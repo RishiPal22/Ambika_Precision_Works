@@ -1,4 +1,3 @@
-
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
@@ -8,6 +7,9 @@ import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Product from "./Pages/Product";
+import { init } from '@emailjs/browser';
+
+init("8camyyLwv9hs5-Hj4");
 
 export default function App() {
   return (
