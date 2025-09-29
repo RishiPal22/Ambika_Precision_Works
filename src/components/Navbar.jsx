@@ -4,10 +4,16 @@ import { Link } from "react-router-dom";
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // Height of navbar (matches --navbar-height in App.jsx and CSS)
+  const NAVBAR_HEIGHT = 64; // px (h-16)
+
   return (
-    <nav className="fixed w-full bg-slate-800 shadow-2xl z-50">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+    <nav
+      className="fixed w-full bg-slate-800 shadow-2xl z-50"
+      style={{ height: NAVBAR_HEIGHT, minHeight: NAVBAR_HEIGHT }}
+    >
+      <div className="max-w-7xl mx-auto px-4 h-full flex items-center">
+        <div className="flex items-center justify-between w-full h-full">
           {/* Logo/Company Name */}
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
@@ -128,7 +134,7 @@ function Navbar() {
         )}
       </div>
     </nav>
-  );
+  );  
 }
 
 export default Navbar;

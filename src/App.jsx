@@ -12,11 +12,17 @@ import { init } from '@emailjs/browser';
 init("8camyyLwv9hs5-Hj4");
 
 export default function App() {
+  // Keep in sync with Navbar.jsx
+  const NAVBAR_HEIGHT = 64; // px (h-16)
   return (
     <Router>
       <div className="min-h-screen flex flex-col bg-slate-50">
         <Navbar />
-        <main className="flex-1 pt-24 max-w-7xl mx-auto w-full px-6 py-12">
+        {/* Use inline style to match navbar height for top padding */}
+        <main
+          className="flex-1 max-w-7xl mx-auto w-full px-6 py-12"
+          style={{ paddingTop: NAVBAR_HEIGHT }}
+        >
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
