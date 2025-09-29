@@ -94,8 +94,8 @@ const Product = () => {
 
   return (
     <div className="min-h-screen bg-background w-full">
-      <div className="bg-gradient-to-b from-secondary/30 to-background pt-10 pb-10 px-0">
-        <div className="max-w-7xl mx-auto text-center">
+      <div className="bg-gradient-to-b from-secondary/30 to-background pt-10 pb-10 w-full">
+        <div className="w-full text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-4 text-balance gradient-text">Precision Products</h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto text-balance">
             Discover our comprehensive range of high-precision CNC machined components serving critical industries worldwide
@@ -103,7 +103,7 @@ const Product = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-0 py-10">
+  <div className="w-full py-10">
         <div className="mb-6">
           <div className="flex flex-col lg:flex-row gap-3 items-start lg:items-center justify-between">
             {/* Search Bar */}

@@ -8,10 +8,10 @@
   --font-mono: "JetBrains Mono", monospace;
 
   /* CNC Professional Color Palette */
-  --color-background: #0a0f1c;
+  --color-background: #FAF9F6;
   --color-foreground: #f8fafc;
-  --color-card: #1e293b;
-  --color-card-foreground: #f1f5f9;
+  --color-card: #FAF9F6;
+  --color-card-foreground: #E63946; /* card name */
   --color-popover: #1e293b;
   --color-popover-foreground: #f1f5f9;
   --color-primary: #1e40af;
@@ -33,6 +33,7 @@
 * {
   border-color: hsl(var(--border));
   
+  
 
 }
 
@@ -40,6 +41,7 @@ body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
   font-feature-settings: "rlig" 1, "calt" 1;
+  
 }
 
 /* Glass effect utilities */
