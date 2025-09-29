@@ -93,22 +93,21 @@ const Product = () => {
   })
 
   return (
-    <div className="min-h-screen bg-background">
-      <div className="bg-gradient-to-b from-secondary/30 to-background py-24 px-6">
+    <div className="min-h-screen bg-background w-full">
+      <div className="bg-gradient-to-b from-secondary/30 to-background pt-10 pb-10 px-0">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-balance gradient-text">Precision Products</h1>
+          <h1 className="text-5xl md:text-7xl font-bold mb-4 text-balance gradient-text">Precision Products</h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto text-balance">
-            Discover our comprehensive range of high-precision CNC machined components serving critical industries
-            worldwide
+            Discover our comprehensive range of high-precision CNC machined components serving critical industries worldwide
           </p>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="mb-12">
-          <div className="flex flex-col lg:flex-row gap-6 items-start lg:items-center justify-between">
+      <div className="max-w-7xl mx-auto px-0 py-10">
+        <div className="mb-6">
+          <div className="flex flex-col lg:flex-row gap-3 items-start lg:items-center justify-between">
             {/* Search Bar */}
-            <div className="relative flex-1 max-w-md">
+            <div className="relative flex-1 max-w-md min-w-0">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                 <svg className="h-5 w-5 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -147,13 +146,13 @@ const Product = () => {
           </div>
 
           {/* Results Count */}
-          <div className="mt-6 text-muted-foreground">
+          <div className="mt-2 text-muted-foreground">
             Showing {filteredProducts.length} of {products.length} products
             {activeFilter !== "All" && ` in ${activeFilter}`}
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProducts.map((product) => (
             <div
               key={product.id}
@@ -209,7 +208,7 @@ const Product = () => {
           </div>
         )}
 
-        <div className="mt-24 bg-gradient-to-r from-secondary/50 to-accent/50 rounded-2xl p-8 md:p-12">
+  <div className="mt-16 bg-gradient-to-r from-secondary/50 to-accent/50 rounded-2xl p-8 md:p-12">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Manufacturing Capabilities</h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">

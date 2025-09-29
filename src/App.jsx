@@ -20,7 +20,7 @@ export default function App() {
         <Navbar />
         {/* Use inline style to match navbar height for top padding */}
         <main
-          className="flex-1 max-w-7xl mx-auto w-full px-6 py-12"
+          className="flex-1 w-full py-4"
           style={{ paddingTop: NAVBAR_HEIGHT }}
         >
           <Routes>
