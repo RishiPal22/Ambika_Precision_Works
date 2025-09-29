@@ -8,25 +8,41 @@
   --font-mono: "JetBrains Mono", monospace;
 
   /* CNC Professional Color Palette */
-  --color-background: #FAF9F6;
-  --color-foreground: #f8fafc;
-  --color-card: #FAF9F6;
-  --color-card-foreground: #E63946; /* card name */
-  --color-popover: #1e293b;
-  --color-popover-foreground: #f1f5f9;
-  --color-primary: #1e40af;
-  --color-primary-foreground: #f8fafc;
-  --color-secondary: #334155;
-  --color-secondary-foreground: #f1f5f9;
-  --color-muted: #334155;
-  --color-muted-foreground: #94a3b8;
-  --color-accent: #ea580c;
-  --color-accent-foreground: #f8fafc;
-  --color-destructive: #dc2626;
+  --color-background: #f9fafb;          /* Very light gray (clean background) */
+  --color-foreground: #0f172a;          /* Slate-900 for text (strong contrast) */
+  --color-card: #ffffff;                /* White cards */
+  --color-card-foreground: #1e293b;     /* Dark slate for card titles */
+
+  /* Overlays / Surfaces */
+  --color-popover: #1e293b;             /* Slate-800 for dark sections */
+  --color-popover-foreground: #f1f5f9;  /* Light text on dark */
+
+  /* Primary Brand */
+  --color-primary: #1e40af;             /* Industrial Blue (trust, precision) */
+  --color-primary-foreground: #f8fafc;  /* White on blue */
+
+  /* Secondary */
+  --color-secondary: #334155;           /* Slate-700 (neutral dark features) */
+  --color-secondary-foreground: #e2e8f0; /* Light slate text */
+
+  /* Muted */
+  --color-muted: #f1f5f9;               /* Subtle gray backgrounds */
+  --color-muted-foreground: #64748b;    /* Slate-500 for secondary text */
+
+  /* Accent */
+  --color-accent: #f59e0b;              /* Amber-500 (highlight, energy) */
+  --color-accent-foreground: #1e293b;   /* Dark text on amber */
+
+  /* Destructive */
+  --color-destructive: #dc2626;         /* Red-600 (alerts/errors) */
   --color-destructive-foreground: #f8fafc;
-  --color-border: #334155;
-  --color-input: #334155;
-  --color-ring: #1e40af;
+
+  /* Borders / Inputs */
+  --color-border: #e2e8f0;              /* Light gray borders */
+  --color-input: #cbd5e1;               /* Muted input border */
+  --color-ring: #1e40af;                /* Blue focus ring */
+
+  /* Radius */
   --radius: 0.5rem;
 }
 
