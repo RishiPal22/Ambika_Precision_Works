@@ -1,92 +1,240 @@
 import React from "react";
+import { Award, Shield, Users, CheckCircle, Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
+
+const highlights = [
+  {
+    icon: <Award className="w-8 h-8 text-blue-500" />,
+    title: "ISO 9001:2015 Certified",
+    desc: "Internationally recognized quality management for every project.",
+    badge: "Certified",
+    color: "from-blue-500 to-purple-500"
+  },
+  {
+    icon: <Shield className="w-8 h-8 text-green-500" />,
+    title: "100% Quality Inspection",
+    desc: "Rigorous testing and inspection for zero-defect delivery.",
+    badge: "Zero Defect",
+    color: "from-green-500 to-teal-500"
+  },
+  {
+    icon: <Users className="w-8 h-8 text-cyan-500" />,
+    title: "Expert Team",
+    desc: "Skilled engineers with decades of combined experience.",
+    badge: "15+ Years",
+    color: "from-cyan-500 to-blue-400"
+  },
+];
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i = 1) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.2, duration: 0.7, type: "spring" }
+  })
+};
+
 const About = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="max-w-4xl mx-auto px-6 py-16">
-        {/* Header Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">About Ambika Precision Works</h1>
-          <div className="w-20 h-1 bg-blue-600 mx-auto mb-6 rounded"></div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Established in 2010, an ISO 9001:2015 certified company by ICS (Reg. No. RQ91/6769), Ambika Precision Works has been a trusted name in high-precision CNC turning and VMC (up to 5th axis) solutions for over a decade. We specialize in large-diameter CNC turning up to 650 mm, consistently delivering excellence to our domestic clients with a firm commitment to 100% job inspection and quality assurance.
-          </p>
-        </div>
+    <motion.div
+      initial="hidden"
+      animate="visible"
+      variants={{
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
+      }}
+      className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-teal-50 relative overflow-hidden"
+    >
+      {/* Decorative background with animated pulse */}
+      <motion.div
+        initial={{ scale: 0.9, opacity: 0.1 }}
+        animate={{ scale: [1, 1.05, 1], opacity: [0.1, 0.2, 0.1] }}
+        transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+        className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full blur-3xl pointer-events-none"
+      />
+      <motion.div
+        initial={{ scale: 0.9, opacity: 0.1 }}
+        animate={{ scale: [1, 1.07, 1], opacity: [0.1, 0.18, 0.1] }}
+        transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
+        className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500 rounded-full blur-3xl pointer-events-none"
+      />
 
-        {/* Company Overview */}
-        <div className="bg-white rounded-lg shadow-sm p-8 mb-12">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-6">Company Overview</h2>
-          <p className="text-gray-700 leading-relaxed mb-6">
-            Established in 2010, Ambika Precision Works is an ISO 9001:2015 certified company by ICS with Reg. No. RQ91/6769. For over a decade, we have been a trusted name in high-precision CNC turning as well as VMC (up to 5th axis) solutions. Specializing in large-diameter CNC turning up to 650 mm since our inception, we have consistently delivered excellence to our domestic clients with a firm commitment to 100% job inspection and quality assurance.
-          </p>
-          <p className="text-gray-700 leading-relaxed">
-            <span className="font-semibold">Our Products:</span> We deliver high-accuracy CNC/VMC machined parts in steel, bronze, brass, metal alloys, Inconel, and more. Our portfolio includes machining parts for oil and gas, valves and fittings, defence, aerospace, and general engineering components. With a 100-ton monthly machining capacity, we are committed to quality and timely delivery for every project.
-          </p>
-        </div>
+      <div className="max-w-6xl mx-auto px-6 py-20 relative z-10">
+        {/* Header */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={0}
+          className="text-center mb-16"
+        >
+          <motion.div
+            whileHover={{ scale: 1.05, boxShadow: "0 0 24px #6366f1" }}
+            className="inline-flex items-center px-6 py-3 bg-blue-500/10 rounded-full text-blue-700 text-sm font-semibold mb-6 backdrop-blur-sm border border-blue-200/50"
+          >
+            <Sparkles className="w-4 h-4 mr-2" />
+            About Ambika Precision Works
+          </motion.div>
+          <motion.h1
+            variants={fadeUp}
+            custom={1}
+            className="text-5xl md:text-6xl font-bold mb-6 text-slate-900 leading-tight"
+          >
+            Precision Engineering
+            <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 bg-clip-text text-transparent">
+              With Trusted Excellence
+            </span>
+          </motion.h1>
+          <motion.p
+            variants={fadeUp}
+            custom={2}
+            className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed"
+          >
+            Since 2010, Ambika Precision Works has delivered high-precision CNC turning and VMC solutions, specializing in large-diameter machining and uncompromising quality for India's leading industries.
+          </motion.p>
+        </motion.div>
 
-        {/* Key Highlights Grid */}
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
-          <div className="bg-white rounded-lg shadow-sm p-6 text-center">
-            <div className="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-xl font-bold text-blue-600">14+</span>
-            </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Years of Experience</h3>
-            <p className="text-gray-600">Serving clients since 2010 with consistent quality</p>
-          </div>
-          <div className="bg-white rounded-lg shadow-sm p-6 text-center">
-            <div className="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-lg font-bold text-green-600">650mm</span>
-            </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Large Diameter Capacity</h3>
-            <p className="text-gray-600">Specialized in large-diameter CNC turning</p>
-          </div>
-          <div className="bg-white rounded-lg shadow-sm p-6 text-center">
-            <div className="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-lg font-bold text-purple-600">100%</span>
-            </div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">Quality Inspection</h3>
-            <p className="text-gray-600">Every job undergoes complete quality assurance</p>
-          </div>
-        </div>
+        {/* Highlights Grid */}
+        <motion.div
+          className="grid md:grid-cols-3 gap-8 mb-16"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            visible: { transition: { staggerChildren: 0.2 } }
+          }}
+        >
+          {highlights.map((item, idx) => (
+            <motion.div
+              key={item.title}
+              variants={fadeUp}
+              custom={idx}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 0 32px #6366f1",
+                y: -8
+              }}
+              className={`bg-gradient-to-br ${item.color} rounded-2xl shadow-lg p-8 text-center relative transition-all duration-300`}
+            >
+              <motion.div
+                whileHover={{ rotate: 12 }}
+                className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4 border border-white/30"
+              >
+                {item.icon}
+              </motion.div>
+              <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+              <p className="text-white/80 mb-4">{item.desc}</p>
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                className="absolute top-6 right-6 bg-white/90 text-blue-700 font-bold px-4 py-1 rounded-full text-xs shadow"
+              >
+                {item.badge}
+              </motion.div>
+            </motion.div>
+          ))}
+        </motion.div>
 
-        {/* Certification & Quality */}
-        <div className="bg-white rounded-lg shadow-sm p-8 mb-12">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-6">Certification & Quality Standards</h2>
-          <div className="flex items-start space-x-4">
-            <div className="flex-shrink-0">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
-                <span className="text-blue-600 font-bold">ISO</span>
+        {/* Company Overview & Certification */}
+        <motion.div
+          className="grid md:grid-cols-2 gap-12 mb-16"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            visible: { transition: { staggerChildren: 0.3 } }
+          }}
+        >
+          <motion.div
+            variants={fadeUp}
+            custom={0}
+            className="bg-white rounded-3xl shadow-lg p-10"
+          >
+            <h2 className="text-3xl font-bold text-slate-900 mb-6">Company Overview</h2>
+            <p className="text-slate-700 leading-relaxed mb-4">
+              Ambika Precision Works, established in 2010, is an ISO 9001:2015 certified company by ICS (Reg. No. RQ91/6769). We are renowned for high-precision CNC turning (up to 650mm diameter) and advanced VMC machining (up to 5th axis), serving oil & gas, valves, defence, aerospace, mining, and general engineering sectors.
+            </p>
+            <p className="text-slate-700 leading-relaxed">
+              <span className="font-semibold text-blue-700">Our Products:</span> Steel, bronze, brass, alloys, Inconel, and more—machined to perfection. 100-ton monthly capacity, 100% job inspection, and a legacy of timely delivery.
+            </p>
+          </motion.div>
+          <motion.div
+            variants={fadeUp}
+            custom={1}
+            className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-3xl shadow-lg p-10 flex flex-col justify-center"
+          >
+            <div className="flex items-center mb-6">
+              <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mr-4 shadow-lg">
+                <Award className="w-8 h-8 text-white" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-blue-900 mb-1">ISO 9001:2015 Certified</h3>
+                <div className="text-blue-700 font-semibold">ICS Reg. No. RQ91/6769</div>
               </div>
             </div>
-            <div>
-              <h3 className="text-lg font-medium text-gray-900 mb-2">ISO 9001:2015 Certified</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Certified by ICS with Registration No. RQ91/6769, ensuring our processes meet international quality management standards. Our commitment to quality is reflected in our systematic approach to continuous improvement and customer satisfaction.
-              </p>
-            </div>
-          </div>
-        </div>
+            <p className="text-slate-700 leading-relaxed">
+              Our certification ensures international standards in quality management, systematic improvement, and customer satisfaction. Every process is designed for reliability and excellence.
+            </p>
+          </motion.div>
+        </motion.div>
 
-        {/* Our Commitment */}
-        <div className="bg-white rounded-lg shadow-sm p-8">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-6">Our Commitment</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div>
-              <h3 className="text-lg font-medium text-gray-900 mb-3">Precision Excellence</h3>
-              <p className="text-gray-700 leading-relaxed">
-                Every component is manufactured with meticulous attention to detail, ensuring dimensional accuracy and surface finish quality that exceeds industry standards.
+        {/* Commitment Section */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={0}
+          className="bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 rounded-3xl p-12 mb-16 text-white shadow-xl"
+        >
+          <h2 className="text-3xl font-bold mb-8 text-center">Our Commitment</h2>
+          <div className="grid md:grid-cols-2 gap-12">
+            <motion.div variants={fadeUp} custom={1}>
+              <h3 className="text-xl font-semibold mb-3">Precision Excellence</h3>
+              <p className="text-white/80 leading-relaxed">
+                Every component is crafted with meticulous attention to detail, achieving dimensional accuracy and surface finish that surpasses industry benchmarks.
               </p>
-            </div>
-            <div>
-              <h3 className="text-lg font-medium text-gray-900 mb-3">Customer Focus</h3>
-              <p className="text-gray-700 leading-relaxed">
-                We work closely with our domestic clients to understand their specific requirements and deliver solutions that meet their exact specifications and timelines.
+            </motion.div>
+            <motion.div variants={fadeUp} custom={2}>
+              <h3 className="text-xl font-semibold mb-3">Customer Focus</h3>
+              <p className="text-white/80 leading-relaxed">
+                We collaborate closely with clients, understanding their unique needs and delivering solutions tailored to exact specifications and timelines.
               </p>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
+
+        {/* Timeline / Experience Section */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={0}
+          className="text-center mb-12"
+        >
+          <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full text-blue-700 text-sm font-semibold mb-6 border border-blue-200/50">
+            <CheckCircle className="w-4 h-4 mr-2" />
+            Trusted by Industry Leaders for 14+ Years
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8">
+            <motion.div variants={fadeUp} custom={1}>
+              <div className="text-3xl font-bold text-blue-600 mb-2">14+</div>
+              <div className="text-slate-700 text-sm font-medium">Years Experience</div>
+            </motion.div>
+            <motion.div variants={fadeUp} custom={2}>
+              <div className="text-3xl font-bold text-purple-600 mb-2">650mm</div>
+              <div className="text-slate-700 text-sm font-medium">Max Diameter</div>
+            </motion.div>
+            <motion.div variants={fadeUp} custom={3}>
+              <div className="text-3xl font-bold text-green-600 mb-2">100%</div>
+              <div className="text-slate-700 text-sm font-medium">Quality Inspection</div>
+            </motion.div>
+            <motion.div variants={fadeUp} custom={4}>
+              <div className="text-3xl font-bold text-yellow-500 mb-2">100T</div>
+              <div className="text-slate-700 text-sm font-medium">Monthly Capacity</div>
+            </motion.div>
+          </div>
+        </motion.div>
       </div>
-    </div>
-  )
-}
+    </motion.div>
+  );
+};
 
-export default About
+export default About;
