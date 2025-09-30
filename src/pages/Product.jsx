@@ -2,9 +2,15 @@ import React from 'react'
 "use client"
 
 import { useState } from "react"
+import { useLocation } from "react-router-dom";
+
 
 const Product = () => {
-  const [activeFilter, setActiveFilter] = useState("All")
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
+  const initialFilter = params.get("filter") || "All";
+  
+  const [activeFilter, setActiveFilter] = useState(initialFilter)
   const [searchTerm, setSearchTerm] = useState("")
 
   const categories = ["All", "Oil & Gas", "Valves & Fittings", "Defence", "Aerospace", "Mining", "General Engineering"]
