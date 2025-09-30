@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -9,7 +10,7 @@ function Navbar() {
 
   return (
     <nav
-      className="fixed w-full bg-slate-800 shadow-2xl z-50"
+      className="fixed w-full bg-slate-800 shadow-2xl z-50 navbar "
       style={{ height: NAVBAR_HEIGHT, minHeight: NAVBAR_HEIGHT }}
     >
       <div className="max-w-7xl mx-auto px-4 h-full flex items-center">
@@ -17,7 +18,11 @@ function Navbar() {
           {/* Logo/Company Name */}
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center">
-              <span className="text-blue-900 font-bold text-lg">AP</span>
+              <img
+                src={logo}
+                alt="Company Logo"
+                className="w-8 h-8 object-contain"
+              />
             </div>
             <div className="text-xl font-bold text-white">
               Ambika Precision Works
@@ -134,7 +139,7 @@ function Navbar() {
         )}
       </div>
     </nav>
-  );  
+  );
 }
 
 export default Navbar;

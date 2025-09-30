@@ -4,12 +4,12 @@
 @tailwind utilities;
 
 @theme inline {
-  --font-sans: "Inter", system-ui, sans-serif;
+  --font-sans: "Open Sans", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
   /* CNC Professional Color Palette */
   --color-background: #f9fafb;          /* Very light gray (clean background) */
-  --color-foreground: #0f172a;          /* Slate-900 for text (strong contrast) */
+  --color-foreground: #86DEB7;          /* Slate-900 for text (strong contrast) */
   --color-card: #ffffff;                /* White cards */
   --color-card-foreground: #1e293b;     /* Dark slate for card titles */
 
@@ -46,6 +46,13 @@
   --radius: 0.5rem;
 }
 
+/* Add to the top of index.css or a global CSS file */
+:root {
+  --navbar-bg: #1a202c; /* default dark background */
+  --navbar-text: #fff;
+  --navbar-hover: #1e41dc; /* default accent */
+}
+
 * {
   border-color: hsl(var(--border));
   
@@ -76,13 +83,13 @@ body {
 }
 
 /* Custom scrollbar */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 8px;
-}
+} */
 
-::-webkit-scrollbar-track {
+/* ::-webkit-scrollbar-track {
   background: hsl(var(--background));
-}
+} */
 
 ::-webkit-scrollbar-thumb {
   background: hsl(var(--muted));
@@ -91,4 +98,26 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--muted-foreground));
+}
+
+.navbar {
+  background-color: var(--navbar-bg);
+  color: var(--navbar-text);
+  transition: background 0.3s, color 0.3s;
+}
+
+.navbar a {
+  color: var(--navbar-text);
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: var(--navbar-hover);
+}
+
+/* Example: To change theme, override variables anywhere (e.g., in a .light-theme class) */
+.light-theme {
+  --navbar-bg: #fff;
+  --navbar-text: #1a202c;
+  --navbar-hover: #0ea5e9;
 }
