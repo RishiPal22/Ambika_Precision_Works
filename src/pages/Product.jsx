@@ -1,8 +1,29 @@
 import React from 'react' 
-"use client"
-
 import { useState } from "react"
 import { useLocation } from "react-router-dom";
+// Oil & Gas
+// import hammerUnions from "../assets/oil-gas/hammer-unions.png";
+// import pupJoints from "../assets/oil-gas/pup-joints.png";
+// import crossover from "../assets/oil-gas/crossover.png";
+import swivelJoints from "../assets/oil-gas/swivel joint.jpg";
+// import mudPumpLiners from "../assets/oil-gas/mud-pump-liners.png";
+// import valveBodies from "../assets/oil-gas/valve-bodies.png";
+import ringJointGaskets from "../assets/oil-gas/Ring-Joint-Gasket.avif";
+// import spacerSpools from "../assets/oil-gas/spacer-spools.png";
+// import flowTees from "../assets/oil-gas/flow-tees.png";
+
+// Valves & Fittings
+import gateValves from "../assets/valves/gate-valves.jpg";
+import globeValves from "../assets/valves/globevalve.png";
+// import ballValves from "../assets/valves/ball-valve.png";
+// import butterflyValves from "../assets/valves/butterfly-valve.png";
+// import checkValves from "../assets/valves/check-valve.png";
+// import needleValves from "../assets/valves/needle-valve.png";
+// import unionNuts from "../assets/valves/union-nuts.png";
+// import tubeFittings from "../assets/valves/tube-fittings.png";
+// import flanges from "../assets/valves/flanges.png";
+// import couplings from "../assets/valves/couplings.png";
+
 
 
 const Product = () => {
@@ -16,79 +37,163 @@ const Product = () => {
   const categories = ["All", "Oil & Gas", "Valves & Fittings", "Defence", "Aerospace", "Mining", "General Engineering"]
 
   const products = [
-    {
-      id: 1,
-      name: "Precision Valve Components",
-      category: "Valves & Fittings",
-      description: "High-precision machined valve bodies and components for industrial applications",
-      image: "/precision-machined-valve-components-industrial.jpg",
-      specifications: "Material: Stainless Steel | Tolerance: ±0.01mm",
-    },
-    {
-      id: 2,
-      name: "Oil & Gas Pipeline Fittings",
-      category: "Oil & Gas",
-      description: "Heavy-duty pipeline fittings designed for extreme pressure applications",
-      image: "/oil-gas-pipeline-fittings-heavy-duty-industrial.jpg",
-      specifications: "Pressure Rating: 10,000 PSI | Size: Up to 650mm",
-    },
-    {
-      id: 3,
-      name: "Aerospace Engine Components",
-      category: "Aerospace",
-      description: "Critical engine components meeting aerospace industry standards",
-      image: "/aerospace-engine-components-precision-machined.jpg",
-      specifications: "Material: Titanium Alloy | Certification: AS9100",
-    },
-    {
-      id: 4,
-      name: "Defence Equipment Parts",
-      category: "Defence",
-      description: "Specialized components for defence and military applications",
-      image: "/defence-military-equipment-precision-parts.jpg",
-      specifications: "Material: Hardened Steel | Security Clearance Required",
-    },
-    {
-      id: 5,
-      name: "Mining Equipment Gears",
-      category: "Mining",
-      description: "Heavy-duty gears and transmission components for mining machinery",
-      image: "/mining-equipment-gears-heavy-duty-machinery.jpg",
-      specifications: "Load Capacity: 50 Tons | Hardness: 58-62 HRC",
-    },
-    {
-      id: 6,
-      name: "General Engineering Shafts",
-      category: "General Engineering",
-      description: "Custom machined shafts for various industrial applications",
-      image: "/precision-machined-shafts-industrial-engineering.jpg",
-      specifications: "Length: Up to 3000mm | Surface Finish: Ra 0.8",
-    },
-    {
-      id: 7,
-      name: "Hydraulic Valve Bodies",
-      category: "Valves & Fittings",
-      description: "Complex hydraulic valve bodies with intricate internal passages",
-      image: "/hydraulic-valve-bodies-complex-machining.jpg",
-      specifications: "Working Pressure: 350 Bar | Material: Ductile Iron",
-    },
-    {
-      id: 8,
-      name: "Offshore Platform Components",
-      category: "Oil & Gas",
-      description: "Corrosion-resistant components for offshore drilling platforms",
-      image: "/offshore-platform-components-corrosion-resistant.jpg",
-      specifications: "Material: Super Duplex Steel | Salt Spray Test: 1000hrs",
-    },
-    {
-      id: 9,
-      name: "Aircraft Landing Gear Parts",
-      category: "Aerospace",
-      description: "Critical landing gear components with stringent quality requirements",
-      image: "/aircraft-landing-gear-precision-components.jpg",
-      specifications: "Material: 4340 Steel | NDT: 100% Inspected",
-    },
-  ]
+  // {
+  //   id: 10,
+  //   name: "Hammer Unions",
+  //   category: "Oil & Gas",
+  //   description: "High-pressure hammer unions for reliable oilfield connections",
+  //   image: hammerUnions,
+  //   specifications: "Pressure Rating: Up to 15,000 PSI | Size: 2-10 inches",
+  // },
+  // {
+  //   id: 11,
+  //   name: "Pup Joints",
+  //   category: "Oil & Gas",
+  //   description: "Integral pup joints designed for durability in drilling operations",
+  //   image: pupJoints,
+  //   specifications: "Length: 2-10 ft | Material: Alloy Steel",
+  // },
+  // {
+  //   id: 12,
+  //   name: "Crossover",
+  //   category: "Oil & Gas",
+  //   description: "Crossovers used to connect different sizes of drilling equipment",
+  //   image: crossover,
+  //   specifications: "Custom Sizes Available | API Certified",
+  // },
+  {
+    id: 13,
+    name: "Swivel Joints",
+    category: "Oil & Gas",
+    description: "Rotational swivel joints for fluid transfer under pressure",
+    image: swivelJoints,
+    specifications: "Pressure Rating: 6,000 PSI | Rotation: 360°",
+  },
+  // {
+  //   id: 14,
+  //   name: "Mud Pump Liners",
+  //   category: "Oil & Gas",
+  //   description: "Durable mud pump liners for drilling fluid systems",
+  //   image: mudPumpLiners,
+  //   specifications: "Material: Ceramic/Chromium | Size: 6-8 inches",
+  // },
+  // {
+  //   id: 15,
+  //   name: "Valve Bodies (Choke/Plug/Check)",
+  //   category: "Oil & Gas",
+  //   description: "Robust valve bodies for choke, plug, and check valve assemblies",
+  //   image: valveBodies,
+  //   specifications: "Material: Forged Steel | High Pressure Resistant",
+  // },
+  {
+    id: 16,
+    name: "Ring Joint Gaskets",
+    category: "Oil & Gas",
+    description: "Metal ring joint gaskets for high-pressure pipeline sealing",
+    image: ringJointGaskets,
+    specifications: "Standard: API 6A | Materials: Soft Iron, Stainless Steel",
+  },
+  // {
+  //   id: 17,
+  //   name: "Spacer Spools / Drilling Spools",
+  //   category: "Oil & Gas",
+  //   description: "Spacer and drilling spools for blowout preventer stacks",
+  //   image: spacerSpools,
+  //   specifications: "Pressure Rating: 10,000 PSI | Bore Size: Up to 21 inches",
+  // },
+  // {
+  //   id: 18,
+  //   name: "Flow Tees / Flow Crosses",
+  //   category: "Oil & Gas",
+  //   description: "Flow tees and crosses for fluid distribution in wellheads",
+  //   image: flowTees,
+  //   specifications: "Material: Alloy Steel | API 6A Compliant",
+  // },
+
+  // ---------------- Valves & Fittings ----------------
+  {
+    id: 19,
+    name: "Gate Valves",
+    category: "Valves & Fittings",
+    description: "Industrial gate valves for fluid shut-off applications",
+    image: gateValves,
+    specifications: "Pressure Class: 150-2500 | Material: WCB/SS",
+  },
+  {
+    id: 20,
+    name: "Globe Valves",
+    category: "Valves & Fittings",
+    description: "Globe valves for regulating fluid flow in pipelines",
+    image: globeValves,
+    specifications: "Size: ½” – 24” | Material: Cast Steel, Stainless Steel",
+  },
+  // {
+  //   id: 21,
+  //   name: "Ball Valves",
+  //   category: "Valves & Fittings",
+  //   description: "Durable ball valves for reliable shut-off in piping systems",
+  //   image: ballValves,
+  //   specifications: "Pressure Rating: PN16 – PN420 | Type: Floating/Trunnion",
+  // },
+  // {
+  //   id: 22,
+  //   name: "Butterfly Valves",
+  //   category: "Valves & Fittings",
+  //   description: "Compact butterfly valves for throttling and shut-off",
+  //   image: butterflyValves,
+  //   specifications: "Disc Material: SS/CI | Operation: Manual/Gear/Pneumatic",
+  // },
+  // {
+  //   id: 23,
+  //   name: "Check Valves",
+  //   category: "Valves & Fittings",
+  //   description: "One-way check valves to prevent reverse flow",
+  //   image: checkValves,
+  //   specifications: "Type: Swing, Lift, Dual Plate | Size: DN50–DN1200",
+  // },
+  // {
+  //   id: 24,
+  //   name: "Needle Valves",
+  //   category: "Valves & Fittings",
+  //   description: "Precision needle valves for fine flow control",
+  //   image: needleValves,
+  //   specifications: "Max Pressure: 6000 PSI | Material: SS316/Brass",
+  // },
+  // {
+  //   id: 25,
+  //   name: "Union Nuts & End Connectors",
+  //   category: "Valves & Fittings",
+  //   description: "Connector components for secure piping assemblies",
+  //   image: unionNuts,
+  //   specifications: "Thread Types: NPT/BSP | Material: Brass/SS",
+  // },
+  // {
+  //   id: 26,
+  //   name: "Tube Fittings (Elbows, Tees, Crosses)",
+  //   category: "Valves & Fittings",
+  //   description: "Precision tube fittings including elbows, tees, and crosses",
+  //   image: tubeFittings,
+  //   specifications: "Material: SS316/L | Sizes: ¼” – 2”",
+  // },
+  // {
+  //   id: 27,
+  //   name: "Flanges (Blind, Slip-On, Weld Neck)",
+  //   category: "Valves & Fittings",
+  //   description: "Industrial flanges for pipe connections",
+  //   image: flanges,
+  //   specifications: "Standard: ANSI/ASME | Size: ½” – 48”",
+  // },
+  // {
+  //   id: 28,
+  //   name: "Couplings / Adapters",
+  //   category: "Valves & Fittings",
+  //   description: "Pipe couplings and adapters for versatile connections",
+  //   image: couplings,
+  //   specifications: "Material: Carbon Steel, SS, Alloy | Sizes Available",
+  // }
+];
+
+
 
   const filteredProducts = products.filter((product) => {
     const matchesFilter = activeFilter === "All" || product.category === activeFilter
