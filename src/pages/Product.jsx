@@ -269,11 +269,17 @@ const Product = () => {
               key={product.id}
               className="group bg-card rounded-xl border border-border overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 animate-fade-in"
             >
-              <div className="aspect-[4/3] overflow-hidden bg-secondary/20">
+              <div className="aspect-[4/3] overflow-hidden bg-secondary/20 flex items-center justify-center">
                 <img
                   src={product.image || "/placeholder.svg"}
                   alt={product.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    display: "block",
+                    background: "white"
+                  }}
                 />
               </div>
 

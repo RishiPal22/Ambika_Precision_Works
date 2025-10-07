@@ -6,8 +6,10 @@ import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Product from "./Pages/Product";
+import Product from "./pages/Product";
 import { init } from '@emailjs/browser';
+import ScrollToTop from "./components/ScrollToTop";
+
 
 init("8camyyLwv9hs5-Hj4");
 
@@ -16,6 +18,7 @@ export default function App() {
   const NAVBAR_HEIGHT = 64; // px (h-16)
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen flex flex-col bg-slate-50">
         <Navbar />
         {/* Use inline style to match navbar height for top padding */}
