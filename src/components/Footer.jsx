@@ -199,7 +199,7 @@ const Footer = () => {
         </div>
 
         {/* Industries Section */}
-        <div className="border-t border-slate-700/50">
+        {/* <div className="border-t border-slate-700/50">
           <div className="max-w-7xl mx-auto px-4 py-8">
             <div className="text-center mb-6">
               <h3 className="text-lg font-bold text-white mb-2">Industries We Serve</h3>
@@ -217,7 +217,7 @@ const Footer = () => {
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Bottom Bar */}
         <div className="border-t border-slate-700/50">
