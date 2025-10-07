@@ -72,7 +72,7 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Enhanced Hero Section */}
-      <section className="relative pt-20 pb-16 px-4 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 overflow-hidden">
+  <section className="relative pt-8 pb-16 px-4 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full blur-3xl animate-pulse"></div>
@@ -88,7 +88,14 @@ const Home = () => {
               <Award className="w-4 h-4 mr-2" />
               ISO 9001:2015 Certified Excellence
             </div>
-            
+            <div className="inline-flex items-center px-4 py-2 bg-blue-500/20 rounded-full text-blue-200 text-sm font-medium mb-6 backdrop-blur-sm ml-2">
+              <Award className="w-4 h-4 mr-2" />
+              ISO 9001:2015 Certified Excellence
+            </div>
+            <div className="inline-flex items-center px-4 py-2 bg-blue-500/20 rounded-full text-blue-200 text-sm font-medium mb-6 backdrop-blur-sm ml-2">
+              <Award className="w-4 h-4 mr-2" />
+              ISO 9001:2015 Certified Excellence
+            </div>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white leading-tight">
               Precision Engineering
               <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-blue-300 bg-clip-text text-transparent">
