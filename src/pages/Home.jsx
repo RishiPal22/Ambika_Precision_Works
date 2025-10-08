@@ -72,7 +72,7 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Enhanced Hero Section */}
-  <section className="relative pt-8 pb-16 px-4 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 overflow-hidden">
+      <section className="relative pt-8 pb-16 px-4 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 overflow-hidden">
         {/* Animated background elements */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full blur-3xl animate-pulse"></div>
@@ -84,41 +84,44 @@ const Home = () => {
         
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center">
-            <div className="inline-flex items-center px-4 py-2 bg-blue-500/20 rounded-full text-blue-200 text-sm font-medium mb-6 backdrop-blur-sm">
-              <Award className="w-4 h-4 mr-2" />
-              ISO 9001:2015 Certified Excellence
+            <div className="flex flex-wrap justify-center gap-2 mb-8">
+              <div className="inline-flex items-center px-4 py-2 bg-blue-500/20 rounded-full text-blue-200 text-sm font-medium backdrop-blur-sm animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+                <Award className="w-4 h-4 mr-2" />
+                ISO 9001:2015 Certified Excellence
+              </div>
+              <div className="inline-flex items-center px-4 py-2 bg-green-500/20 rounded-full text-green-200 text-sm font-medium backdrop-blur-sm animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+                <CheckCircle className="w-4 h-4 mr-2" />
+                15+ Years Experience
+              </div>
+              <div className="inline-flex items-center px-4 py-2 bg-purple-500/20 rounded-full text-purple-200 text-sm font-medium backdrop-blur-sm animate-fade-in-up" style={{animationDelay: '0.6s'}}>
+                <Target className="w-4 h-4 mr-2" />
+                Precision Manufacturing
+              </div>
             </div>
-            <div className="inline-flex items-center px-4 py-2 bg-blue-500/20 rounded-full text-blue-200 text-sm font-medium mb-6 backdrop-blur-sm ml-2">
-              <Award className="w-4 h-4 mr-2" />
-              ISO 9001:2015 Certified Excellence
-            </div>
-            <div className="inline-flex items-center px-4 py-2 bg-blue-500/20 rounded-full text-blue-200 text-sm font-medium mb-6 backdrop-blur-sm ml-2">
-              <Award className="w-4 h-4 mr-2" />
-              ISO 9001:2015 Certified Excellence
-            </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white leading-tight">
+            
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white leading-tight animate-fade-in-up" style={{animationDelay: '0.8s'}}>
               Precision Engineering
-              <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-blue-300 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-blue-300 bg-clip-text text-transparent animate-gradient-x">
                 Meets Innovation
               </span>
             </h1>
             
-            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed text-slate-200">
+            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed text-slate-200 animate-fade-in-up" style={{animationDelay: '1s'}}>
               Transform your manufacturing vision into reality with Ambika Precision Works' 
               cutting-edge CNC solutions, uncompromising quality, and over 15 years of trusted expertise.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-fade-in-up" style={{animationDelay: '1.2s'}}>
               <Link
                 to="/services"
-                className="group bg-blue-600 text-white px-10 py-5 rounded-full font-semibold hover:bg-blue-700 transition-all duration-300 hover:scale-105 text-lg shadow-2xl flex items-center"
+                className="group bg-blue-600 text-white px-10 py-5 rounded-full font-semibold hover:bg-blue-700 transition-all duration-300 hover:scale-105 text-lg shadow-2xl flex items-center hover:shadow-blue-500/25"
               >
                 Explore Our Services
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link
                 to="/about"
-                className="group text-slate-200 hover:text-white transition-colors font-semibold flex items-center gap-2 text-lg px-6 py-3 border border-slate-400/30 rounded-full hover:border-slate-300/50 backdrop-blur-sm"
+                className="group text-slate-200 hover:text-white transition-colors font-semibold flex items-center gap-2 text-lg px-6 py-3 border border-slate-400/30 rounded-full hover:border-slate-300/50 backdrop-blur-sm hover:bg-white/5"
               >
                 Learn Our Story
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -127,20 +130,20 @@ const Home = () => {
 
             {/* Trust indicators */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-slate-700/50">
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">15+</div>
+              <div className="text-center animate-fade-in-up" style={{animationDelay: '1.4s'}}>
+                <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2 animate-count-up">15+</div>
                 <div className="text-slate-300 text-sm font-medium">Years Excellence</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-purple-400 mb-2">650mm</div>
+              <div className="text-center animate-fade-in-up" style={{animationDelay: '1.6s'}}>
+                <div className="text-3xl md:text-4xl font-bold text-purple-400 mb-2 animate-count-up">650mm</div>
                 <div className="text-slate-300 text-sm font-medium">Max Diameter</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-green-400 mb-2">100%</div>
+              <div className="text-center animate-fade-in-up" style={{animationDelay: '1.8s'}}>
+                <div className="text-3xl md:text-4xl font-bold text-green-400 mb-2 animate-count-up">100%</div>
                 <div className="text-slate-300 text-sm font-medium">Quality Assured</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-yellow-400 mb-2">500+</div>
+              <div className="text-center animate-fade-in-up" style={{animationDelay: '2s'}}>
+                <div className="text-3xl md:text-4xl font-bold text-yellow-400 mb-2 animate-count-up">500+</div>
                 <div className="text-slate-300 text-sm font-medium">Projects Delivered</div>
               </div>
             </div>
@@ -152,8 +155,8 @@ const Home = () => {
       <section className="py-24 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">Our Core Capabilities</h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 animate-fade-in-up">Our Core Capabilities</h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{animationDelay: '0.2s'}}>
               Delivering precision manufacturing solutions with uncompromising quality, 
               cutting-edge technology, and decades of engineering expertise.
             </p>
@@ -161,8 +164,8 @@ const Home = () => {
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
-              <div className="flex gap-6 group">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-xl transition-shadow">
+              <div className="flex gap-6 group animate-slide-in-left" style={{animationDelay: '0.4s'}}>
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
                   <Settings className="w-8 h-8 text-white" />
                 </div>
                 <div>
@@ -175,8 +178,8 @@ const Home = () => {
                 </div>
               </div>
 
-              <div className="flex gap-6 group">
-                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-xl transition-shadow">
+              <div className="flex gap-6 group animate-slide-in-left" style={{animationDelay: '0.6s'}}>
+                <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
                   <Shield className="w-8 h-8 text-white" />
                 </div>
                 <div>
@@ -188,8 +191,8 @@ const Home = () => {
                 </div>
               </div>
 
-              <div className="flex gap-6 group">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-xl transition-shadow">
+              <div className="flex gap-6 group animate-slide-in-left" style={{animationDelay: '0.8s'}}>
+                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-105">
                   <Users className="w-8 h-8 text-white" />
                 </div>
                 <div>
@@ -202,12 +205,12 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="relative">
+            <div className="relative animate-slide-in-right" style={{animationDelay: '0.4s'}}>
               <div className="bg-gradient-to-br from-slate-100 to-slate-200 rounded-3xl p-12 h-96 flex items-center justify-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10"></div>
                 <div className="text-center relative z-10">
-                  <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl">
-                    <Settings className="w-16 h-16 text-white animate-spin" style={{animationDuration: '8s'}} />
+                  <div className="w-32 h-32 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-2xl animate-float">
+                    <Settings className="w-16 h-16 text-white animate-spin-slow" />
                   </div>
                   <h4 className="text-2xl font-bold text-slate-800 mb-2">CNC Manufacturing</h4>
                   <p className="text-slate-600 text-lg">Excellence in Motion</p>
@@ -218,7 +221,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* COMPLETELY REDESIGNED: Why Choose Ambika Section */}
+      {/* Why Choose Ambika Section */}
       <section className="py-24 px-4 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 relative overflow-hidden">
         {/* Animated background */}
         <div className="absolute inset-0">
@@ -231,158 +234,155 @@ const Home = () => {
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-20">
-            <div className="inline-flex items-center px-6 py-3 bg-white/10 rounded-full text-white text-sm font-medium mb-6 backdrop-blur-sm border border-white/20">
+            <div className="inline-flex items-center px-6 py-3 bg-white/10 rounded-full text-white text-sm font-medium mb-6 backdrop-blur-sm border border-white/20 animate-fade-in-up">
               <Sparkles className="w-4 h-4 mr-2" />
               Why Industry Leaders Choose Us
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white animate-fade-in-up" style={{animationDelay: '0.2s'}}>
               Excellence in Every
-              <span className="block bg-gradient-to-r from-cyan-400 via-blue-300 to-purple-300 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-cyan-400 via-blue-300 to-purple-300 bg-clip-text text-transparent animate-gradient-x">
                 Dimension
               </span>
             </h2>
-            <p className="text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{animationDelay: '0.4s'}}>
               Discover the Ambika Precision Works advantage through innovation, precision, and unwavering commitment to excellence.
             </p>
           </div>
 
-          {/* Hexagonal Grid Layout */}
-          <div className="relative">
-            {/* Center Feature */}
-            <div className="flex justify-center mb-16">
-              <div className="relative group">
-                <div className="w-80 h-80 bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm rounded-3xl border border-white/30 flex flex-col items-center justify-center p-8 hover:scale-105 transition-all duration-500 hover:bg-white/25">
-                  <div className="w-20 h-20 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center mb-6 shadow-2xl">
-                    <Award className="w-10 h-10 text-white" />
+          {/* Center Feature */}
+          <div className="flex justify-center mb-16">
+            <div className="relative group animate-scale-in" style={{animationDelay: '0.6s'}}>
+              <div className="w-80 h-80 bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm rounded-3xl border border-white/30 flex flex-col items-center justify-center p-8 hover:scale-105 transition-all duration-500 hover:bg-white/25">
+                <div className="w-20 h-20 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center mb-6 shadow-2xl animate-float">
+                  <Award className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4 text-center">ISO 9001:2015</h3>
+                <p className="text-slate-200 text-center leading-relaxed">
+                  Certified quality management systems ensuring consistent excellence in every project
+                </p>
+                <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-400 rounded-full flex items-center justify-center animate-bounce">
+                  <CheckCircle className="w-4 h-4 text-white" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Surrounding Features in Staggered Layout */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
+            {/* Row 1 */}
+            <div className="group transform hover:-translate-y-2 transition-all duration-300 animate-fade-in-up" style={{animationDelay: '0.8s'}}>
+              <div className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 backdrop-blur-sm rounded-2xl border border-white/20 p-8 h-full hover:bg-white/10 transition-all duration-300">
+                <div className="flex items-start justify-between mb-6">
+                  <div className="w-14 h-14 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center">
+                    <Target className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-4 text-center">ISO 9001:2015</h3>
-                  <p className="text-slate-200 text-center leading-relaxed">
-                    Certified quality management systems ensuring consistent excellence in every project
-                  </p>
-                  <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-400 rounded-full flex items-center justify-center">
-                    <CheckCircle className="w-4 h-4 text-white" />
-                  </div>
+                  <div className="text-blue-300 text-sm font-bold bg-blue-500/20 px-3 py-1 rounded-full">±0.01mm</div>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4">Precision Excellence</h3>
+                <p className="text-slate-200 leading-relaxed">
+                  Achieving microscopic tolerances with state-of-the-art CNC equipment and rigorous quality control processes.
+                </p>
+                <div className="mt-6 flex items-center text-blue-300 text-sm font-medium">
+                  <TrendingUp className="w-4 h-4 mr-2" />
+                  99.8% Accuracy Rate
                 </div>
               </div>
             </div>
 
-            {/* Surrounding Features in Staggered Layout */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-              {/* Row 1 */}
-              <div className="group transform hover:-translate-y-2 transition-all duration-300">
-                <div className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 backdrop-blur-sm rounded-2xl border border-white/20 p-8 h-full hover:bg-white/10 transition-all duration-300">
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="w-14 h-14 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center">
-                      <Target className="w-7 h-7 text-white" />
-                    </div>
-                    <div className="text-blue-300 text-sm font-bold bg-blue-500/20 px-3 py-1 rounded-full">±0.01mm</div>
+            <div className="group transform hover:-translate-y-2 transition-all duration-300 lg:mt-8 animate-fade-in-up" style={{animationDelay: '1s'}}>
+              <div className="bg-gradient-to-br from-green-500/20 to-teal-500/20 backdrop-blur-sm rounded-2xl border border-white/20 p-8 h-full hover:bg-white/10 transition-all duration-300">
+                <div className="flex items-start justify-between mb-6">
+                  <div className="w-14 h-14 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center">
+                    <Clock className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-4">Precision Excellence</h3>
-                  <p className="text-slate-200 leading-relaxed">
-                    Achieving microscopic tolerances with state-of-the-art CNC equipment and rigorous quality control processes.
-                  </p>
-                  <div className="mt-6 flex items-center text-blue-300 text-sm font-medium">
-                    <TrendingUp className="w-4 h-4 mr-2" />
-                    99.8% Accuracy Rate
-                  </div>
+                  <div className="text-green-300 text-sm font-bold bg-green-500/20 px-3 py-1 rounded-full">98%</div>
                 </div>
-              </div>
-
-              <div className="group transform hover:-translate-y-2 transition-all duration-300 lg:mt-8">
-                <div className="bg-gradient-to-br from-green-500/20 to-teal-500/20 backdrop-blur-sm rounded-2xl border border-white/20 p-8 h-full hover:bg-white/10 transition-all duration-300">
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="w-14 h-14 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center">
-                      <Clock className="w-7 h-7 text-white" />
-                    </div>
-                    <div className="text-green-300 text-sm font-bold bg-green-500/20 px-3 py-1 rounded-full">98%</div>
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-4">On-Time Delivery</h3>
-                  <p className="text-slate-200 leading-relaxed">
-                    Reliable project timelines ensuring your production schedules stay on track, every single time.
-                  </p>
-                  <div className="mt-6 flex items-center text-green-300 text-sm font-medium">
-                    <CheckCircle className="w-4 h-4 mr-2" />
-                    Guaranteed Timeline
-                  </div>
-                </div>
-              </div>
-
-              <div className="group transform hover:-translate-y-2 transition-all duration-300">
-                <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm rounded-2xl border border-white/20 p-8 h-full hover:bg-white/10 transition-all duration-300">
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="w-14 h-14 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl flex items-center justify-center">
-                      <Zap className="w-7 h-7 text-white" />
-                    </div>
-                    <div className="text-purple-300 text-sm font-bold bg-purple-500/20 px-3 py-1 rounded-full">Latest</div>
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-4">Advanced Technology</h3>
-                  <p className="text-slate-200 leading-relaxed">
-                    Latest CNC machinery and CAD/CAM software ensuring optimal efficiency and superior outcomes.
-                  </p>
-                  <div className="mt-6 flex items-center text-purple-300 text-sm font-medium">
-                    <Zap className="w-4 h-4 mr-2" />
-                    Cutting-Edge Tech
-                  </div>
+                <h3 className="text-xl font-bold text-white mb-4">On-Time Delivery</h3>
+                <p className="text-slate-200 leading-relaxed">
+                  Reliable project timelines ensuring your production schedules stay on track, every single time.
+                </p>
+                <div className="mt-6 flex items-center text-green-300 text-sm font-medium">
+                  <CheckCircle className="w-4 h-4 mr-2" />
+                  Guaranteed Timeline
                 </div>
               </div>
             </div>
 
-            {/* Bottom Row */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="group transform hover:-translate-y-2 transition-all duration-300 lg:mt-8">
-                <div className="bg-gradient-to-br from-orange-500/20 to-red-500/20 backdrop-blur-sm rounded-2xl border border-white/20 p-8 h-full hover:bg-white/10 transition-all duration-300">
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="w-14 h-14 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl flex items-center justify-center">
-                      <CheckCircle className="w-7 h-7 text-white" />
-                    </div>
-                    <div className="text-orange-300 text-sm font-bold bg-orange-500/20 px-3 py-1 rounded-full">100%</div>
+            <div className="group transform hover:-translate-y-2 transition-all duration-300 animate-fade-in-up" style={{animationDelay: '1.2s'}}>
+              <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm rounded-2xl border border-white/20 p-8 h-full hover:bg-white/10 transition-all duration-300">
+                <div className="flex items-start justify-between mb-6">
+                  <div className="w-14 h-14 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl flex items-center justify-center">
+                    <Zap className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-4">Quality Certified</h3>
-                  <p className="text-slate-200 leading-relaxed">
-                    Comprehensive quality management with continuous improvement and rigorous testing processes.
-                  </p>
-                  <div className="mt-6 flex items-center text-orange-300 text-sm font-medium">
-                    <Shield className="w-4 h-4 mr-2" />
-                    Zero Defect Goal
-                  </div>
+                  <div className="text-purple-300 text-sm font-bold bg-purple-500/20 px-3 py-1 rounded-full">Latest</div>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4">Advanced Technology</h3>
+                <p className="text-slate-200 leading-relaxed">
+                  Latest CNC machinery and CAD/CAM software ensuring optimal efficiency and superior outcomes.
+                </p>
+                <div className="mt-6 flex items-center text-purple-300 text-sm font-medium">
+                  <Zap className="w-4 h-4 mr-2" />
+                  Cutting-Edge Tech
                 </div>
               </div>
+            </div>
+          </div>
 
-              <div className="group transform hover:-translate-y-2 transition-all duration-300">
-                <div className="bg-gradient-to-br from-cyan-500/20 to-teal-500/20 backdrop-blur-sm rounded-2xl border border-white/20 p-8 h-full hover:bg-white/10 transition-all duration-300">
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="w-14 h-14 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-xl flex items-center justify-center">
-                      <Users className="w-7 h-7 text-white" />
-                    </div>
-                    <div className="text-cyan-300 text-sm font-bold bg-cyan-500/20 px-3 py-1 rounded-full">15+</div>
+          {/* Bottom Row */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="group transform hover:-translate-y-2 transition-all duration-300 lg:mt-8 animate-fade-in-up" style={{animationDelay: '1.4s'}}>
+              <div className="bg-gradient-to-br from-orange-500/20 to-red-500/20 backdrop-blur-sm rounded-2xl border border-white/20 p-8 h-full hover:bg-white/10 transition-all duration-300">
+                <div className="flex items-start justify-between mb-6">
+                  <div className="w-14 h-14 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl flex items-center justify-center">
+                    <CheckCircle className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-4">Expert Team</h3>
-                  <p className="text-slate-200 leading-relaxed">
-                    Skilled engineers and technicians with decades of combined experience in precision manufacturing.
-                  </p>
-                  <div className="mt-6 flex items-center text-cyan-300 text-sm font-medium">
-                    <Award className="w-4 h-4 mr-2" />
-                    Master Craftsmen
-                  </div>
+                  <div className="text-orange-300 text-sm font-bold bg-orange-500/20 px-3 py-1 rounded-full">100%</div>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4">Quality Certified</h3>
+                <p className="text-slate-200 leading-relaxed">
+                  Comprehensive quality management with continuous improvement and rigorous testing processes.
+                </p>
+                <div className="mt-6 flex items-center text-orange-300 text-sm font-medium">
+                  <Shield className="w-4 h-4 mr-2" />
+                  Zero Defect Goal
                 </div>
               </div>
+            </div>
 
-              <div className="group transform hover:-translate-y-2 transition-all duration-300 lg:mt-8">
-                <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 backdrop-blur-sm rounded-2xl border border-white/20 p-8 h-full hover:bg-white/10 transition-all duration-300">
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="w-14 h-14 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center">
-                      <Award className="w-7 h-7 text-white" />
-                    </div>
-                    <div className="text-yellow-300 text-sm font-bold bg-yellow-500/20 px-3 py-1 rounded-full">500+</div>
+            <div className="group transform hover:-translate-y-2 transition-all duration-300 animate-fade-in-up" style={{animationDelay: '1.6s'}}>
+              <div className="bg-gradient-to-br from-cyan-500/20 to-teal-500/20 backdrop-blur-sm rounded-2xl border border-white/20 p-8 h-full hover:bg-white/10 transition-all duration-300">
+                <div className="flex items-start justify-between mb-6">
+                  <div className="w-14 h-14 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-xl flex items-center justify-center">
+                    <Users className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-4">Industry Recognition</h3>
-                  <p className="text-slate-200 leading-relaxed">
-                    Trusted by leading manufacturers with proven track record of excellence and innovation.
-                  </p>
-                  <div className="mt-6 flex items-center text-yellow-300 text-sm font-medium">
-                    <Star className="w-4 h-4 mr-2" />
-                    Trusted Partner
+                  <div className="text-cyan-300 text-sm font-bold bg-cyan-500/20 px-3 py-1 rounded-full">15+</div>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4">Expert Team</h3>
+                <p className="text-slate-200 leading-relaxed">
+                  Skilled engineers and technicians with decades of combined experience in precision manufacturing.
+                </p>
+                <div className="mt-6 flex items-center text-cyan-300 text-sm font-medium">
+                  <Award className="w-4 h-4 mr-2" />
+                  Master Craftsmen
+                </div>
+              </div>
+            </div>
+
+            <div className="group transform hover:-translate-y-2 transition-all duration-300 lg:mt-8 animate-fade-in-up" style={{animationDelay: '1.8s'}}>
+              <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 backdrop-blur-sm rounded-2xl border border-white/20 p-8 h-full hover:bg-white/10 transition-all duration-300">
+                <div className="flex items-start justify-between mb-6">
+                  <div className="w-14 h-14 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center">
+                    <Award className="w-7 h-7 text-white" />
                   </div>
+                  <div className="text-yellow-300 text-sm font-bold bg-yellow-500/20 px-3 py-1 rounded-full">500+</div>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4">Industry Recognition</h3>
+                <p className="text-slate-200 leading-relaxed">
+                  Trusted by leading manufacturers with proven track record of excellence and innovation.
+                </p>
+                <div className="mt-6 flex items-center text-yellow-300 text-sm font-medium">
+                  <Star className="w-4 h-4 mr-2" />
+                  Trusted Partner
                 </div>
               </div>
             </div>
@@ -390,7 +390,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* COMPLETELY REDESIGNED: Industry Solutions Section */}
+      {/* Industry Solutions Section */}
       <section className="py-24 px-4 bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute inset-0 opacity-5">
@@ -401,20 +401,20 @@ const Home = () => {
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-20">
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full text-slate-700 text-sm font-medium mb-8 border border-blue-200/50">
+            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full text-slate-700 text-sm font-medium mb-8 border border-blue-200/50 animate-fade-in-up">
               <MousePointer className="w-4 h-4 mr-2" />
               Interactive Industry Explorer
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold mb-8 text-slate-900">
+            <h2 className="text-5xl md:text-6xl font-bold mb-8 text-slate-900 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
               Our Industry
-              <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-teal-600 bg-clip-text text-transparent animate-gradient-x">
                 Solutions
               </span>
             </h2>
-            <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed mb-8">
+            <p className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed mb-8 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
               From aerospace to mining, each industry presents unique challenges. Discover how our precision engineering transforms complex requirements into flawless solutions.
             </p>
-            <div className="flex items-center justify-center gap-2 text-slate-500 text-sm">
+            <div className="flex items-center justify-center gap-2 text-slate-500 text-sm animate-fade-in-up" style={{animationDelay: '0.6s'}}>
               <span>Hover over cards to explore</span>
               <MousePointer className="w-4 h-4 animate-bounce" />
             </div>
@@ -425,8 +425,8 @@ const Home = () => {
             {productShowcase.map((category, idx) => (
               <div
                 key={category.name}
-                className="break-inside-avoid group relative"
-                style={{ animationDelay: `${idx * 100}ms` }}
+                className="break-inside-avoid group relative animate-fade-in-up"
+                style={{ animationDelay: `${0.8 + idx * 0.1}s` }}
               >
                 <div className="relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:scale-[1.02] cursor-pointer bg-white">
                   {/* Image with overlay */}
@@ -440,12 +440,12 @@ const Home = () => {
                     <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-75 group-hover:opacity-60 transition-opacity duration-300`}></div>
                     
                     {/* Floating icon */}
-                    <div className="absolute top-6 left-6 w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/30">
+                    <div className="absolute top-6 left-6 w-16 h-16 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/30 animate-float">
                       {category.icon}
                     </div>
                     
                     {/* Stats badge */}
-                    <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 text-xs font-bold text-slate-700">
+                    <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 text-xs font-bold text-slate-700 animate-slide-in-right">
                       {category.stats}
                     </div>
                     
@@ -515,7 +515,7 @@ const Home = () => {
           </div>
 
           {/* Call to action */}
-          <div className="text-center mt-16">
+          <div className="text-center mt-16 animate-fade-in-up" style={{animationDelay: '2s'}}>
             <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 border border-blue-100">
               <h3 className="text-2xl font-bold text-slate-900 mb-4">Don't see your industry?</h3>
               <p className="text-slate-600 mb-6 max-w-2xl mx-auto">
@@ -533,91 +533,17 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Testimonials Section
-      <section className="py-24 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">What Our Clients Say</h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Discover why industry leaders trust Ambika Precision Works for their critical manufacturing needs.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-slate-50 rounded-2xl p-8 relative">
-              <Quote className="w-8 h-8 text-blue-500 mb-4" />
-              <p className="text-slate-700 mb-6 leading-relaxed italic">
-                "Ambika Precision Works has been instrumental in our success. Their attention to detail 
-                and commitment to quality is unmatched in the industry."
-              </p>
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-white font-bold">RK</span>
-                </div>
-                <div>
-                  <div className="font-semibold text-slate-900">Rajesh Kumar</div>
-                  <div className="text-slate-600 text-sm">Manufacturing Director</div>
-                </div>
-              </div>
-              <div className="flex text-yellow-400 mt-4">
-                {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
-              </div>
-            </div>
-
-            <div className="bg-slate-50 rounded-2xl p-8 relative">
-              <Quote className="w-8 h-8 text-green-500 mb-4" />
-              <p className="text-slate-700 mb-6 leading-relaxed italic">
-                "The precision and reliability of their CNC work has helped us maintain our competitive 
-                edge. Truly exceptional service and quality."
-              </p>
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-white font-bold">SP</span>
-                </div>
-                <div>
-                  <div className="font-semibold text-slate-900">Suresh Patel</div>
-                  <div className="text-slate-600 text-sm">Operations Manager</div>
-                </div>
-              </div>
-              <div className="flex text-yellow-400 mt-4">
-                {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
-              </div>
-            </div>
-
-            <div className="bg-slate-50 rounded-2xl p-8 relative">
-              <Quote className="w-8 h-8 text-purple-500 mb-4" />
-              <p className="text-slate-700 mb-6 leading-relaxed italic">
-                "Working with Ambika Precision Works for over 8 years. Their consistency in quality 
-                and on-time delivery is remarkable."
-              </p>
-              <div className="flex items-center">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mr-4">
-                  <span className="text-white font-bold">MG</span>
-                </div>
-                <div>
-                  <div className="font-semibold text-slate-900">Meera Gupta</div>
-                  <div className="text-slate-600 text-sm">Production Head</div>
-                </div>
-              </div>
-              <div className="flex text-yellow-400 mt-4">
-                {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
       {/* Contact Section */}
       <section className="py-24 px-4 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white relative overflow-hidden">
         {/* Background elements */}
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
+          <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl animate-pulse delay-1000"></div>
         </div>
         
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
+            <div className="animate-slide-in-left">
               <h2 className="text-4xl md:text-5xl font-bold mb-6">Ready to Start Your Precision Manufacturing Project?</h2>
               <p className="text-xl mb-8 text-slate-200 leading-relaxed">
                 Get in touch with our expert team to discuss your manufacturing needs and discover 
@@ -625,21 +551,21 @@ const Home = () => {
               </p>
               
               <div className="space-y-4 mb-8">
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
                   <Phone className="w-6 h-6 text-blue-400" />
                   <span className="text-lg">+91 98765 43210</span>
                 </div>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 animate-fade-in-up" style={{animationDelay: '0.4s'}}>
                   <Mail className="w-6 h-6 text-green-400" />
                   <span className="text-lg">info@ambikaprecisionworks.com</span>
                 </div>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 animate-fade-in-up" style={{animationDelay: '0.6s'}}>
                   <MapPin className="w-6 h-6 text-purple-400" />
                   <span className="text-lg">Mumbai, Maharashtra, India</span>
                 </div>
               </div>
               
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{animationDelay: '0.8s'}}>
                 <Link
                   to="/contact"
                   className="group bg-white text-slate-900 px-8 py-4 rounded-full font-semibold hover:bg-slate-100 transition-all hover:scale-105 flex items-center justify-center"
@@ -657,33 +583,34 @@ const Home = () => {
               </div>
             </div>
             
-            <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+            <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 animate-slide-in-right">
               <h3 className="text-2xl font-bold mb-6">Quick Inquiry</h3>
               <form className="space-y-4">
-                <div>
+                <div className="animate-fade-in-up" style={{animationDelay: '0.2s'}}>
                   <input 
                     type="text" 
                     placeholder="Your Name" 
-                    className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300 focus:bg-white/25"
                   />
                 </div>
-                <div>
+                <div className="animate-fade-in-up" style={{animationDelay: '0.4s'}}>
                   <input 
                     type="email" 
                     placeholder="Your Email" 
-                    className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300 focus:bg-white/25"
                   />
                 </div>
-                <div>
+                <div className="animate-fade-in-up" style={{animationDelay: '0.4s'}}>
                   <textarea 
                     placeholder="Project Details" 
                     rows={4}
-                    className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none"
+                    className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none transition-all duration-300 focus:bg-white/25"
                   ></textarea>
                 </div>
                 <button 
                   type="submit" 
-                  className="w-full bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-colors"
+                  className="w-full bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 hover:scale-105 animate-fade-in-up"
+                  style={{animationDelay: '0.8s'}}
                 >
                   Send Inquiry
                 </button>
