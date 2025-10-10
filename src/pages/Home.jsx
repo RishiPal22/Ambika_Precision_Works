@@ -222,166 +222,155 @@ const Home = () => {
       </section>
 
       {/* Why Choose Ambika Section */}
-      <section className="py-24 px-4 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900 relative overflow-hidden">
-        {/* Animated background */}
-        <div className="absolute inset-0">
+       <section className="py-24 px-4 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
           <div className="absolute top-0 left-0 w-full h-full opacity-20">
-            <div className="absolute top-20 left-20 w-64 h-64 bg-blue-400 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-20 right-20 w-80 h-80 bg-purple-400 rounded-full blur-3xl animate-pulse delay-700"></div>
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-teal-400 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute top-24 left-24 w-96 h-96 bg-blue-500 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-24 right-24 w-[500px] h-[500px] bg-cyan-500 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal-500 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
           </div>
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMC41IiBvcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30"></div>
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-20">
-            <div className="inline-flex items-center px-6 py-3 bg-white/10 rounded-full text-white text-sm font-medium mb-6 backdrop-blur-sm border border-white/20 animate-fade-in-up">
-              <Sparkles className="w-4 h-4 mr-2" />
+            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full text-white text-sm font-semibold mb-8 backdrop-blur-md border border-white/30 shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105">
+              <Sparkles className="w-4 h-4 mr-2 animate-spin" style={{ animationDuration: '3s' }} />
               Why Industry Leaders Choose Us
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-white animate-fade-in-up" style={{animationDelay: '0.2s'}}>
+            <h2 className="text-5xl md:text-7xl font-black mb-8 text-white tracking-tight">
               Excellence in Every
-              <span className="block bg-gradient-to-r from-cyan-400 via-blue-300 to-purple-300 bg-clip-text text-transparent animate-gradient-x">
+              <span className="block bg-gradient-to-r from-cyan-400 via-blue-400 to-teal-400 bg-clip-text text-transparent animate-gradient">
                 Dimension
               </span>
             </h2>
-            <p className="text-xl text-slate-200 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{animationDelay: '0.4s'}}>
+            <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-light">
               Discover the Ambika Precision Works advantage through innovation, precision, and unwavering commitment to excellence.
             </p>
           </div>
 
-          {/* Center Feature */}
-          <div className="flex justify-center mb-16">
-            <div className="relative group animate-scale-in" style={{animationDelay: '0.6s'}}>
-              <div className="w-80 h-80 bg-gradient-to-br from-white/20 to-white/5 backdrop-blur-sm rounded-3xl border border-white/30 flex flex-col items-center justify-center p-8 hover:scale-105 transition-all duration-500 hover:bg-white/25">
-                <div className="w-20 h-20 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center mb-6 shadow-2xl animate-float">
-                  <Award className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-4 text-center">ISO 9001:2015</h3>
-                <p className="text-slate-200 text-center leading-relaxed">
-                  Certified quality management systems ensuring consistent excellence in every project
-                </p>
-                <div className="absolute -top-2 -right-2 w-6 h-6 bg-green-400 rounded-full flex items-center justify-center animate-bounce">
-                  <CheckCircle className="w-4 h-4 text-white" />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Surrounding Features in Staggered Layout */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
-            {/* Row 1 */}
-            <div className="group transform hover:-translate-y-2 transition-all duration-300 animate-fade-in-up" style={{animationDelay: '0.8s'}}>
-              <div className="bg-gradient-to-br from-blue-500/20 to-purple-500/20 backdrop-blur-sm rounded-2xl border border-white/20 p-8 h-full hover:bg-white/10 transition-all duration-300">
-                <div className="flex items-start justify-between mb-6">
-                  <div className="w-14 h-14 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center">
-                    <Target className="w-7 h-7 text-white" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="group relative bg-gradient-to-br from-blue-500/10 to-cyan-500/10 backdrop-blur-xl border border-blue-400/30 rounded-3xl shadow-2xl p-8 flex flex-col items-start hover:shadow-blue-500/50 hover:scale-105 hover:-translate-y-2 transition-all duration-500 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-cyan-500/0 group-hover:from-blue-500/20 group-hover:to-cyan-500/20 transition-all duration-500"></div>
+              <div className="absolute -top-24 -right-24 w-48 h-48 bg-blue-500 rounded-full blur-3xl opacity-0 group-hover:opacity-30 transition-all duration-500"></div>
+              <div className="relative z-10 w-full">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="p-4 bg-blue-500/20 rounded-2xl group-hover:bg-blue-500/30 transition-all duration-300 group-hover:rotate-6 group-hover:scale-110">
+                    <Target className="w-8 h-8 text-blue-400" />
                   </div>
-                  <div className="text-blue-300 text-sm font-bold bg-blue-500/20 px-3 py-1 rounded-full">±0.01mm</div>
+                  <span className="text-3xl font-black text-blue-400 group-hover:scale-125 transition-transform duration-300">±0.01mm</span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">Precision Excellence</h3>
-                <p className="text-slate-200 leading-relaxed">
-                  Achieving microscopic tolerances with state-of-the-art CNC equipment and rigorous quality control processes.
+                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors duration-300">Precision Excellence</h3>
+                <p className="text-slate-300 mb-6 leading-relaxed">
+                  Achieving microscopic tolerances with state-of-the-art CNC equipment and rigorous quality control.
                 </p>
-                <div className="mt-6 flex items-center text-blue-300 text-sm font-medium">
-                  <TrendingUp className="w-4 h-4 mr-2" />
+                <div className="flex items-center text-blue-400 text-sm font-semibold mt-auto pt-4 border-t border-blue-400/20 group-hover:text-blue-300 transition-colors duration-300">
+                  <TrendingUp className="w-5 h-5 mr-2 group-hover:animate-bounce" />
                   99.8% Accuracy Rate
                 </div>
               </div>
             </div>
 
-            <div className="group transform hover:-translate-y-2 transition-all duration-300 lg:mt-8 animate-fade-in-up" style={{animationDelay: '1s'}}>
-              <div className="bg-gradient-to-br from-green-500/20 to-teal-500/20 backdrop-blur-sm rounded-2xl border border-white/20 p-8 h-full hover:bg-white/10 transition-all duration-300">
-                <div className="flex items-start justify-between mb-6">
-                  <div className="w-14 h-14 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center">
-                    <Clock className="w-7 h-7 text-white" />
+            <div className="group relative bg-gradient-to-br from-green-500/10 to-emerald-500/10 backdrop-blur-xl border border-green-400/30 rounded-3xl shadow-2xl p-8 flex flex-col items-start hover:shadow-green-500/50 hover:scale-105 hover:-translate-y-2 transition-all duration-500 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500/0 to-emerald-500/0 group-hover:from-green-500/20 group-hover:to-emerald-500/20 transition-all duration-500"></div>
+              <div className="absolute -top-24 -right-24 w-48 h-48 bg-green-500 rounded-full blur-3xl opacity-0 group-hover:opacity-30 transition-all duration-500"></div>
+              <div className="relative z-10 w-full">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="p-4 bg-green-500/20 rounded-2xl group-hover:bg-green-500/30 transition-all duration-300 group-hover:rotate-6 group-hover:scale-110">
+                    <Clock className="w-8 h-8 text-green-400" />
                   </div>
-                  <div className="text-green-300 text-sm font-bold bg-green-500/20 px-3 py-1 rounded-full">98%</div>
+                  <span className="text-3xl font-black text-green-400 group-hover:scale-125 transition-transform duration-300">98%</span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">On-Time Delivery</h3>
-                <p className="text-slate-200 leading-relaxed">
+                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-green-300 transition-colors duration-300">On-Time Delivery</h3>
+                <p className="text-slate-300 mb-6 leading-relaxed">
                   Reliable project timelines ensuring your production schedules stay on track, every single time.
                 </p>
-                <div className="mt-6 flex items-center text-green-300 text-sm font-medium">
-                  <CheckCircle className="w-4 h-4 mr-2" />
+                <div className="flex items-center text-green-400 text-sm font-semibold mt-auto pt-4 border-t border-green-400/20 group-hover:text-green-300 transition-colors duration-300">
+                  <CheckCircle className="w-5 h-5 mr-2 group-hover:animate-bounce" />
                   Guaranteed Timeline
                 </div>
               </div>
             </div>
 
-            <div className="group transform hover:-translate-y-2 transition-all duration-300 animate-fade-in-up" style={{animationDelay: '1.2s'}}>
-              <div className="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-sm rounded-2xl border border-white/20 p-8 h-full hover:bg-white/10 transition-all duration-300">
-                <div className="flex items-start justify-between mb-6">
-                  <div className="w-14 h-14 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl flex items-center justify-center">
-                    <Zap className="w-7 h-7 text-white" />
+            <div className="group relative bg-gradient-to-br from-violet-500/10 to-fuchsia-500/10 backdrop-blur-xl border border-violet-400/30 rounded-3xl shadow-2xl p-8 flex flex-col items-start hover:shadow-violet-500/50 hover:scale-105 hover:-translate-y-2 transition-all duration-500 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-violet-500/0 to-fuchsia-500/0 group-hover:from-violet-500/20 group-hover:to-fuchsia-500/20 transition-all duration-500"></div>
+              <div className="absolute -top-24 -right-24 w-48 h-48 bg-violet-500 rounded-full blur-3xl opacity-0 group-hover:opacity-30 transition-all duration-500"></div>
+              <div className="relative z-10 w-full">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="p-4 bg-violet-500/20 rounded-2xl group-hover:bg-violet-500/30 transition-all duration-300 group-hover:rotate-6 group-hover:scale-110">
+                    <Zap className="w-8 h-8 text-violet-400" />
                   </div>
-                  <div className="text-purple-300 text-sm font-bold bg-purple-500/20 px-3 py-1 rounded-full">Latest</div>
+                  <span className="text-3xl font-black text-violet-400 group-hover:scale-125 transition-transform duration-300">Latest</span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">Advanced Technology</h3>
-                <p className="text-slate-200 leading-relaxed">
+                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-violet-300 transition-colors duration-300">Advanced Technology</h3>
+                <p className="text-slate-300 mb-6 leading-relaxed">
                   Latest CNC machinery and CAD/CAM software ensuring optimal efficiency and superior outcomes.
                 </p>
-                <div className="mt-6 flex items-center text-purple-300 text-sm font-medium">
-                  <Zap className="w-4 h-4 mr-2" />
+                <div className="flex items-center text-violet-400 text-sm font-semibold mt-auto pt-4 border-t border-violet-400/20 group-hover:text-violet-300 transition-colors duration-300">
+                  <Zap className="w-5 h-5 mr-2 group-hover:animate-bounce" />
                   Cutting-Edge Tech
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* Bottom Row */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="group transform hover:-translate-y-2 transition-all duration-300 lg:mt-8 animate-fade-in-up" style={{animationDelay: '1.4s'}}>
-              <div className="bg-gradient-to-br from-orange-500/20 to-red-500/20 backdrop-blur-sm rounded-2xl border border-white/20 p-8 h-full hover:bg-white/10 transition-all duration-300">
-                <div className="flex items-start justify-between mb-6">
-                  <div className="w-14 h-14 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl flex items-center justify-center">
-                    <CheckCircle className="w-7 h-7 text-white" />
+            <div className="group relative bg-gradient-to-br from-orange-500/10 to-amber-500/10 backdrop-blur-xl border border-orange-400/30 rounded-3xl shadow-2xl p-8 flex flex-col items-start hover:shadow-orange-500/50 hover:scale-105 hover:-translate-y-2 transition-all duration-500 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/0 to-amber-500/0 group-hover:from-orange-500/20 group-hover:to-amber-500/20 transition-all duration-500"></div>
+              <div className="absolute -top-24 -right-24 w-48 h-48 bg-orange-500 rounded-full blur-3xl opacity-0 group-hover:opacity-30 transition-all duration-500"></div>
+              <div className="relative z-10 w-full">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="p-4 bg-orange-500/20 rounded-2xl group-hover:bg-orange-500/30 transition-all duration-300 group-hover:rotate-6 group-hover:scale-110">
+                    <Shield className="w-8 h-8 text-orange-400" />
                   </div>
-                  <div className="text-orange-300 text-sm font-bold bg-orange-500/20 px-3 py-1 rounded-full">100%</div>
+                  <span className="text-3xl font-black text-orange-400 group-hover:scale-125 transition-transform duration-300">100%</span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">Quality Certified</h3>
-                <p className="text-slate-200 leading-relaxed">
+                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-orange-300 transition-colors duration-300">Quality Certified</h3>
+                <p className="text-slate-300 mb-6 leading-relaxed">
                   Comprehensive quality management with continuous improvement and rigorous testing processes.
                 </p>
-                <div className="mt-6 flex items-center text-orange-300 text-sm font-medium">
-                  <Shield className="w-4 h-4 mr-2" />
+                <div className="flex items-center text-orange-400 text-sm font-semibold mt-auto pt-4 border-t border-orange-400/20 group-hover:text-orange-300 transition-colors duration-300">
+                  <Shield className="w-5 h-5 mr-2 group-hover:animate-bounce" />
                   Zero Defect Goal
                 </div>
               </div>
             </div>
 
-            <div className="group transform hover:-translate-y-2 transition-all duration-300 animate-fade-in-up" style={{animationDelay: '1.6s'}}>
-              <div className="bg-gradient-to-br from-cyan-500/20 to-teal-500/20 backdrop-blur-sm rounded-2xl border border-white/20 p-8 h-full hover:bg-white/10 transition-all duration-300">
-                <div className="flex items-start justify-between mb-6">
-                  <div className="w-14 h-14 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-xl flex items-center justify-center">
-                    <Users className="w-7 h-7 text-white" />
+            <div className="group relative bg-gradient-to-br from-cyan-500/10 to-sky-500/10 backdrop-blur-xl border border-cyan-400/30 rounded-3xl shadow-2xl p-8 flex flex-col items-start hover:shadow-cyan-500/50 hover:scale-105 hover:-translate-y-2 transition-all duration-500 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 to-sky-500/0 group-hover:from-cyan-500/20 group-hover:to-sky-500/20 transition-all duration-500"></div>
+              <div className="absolute -top-24 -right-24 w-48 h-48 bg-cyan-500 rounded-full blur-3xl opacity-0 group-hover:opacity-30 transition-all duration-500"></div>
+              <div className="relative z-10 w-full">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="p-4 bg-cyan-500/20 rounded-2xl group-hover:bg-cyan-500/30 transition-all duration-300 group-hover:rotate-6 group-hover:scale-110">
+                    <Users className="w-8 h-8 text-cyan-400" />
                   </div>
-                  <div className="text-cyan-300 text-sm font-bold bg-cyan-500/20 px-3 py-1 rounded-full">15+</div>
+                  <span className="text-3xl font-black text-cyan-400 group-hover:scale-125 transition-transform duration-300">15+</span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">Expert Team</h3>
-                <p className="text-slate-200 leading-relaxed">
+                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors duration-300">Expert Team</h3>
+                <p className="text-slate-300 mb-6 leading-relaxed">
                   Skilled engineers and technicians with decades of combined experience in precision manufacturing.
                 </p>
-                <div className="mt-6 flex items-center text-cyan-300 text-sm font-medium">
-                  <Award className="w-4 h-4 mr-2" />
+                <div className="flex items-center text-cyan-400 text-sm font-semibold mt-auto pt-4 border-t border-cyan-400/20 group-hover:text-cyan-300 transition-colors duration-300">
+                  <Award className="w-5 h-5 mr-2 group-hover:animate-bounce" />
                   Master Craftsmen
                 </div>
               </div>
             </div>
 
-            <div className="group transform hover:-translate-y-2 transition-all duration-300 lg:mt-8 animate-fade-in-up" style={{animationDelay: '1.8s'}}>
-              <div className="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 backdrop-blur-sm rounded-2xl border border-white/20 p-8 h-full hover:bg-white/10 transition-all duration-300">
-                <div className="flex items-start justify-between mb-6">
-                  <div className="w-14 h-14 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center">
-                    <Award className="w-7 h-7 text-white" />
+            <div className="group relative bg-gradient-to-br from-yellow-500/10 to-orange-500/10 backdrop-blur-xl border border-yellow-400/30 rounded-3xl shadow-2xl p-8 flex flex-col items-start hover:shadow-yellow-500/50 hover:scale-105 hover:-translate-y-2 transition-all duration-500 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/0 to-orange-500/0 group-hover:from-yellow-500/20 group-hover:to-orange-500/20 transition-all duration-500"></div>
+              <div className="absolute -top-24 -right-24 w-48 h-48 bg-yellow-500 rounded-full blur-3xl opacity-0 group-hover:opacity-30 transition-all duration-500"></div>
+              <div className="relative z-10 w-full">
+                <div className="flex items-center justify-between mb-6">
+                  <div className="p-4 bg-yellow-500/20 rounded-2xl group-hover:bg-yellow-500/30 transition-all duration-300 group-hover:rotate-6 group-hover:scale-110">
+                    <Award className="w-8 h-8 text-yellow-400" />
                   </div>
-                  <div className="text-yellow-300 text-sm font-bold bg-yellow-500/20 px-3 py-1 rounded-full">500+</div>
+                  <span className="text-3xl font-black text-yellow-400 group-hover:scale-125 transition-transform duration-300">500+</span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-4">Industry Recognition</h3>
-                <p className="text-slate-200 leading-relaxed">
+                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-yellow-300 transition-colors duration-300">Industry Recognition</h3>
+                <p className="text-slate-300 mb-6 leading-relaxed">
                   Trusted by leading manufacturers with proven track record of excellence and innovation.
                 </p>
-                <div className="mt-6 flex items-center text-yellow-300 text-sm font-medium">
-                  <Star className="w-4 h-4 mr-2" />
+                <div className="flex items-center text-yellow-400 text-sm font-semibold mt-auto pt-4 border-t border-yellow-400/20 group-hover:text-yellow-300 transition-colors duration-300">
+                  <Star className="w-5 h-5 mr-2 group-hover:animate-bounce" />
                   Trusted Partner
                 </div>
               </div>
