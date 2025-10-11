@@ -204,10 +204,10 @@ const Services = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center">
-            <div className="inline-flex items-center px-4 py-2 bg-blue-500/20 rounded-full text-blue-200 text-sm font-medium mb-6 backdrop-blur-sm">
+            {/* <div className="inline-flex items-center px-4 py-2 bg-blue-500/20 rounded-full text-blue-200 text-sm font-medium mb-6 backdrop-blur-sm">
               <Award className="w-4 h-4 mr-2" />
               Precision Manufacturing Services
-            </div>
+            </div> */}
 
             <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white leading-tight">
               Advanced CNC & VMC

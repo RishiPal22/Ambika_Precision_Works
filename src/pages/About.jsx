@@ -108,7 +108,7 @@ const About = () => {
 				</div>
 			)}
 
-			<div className="max-w-6xl mx-auto px-6 py-20 relative z-10">
+			<div className="max-w-6xl mx-auto px-6 py-8 relative z-10">
 				{/* Header */}
 				<motion.div
 					variants={fadeUp}
@@ -122,7 +122,7 @@ const About = () => {
 						className="inline-flex items-center px-6 py-3 bg-blue-500/10 rounded-full text-blue-700 text-sm font-semibold mb-6 backdrop-blur-sm border border-blue-200/50"
 					>
 						<Sparkles className="w-4 h-4 mr-2" />
-						About Ambika Precision Works
+						<a href="#company-overview "className="hover:underline focus:outline-none">About Ambika Precision Works</a>
 					</motion.div>
 					<motion.h1
 						variants={fadeUp}
@@ -191,6 +191,7 @@ const About = () => {
 					className="grid md:grid-cols-2 gap-12 mb-16"
 					initial="hidden"
 					animate="visible"
+					id="company-overview"
 					variants={{
 						visible: { transition: { staggerChildren: 0.3 } },
 					}}
@@ -199,6 +200,7 @@ const About = () => {
 						variants={fadeUp}
 						custom={0}
 						className="bg-white rounded-3xl shadow-lg p-10"
+						
 					>
 						<h2 className="text-3xl font-bold text-slate-900 mb-6">
 							Company Overview
