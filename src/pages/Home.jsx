@@ -30,7 +30,7 @@ const productShowcase = [
     name: "Oil & Gas",
     tagline: "Powering Energy Frontiers",
     description:
-      "Robust pipeline solutions and corrosion-resistant components for the world's toughest environments.",
+      "Delivering high-precision, corrosion-resistant, precision-built components for critical energy applications.",
     icon: <Zap className="w-10 h-10 text-yellow-400" />,
     gradient: "from-yellow-400 via-orange-400 to-blue-600",
     image:
@@ -41,7 +41,7 @@ const productShowcase = [
     name: "Valves & Fittings",
     tagline: "Precision in Every Flow",
     description:
-      "Engineered valve bodies and fittings for flawless control and reliability in critical systems.",
+      "Machined to exact tolerances, our valve and fitting components ensure superior sealing, pressure integrity, and long service life in critical applications.",
     icon: <Settings className="w-10 h-10 text-blue-500" />,
     gradient: "from-blue-500 via-blue-300 to-green-400",
     image:
@@ -52,7 +52,7 @@ const productShowcase = [
     name: "Defence",
     tagline: "Strength for Security",
     description:
-      "Specialized CNC parts for defense, built to withstand extreme conditions and ensure mission success.",
+      "Engineered components built to perform reliably in the most demanding defence environments..",
     icon: <Shield className="w-10 h-10 text-red-500" />,
     gradient: "from-red-500 via-gray-700 to-black",
     image:
@@ -62,8 +62,7 @@ const productShowcase = [
   {
     name: "Aerospace",
     tagline: "Elevating Innovation",
-    description:
-      "Ultra-light, high-strength components for aerospace applications, where every gram and micron matter.",
+    description: "Supporting the aerospace industry with precision-machined parts that combine advanced metallurgy and specified tolerances for safety, reliability, and performance in the most demanding environments.",
     icon: <Plane className="w-10 h-10 text-purple-500" />,
     gradient: "from-purple-500 via-indigo-400 to-blue-300",
     image:
@@ -74,7 +73,7 @@ const productShowcase = [
     name: "Mining",
     tagline: "Endurance in Motion",
     description:
-      "Heavy-duty gears and transmission parts designed for relentless mining operations.",
+    "Precision-machined parts crafted from high-strength alloys to deliver durability, accuracy, and consistent performance in challenging mining operations.",
     icon: <Hammer className="w-10 h-10 text-yellow-700" />,
     gradient: "from-yellow-700 via-yellow-400 to-gray-500",
     image:
@@ -85,7 +84,7 @@ const productShowcase = [
     name: "General Engineering",
     tagline: "Versatility Unleashed",
     description:
-      "Custom machined shafts and assemblies for diverse industrial challenges.",
+    "From prototyping to production, Ambika Precision Works delivers cost-effective, high-accuracy solutions for mechanical, industrial, and manufacturing applications.",
     icon: <Globe2 className="w-10 h-10 text-teal-500" />,
     gradient: "from-teal-500 via-green-400 to-blue-400",
     image:
@@ -100,13 +99,12 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* Enhanced Hero Section */}
-      <section className="relative pt-8 pb-16 px-4 bg-gradient-to-br from-slate-900 via-slate-800 to-blue-900 overflow-hidden">
-        {/* Animated background elements */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500 rounded-full blur-3xl animate-pulse delay-1000"></div>
-        </div>
-
+      <section
+        className="relative pt-8 pb-16 px-4 bg-cover bg-center bg-no-repeat overflow-hidden"
+        style={{
+          backgroundImage: `url('/3Q Machining - CNC Machining in China for Custom CNC Machining Parts.jpeg')`, // Replace with the actual path to your image
+        }}
+      >
         {/* Subtle overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-slate-800/70 to-blue-900/80"></div>
 
@@ -118,26 +116,26 @@ const Home = () => {
                 style={{ animationDelay: "0.2s" }}
               >
                 <Award className="w-4 h-4 mr-2" />
-                ISO 9001:2015 Certified Excellence
+                ISO 9001:2015 Certified
               </div>
               <div
                 className="inline-flex items-center px-4 py-2 bg-green-500/20 rounded-full text-green-200 text-sm font-medium backdrop-blur-sm animate-fade-in-up"
                 style={{ animationDelay: "0.4s" }}
               >
-                <CheckCircle className="w-4 h-4 mr-2" />
-                15+ Years Experience
+                <Award className="w-4 h-4 mr-2" />
+                EEPC Registered
               </div>
               <div
                 className="inline-flex items-center px-4 py-2 bg-purple-500/20 rounded-full text-purple-200 text-sm font-medium backdrop-blur-sm animate-fade-in-up"
                 style={{ animationDelay: "0.6s" }}
               >
-                <Target className="w-4 h-4 mr-2" />
-                Precision Manufacturing
+                <Award className="w-4 h-4 mr-2" />
+                Importer-Exporter Code
               </div>
             </div>
 
             <h1
-              className="text-5xl md:text-7xl font-bold mb-6 text-white leading-tight animate-fade-in-up"
+              className="text-3xl md:text-5xl font-bold mb-6 text-white leading-tight animate-fade-in-up"
               style={{ animationDelay: "0.8s" }}
             >
               Precision Engineering
@@ -150,9 +148,9 @@ const Home = () => {
               className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed text-slate-200 animate-fade-in-up"
               style={{ animationDelay: "1s" }}
             >
-              Transform your manufacturing vision into reality with Ambika
-              Precision Works' cutting-edge CNC solutions, uncompromising
-              quality, and over 15 years of trusted expertise.
+              Transform your manufacturing targets into reality with Ambika
+              Precision Works, High Precision CNC Machining solutions, ensuring 100% inspection
+               and 15+ years of precision excellence.
             </p>
 
             <div
@@ -182,10 +180,10 @@ const Home = () => {
                 style={{ animationDelay: "1.4s" }}
               >
                 <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2 animate-count-up">
-                  15+
+                  Foundry
                 </div>
                 <div className="text-slate-300 text-sm font-medium">
-                  Years Excellence
+                  Non-Ferrous Bronze/Gun Metal/Inconel Monthly Casting Capacity 25 Tons
                 </div>
               </div>
               <div
@@ -196,7 +194,7 @@ const Home = () => {
                   650mm
                 </div>
                 <div className="text-slate-300 text-sm font-medium">
-                  Max Diameter
+                  Max Turning Diameter
                 </div>
               </div>
               <div
@@ -215,10 +213,10 @@ const Home = () => {
                 style={{ animationDelay: "2s" }}
               >
                 <div className="text-3xl md:text-4xl font-bold text-yellow-400 mb-2 animate-count-up">
-                  500+
+                  100 Tons
                 </div>
                 <div className="text-slate-300 text-sm font-medium">
-                  Projects Delivered
+                  Monthly Machining Capacity
                 </div>
               </div>
             </div>
@@ -233,14 +231,7 @@ const Home = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 animate-fade-in-up">
               Our Core Capabilities
             </h2>
-            <p
-              className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed animate-fade-in-up"
-              style={{ animationDelay: "0.2s" }}
-            >
-              Delivering precision manufacturing solutions with uncompromising
-              quality, cutting-edge technology, and decades of engineering
-              expertise.
-            </p>
+            
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -259,7 +250,7 @@ const Home = () => {
                   <p className="text-slate-600 leading-relaxed text-lg">
                     Specialized in large-diameter turning up to 650mm with
                     exceptional accuracy, superior surface finish quality, and
-                    capability to handle the most complex components with tight
+                    capability to handle the most complex components within specified
                     tolerances.
                   </p>
                 </div>
@@ -277,9 +268,7 @@ const Home = () => {
                     Quality Assurance Excellence
                   </h3>
                   <p className="text-slate-600 leading-relaxed text-lg">
-                    ISO 9001:2015 certified processes with 100% job inspection,
-                    advanced measuring equipment, and rigorous quality control
-                    ensuring every component exceeds industry standards.
+                    With ISO 9001:2015 certified systems and 100% inspection at every stage, we deliver precision, reliability, and quality that consistently exceed global standards.
                   </p>
                 </div>
               </div>
@@ -296,10 +285,7 @@ const Home = () => {
                     Trusted Partnership
                   </h3>
                   <p className="text-slate-600 leading-relaxed text-lg">
-                    Over 15 years of reliable service to domestic and
-                    international clients with unwavering commitment to
-                    excellence, innovation, and long-term business
-                    relationships.
+                    With over 15 years of trusted service to domestic and international clients, we build lasting partnerships through reliability, technical excellence, and a commitment to continuous innovation.
                   </p>
                 </div>
               </div>
@@ -373,16 +359,15 @@ const Home = () => {
                   <div className="p-4 bg-blue-500/20 rounded-2xl group-hover:bg-blue-500/30 transition-all duration-300 group-hover:rotate-6 group-hover:scale-110">
                     <Target className="w-8 h-8 text-blue-400" />
                   </div>
-                  <span className="text-3xl font-black text-blue-400 group-hover:scale-125 transition-transform duration-300">
-                    ±0.01mm
+                  <span className="text-2xl font-black text-blue-400 group-hover:scale-125 transition-transform duration-300">
+                    Accuracy ±0.005mm
                   </span>
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors duration-300">
-                  Precision Excellence
+                  Precision Engineered to perfection
                 </h3>
                 <p className="text-slate-300 mb-6 leading-relaxed">
-                  Achieving microscopic tolerances with state-of-the-art CNC
-                  equipment and rigorous quality control.
+                  Powered by advanced CNC systems, expert programming, and certified inspection standards.
                 </p>
                 <div className="flex items-center text-blue-400 text-sm font-semibold mt-auto pt-4 border-t border-blue-400/20 group-hover:text-blue-300 transition-colors duration-300">
                   <TrendingUp className="w-5 h-5 mr-2 group-hover:animate-bounce" />
@@ -400,15 +385,14 @@ const Home = () => {
                     <Clock className="w-8 h-8 text-green-400" />
                   </div>
                   <span className="text-3xl font-black text-green-400 group-hover:scale-125 transition-transform duration-300">
-                    98%
+                    100%
                   </span>
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-green-300 transition-colors duration-300">
                   On-Time Delivery
                 </h3>
                 <p className="text-slate-300 mb-6 leading-relaxed">
-                  Reliable project timelines ensuring your production schedules
-                  stay on track, every single time.
+                  Ensuring timely completion through optimized machining schedules, real-time tracking, disciplined process control and reliable logistics support.
                 </p>
                 <div className="flex items-center text-green-400 text-sm font-semibold mt-auto pt-4 border-t border-green-400/20 group-hover:text-green-300 transition-colors duration-300">
                   <CheckCircle className="w-5 h-5 mr-2 group-hover:animate-bounce" />
@@ -433,8 +417,7 @@ const Home = () => {
                   Advanced Technology
                 </h3>
                 <p className="text-slate-300 mb-6 leading-relaxed">
-                  Latest CNC machinery and CAD/CAM software ensuring optimal
-                  efficiency and superior outcomes.
+                  Equipped with the latest CNC machinery and CAD/CAM software to ensure maximum efficiency, precision, and superior machining outcomes.
                 </p>
                 <div className="flex items-center text-violet-400 text-sm font-semibold mt-auto pt-4 border-t border-violet-400/20 group-hover:text-violet-300 transition-colors duration-300">
                   <Zap className="w-5 h-5 mr-2 group-hover:animate-bounce" />
@@ -459,8 +442,7 @@ const Home = () => {
                   Quality Certified
                 </h3>
                 <p className="text-slate-300 mb-6 leading-relaxed">
-                  Comprehensive quality management with continuous improvement
-                  and rigorous testing processes.
+                  ISO 9001:2015 certified quality management with inspection at every stage of production.
                 </p>
                 <div className="flex items-center text-orange-400 text-sm font-semibold mt-auto pt-4 border-t border-orange-400/20 group-hover:text-orange-300 transition-colors duration-300">
                   <Shield className="w-5 h-5 mr-2 group-hover:animate-bounce" />
@@ -485,8 +467,7 @@ const Home = () => {
                   Expert Team
                 </h3>
                 <p className="text-slate-300 mb-6 leading-relaxed">
-                  Skilled engineers and technicians with decades of combined
-                  experience in precision manufacturing.
+                  Skilled team of engineers, machinists and CNC specialists with continuous training to ensure flawless execution everytime.
                 </p>
                 <div className="flex items-center text-cyan-400 text-sm font-semibold mt-auto pt-4 border-t border-cyan-400/20 group-hover:text-cyan-300 transition-colors duration-300">
                   <Award className="w-5 h-5 mr-2 group-hover:animate-bounce" />
@@ -511,8 +492,7 @@ const Home = () => {
                   Industry Recognition
                 </h3>
                 <p className="text-slate-300 mb-6 leading-relaxed">
-                  Trusted by leading manufacturers with proven track record of
-                  excellence and innovation.
+                  Trusted by leading industries for our precision, reliability, and quality excellence proudly serving clients across oil & gas, defence, mining, and engineering sectors.
                 </p>
                 <div className="flex items-center text-yellow-400 text-sm font-semibold mt-auto pt-4 border-t border-yellow-400/20 group-hover:text-yellow-300 transition-colors duration-300">
                   <Star className="w-5 h-5 mr-2 group-hover:animate-bounce" />
@@ -555,9 +535,7 @@ const Home = () => {
               className="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed mb-8 animate-fade-in-up"
               style={{ animationDelay: "0.4s" }}
             >
-              From aerospace to mining, each industry presents unique
-              challenges. Discover how our precision engineering transforms
-              complex requirements into flawless solutions.
+              Precision-engineered solutions across aerospace, oil & gas, defence, and mining — transforming challenges into measurable performance.
             </p>
             <div
               className="flex items-center justify-center gap-2 text-slate-500 text-sm animate-fade-in-up"

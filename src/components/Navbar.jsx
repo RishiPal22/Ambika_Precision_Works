@@ -49,36 +49,38 @@ function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
           <div className="flex items-center justify-between h-full">
-            {/* Logo/Company Name */}
-            <Link to="/" className="flex items-center space-x-3 group">
-              {/* Naked Logo */}
+            {/* Logo / Company Name + Phone (inline, no-wrap) */}
+            <Link to="/" className="flex items-center space-x-3 group flex-shrink-0">
               <img
                 src={logo}
                 alt="Ambika Precision Works"
                 className="w-12 h-12 object-contain transition-transform duration-300 group-hover:scale-105"
               />
 
-              {/* Company Name & Tagline */}
               <div
-                className={`transition-colors duration-300 ${
+                className={`transition-colors duration-300 flex items-center space-x-4 ${
                   isScrolled ? "text-slate-900" : "text-white"
                 }`}
               >
-                <div className="text-xl md:text-2xl font-semibold tracking-tight">
+                <div className="text-xl md:text-2xl font-semibold tracking-tight whitespace-nowrap">
                   Ambika Precision Works
                 </div>
-                <div
-                  className={`text-xs md:text-sm font-medium ${
+
+                {/* Inline phone, won't wrap */}
+                {/* <div
+                  className={`hidden md:flex items-center space-x-2 text-sm whitespace-nowrap ${
                     isScrolled ? "text-slate-600" : "text-slate-300"
                   }`}
                 >
-                  ISO 9001:2015 Certified
-                </div>
+                  <Phone className="w-4 h-4" />
+                  <span className="font-medium">+91 9765530366/</span>
+                  <span className="font-medium">info@ambikaprecisionworks.com</span>
+                </div> */}
               </div>
             </Link>
 
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex items-center space-x-1">
+            {/* Desktop Navigation - centered using flex-1 */}
+            <div className="hidden lg:flex items-center space-x-1 flex-1 justify-center">
               {navLinks.map((link) => (
                 <Link
                   key={link.to}
@@ -104,31 +106,21 @@ function Navbar() {
                 </Link>
               ))}
 
-              {/* Contact Info */}
+              {/* Phone number after Products */}
               <div
-                className={`hidden xl:flex items-center space-x-4 ml-6 pl-6 border-l ${
-                  isScrolled ? "border-slate-200" : "border-slate-700"
+                className={`hidden lg:flex items-center space-x-2 text-sm whitespace-nowrap ${
+                  isScrolled ? "text-slate-600" : "text-slate-300"
                 }`}
               >
-                <div
-                  className={`flex items-center space-x-2 text-sm ${
-                    isScrolled ? "text-slate-600" : "text-slate-300"
-                  }`}
-                >
-                  <Phone className="w-4 h-4" />
-                  <span>+91 98765 43210</span>
-                </div>
-                <div
-                  className={`flex items-center space-x-2 text-sm ${
-                    isScrolled ? "text-slate-600" : "text-slate-300"
-                  }`}
-                >
-                  <Mail className="w-4 h-4" />
-                  <span>info@ambikaprecisionworks.com</span>
-                </div>
+                <Phone className="w-4 h-4" />
+                <span className="font-medium">+91 9765530366</span>
+                <Mail className="w-4 h-4" />
+                <span className="font-medium">info@ambikaprecisionworks.com</span>
               </div>
+            </div>
 
-              {/* CTA Button */}
+            {/* CTA (right) */}
+            <div className="hidden lg:flex items-center">
               <Link
                 to="/contact"
                 className="ml-6 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-3 rounded-full font-semibold text-sm uppercase tracking-wide transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
@@ -147,11 +139,7 @@ function Navbar() {
                     : "text-white hover:bg-white/10"
                 }`}
               >
-                {isMenuOpen ? (
-                  <X className="h-6 w-6" />
-                ) : (
-                  <Menu className="h-6 w-6" />
-                )}
+                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
               </button>
             </div>
           </div>
@@ -165,9 +153,7 @@ function Navbar() {
         >
           <div
             className={`${
-              isScrolled
-                ? "bg-white border-t border-slate-200"
-                : "bg-slate-900 border-t border-slate-700"
+              isScrolled ? "bg-white border-t border-slate-200" : "bg-slate-900 border-t border-slate-700"
             }`}
           >
             <div className="px-4 py-6 space-y-2">
@@ -192,22 +178,16 @@ function Navbar() {
 
               {/* Mobile Contact Info */}
               <div
-                className={`pt-4 mt-4 border-t space-y-3 ${
-                  isScrolled ? "border-slate-200" : "border-slate-700"
-                }`}
+                className={`pt-4 mt-4 border-t space-y-3 ${isScrolled ? "border-slate-200" : "border-slate-700"}`}
               >
                 <div
-                  className={`flex items-center space-x-3 px-4 py-2 ${
-                    isScrolled ? "text-slate-600" : "text-slate-300"
-                  }`}
+                  className={`flex items-center space-x-3 px-4 py-2 ${isScrolled ? "text-slate-600" : "text-slate-300"}`}
                 >
                   <Phone className="w-4 h-4" />
                   <span className="text-sm">+91 98765 43210</span>
                 </div>
                 <div
-                  className={`flex items-center space-x-3 px-4 py-2 ${
-                    isScrolled ? "text-slate-600" : "text-slate-300"
-                  }`}
+                  className={`flex items-center space-x-3 px-4 py-2 ${isScrolled ? "text-slate-600" : "text-slate-300"}`}
                 >
                   <Mail className="w-4 h-4" />
                   <span className="text-sm">info@ambikaprecisionworks.com</span>
@@ -231,10 +211,7 @@ function Navbar() {
 
       {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div
-          className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 lg:hidden"
-          onClick={() => setIsMenuOpen(false)}
-        />
+        <div className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 lg:hidden" onClick={() => setIsMenuOpen(false)} />
       )}
     </>
   );

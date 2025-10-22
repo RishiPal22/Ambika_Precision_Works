@@ -134,15 +134,7 @@ const About = () => {
 							With Trusted Excellence
 						</span>
 					</motion.h1>
-					<motion.p
-						variants={fadeUp}
-						custom={2}
-						className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed"
-					>
-						Since 2010, Ambika Precision Works has delivered high-precision CNC
-						turning and VMC solutions, specializing in large-diameter machining and
-						uncompromising quality for India's leading industries.
-					</motion.p>
+					
 				</motion.div>
 
 				{/* Highlights Grid */}
@@ -206,19 +198,19 @@ const About = () => {
 							Company Overview
 						</h2>
 						<p className="text-slate-700 leading-relaxed mb-4">
-							Ambika Precision Works, established in 2010, is an ISO 9001:2015
-							certified company by ICS (Reg. No. RQ91/6769). We are renowned for
-							high-precision CNC turning (up to 650mm diameter) and advanced VMC
-							machining (up to 5th axis), serving oil & gas, valves, defence,
-							aerospace, mining, and general engineering sectors.
+							Ambika Precision Works, established in 2010, is an ISO 9001:2015 certified company (Certified by ICS, Reg. No. RQ91/6769) specializing in high-precision CNC turning (up to 650 mm diameter) and advanced VMC machining (up to 5th axis).
+
+We serve diverse industries including oil & gas, valves & fittings, defence, aerospace, mining, and general engineering, delivering precision-engineered components that meet global standards.
+
+Our expertise spans a wide range of materials — steel, bronze, brass, alloys, Inconel, and more — all machined to perfection with a 100-ton monthly capacity, 100% job inspection, and a proven reputation for timely delivery and consistent quality.
 						</p>
-						<p className="text-slate-700 leading-relaxed">
+						{/* <p className="text-slate-700 leading-relaxed">
 							<span className="font-semibold text-blue-700">Our Products:</span>
 							{" "}
 							Steel, bronze, brass, alloys, Inconel, and more—machined to
 							perfection. 100-ton monthly capacity, 100% job inspection, and a
 							legacy of timely delivery.
-						</p>
+						</p> */}
 					</motion.div>
 					<motion.div
 						variants={fadeUp}
@@ -238,11 +230,7 @@ const About = () => {
 								</div>
 							</div>
 						</div>
-						<p className="text-slate-700 leading-relaxed mb-6">
-							Our certification ensures international standards in quality
-							management, systematic improvement, and customer satisfaction. Every
-							process is designed for reliability and excellence.
-						</p>
+						
 						{/* View Button */}
 						<button
 							onClick={() => setShowModal(true)}
@@ -278,46 +266,6 @@ const About = () => {
 								and delivering solutions tailored to exact specifications and
 								timelines.
 							</p>
-						</motion.div>
-					</div>
-				</motion.div>
-
-				{/* Timeline / Experience Section */}
-				<motion.div
-					variants={fadeUp}
-					initial="hidden"
-					animate="visible"
-					custom={0}
-					className="text-center mb-12"
-				>
-					<div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full text-blue-700 text-sm font-semibold mb-6 border border-blue-200/50">
-						<CheckCircle className="w-4 h-4 mr-2" />
-						Trusted by Industry Leaders for 14+ Years
-					</div>
-					<div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8">
-						<motion.div variants={fadeUp} custom={1}>
-							<div className="text-3xl font-bold text-blue-600 mb-2">14+</div>
-							<div className="text-slate-700 text-sm font-medium">
-								Years Experience
-							</div>
-						</motion.div>
-						<motion.div variants={fadeUp} custom={2}>
-							<div className="text-3xl font-bold text-purple-600 mb-2">650mm</div>
-							<div className="text-slate-700 text-sm font-medium">
-								Max Diameter
-							</div>
-						</motion.div>
-						<motion.div variants={fadeUp} custom={3}>
-							<div className="text-3xl font-bold text-green-600 mb-2">100%</div>
-							<div className="text-slate-700 text-sm font-medium">
-								Quality Inspection
-							</div>
-						</motion.div>
-						<motion.div variants={fadeUp} custom={4}>
-							<div className="text-3xl font-bold text-yellow-500 mb-2">100T</div>
-							<div className="text-slate-700 text-sm font-medium">
-								Monthly Capacity
-							</div>
 						</motion.div>
 					</div>
 				</motion.div>
