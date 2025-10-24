@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import {
@@ -23,6 +23,7 @@ import {
   MousePointer,
   TrendingUp,
   Sparkles,
+  X,
 } from "lucide-react";
 
 const productShowcase = [
@@ -95,6 +96,22 @@ const productShowcase = [
 
 const Home = () => {
   const navigate = useNavigate();
+  const [selectedCertificate, setSelectedCertificate] = useState(null);
+
+  const certificates = [
+    {
+      name: "ISO 9001:2015 Certified",
+      image: "/Iso-certificate.jpg", // Replace with the actual path to your certificate image
+    },
+    {
+      name: "EEPC Registered",
+      image: "/Iso-certificate.jpg", // Replace with the actual path to your certificate image
+    },
+    {
+      name: "Importer-Exporter Code",
+      image: "/Iso-certificate.jpg", // Replace with the actual path to your certificate image
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
@@ -111,27 +128,16 @@ const Home = () => {
         <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center">
             <div className="flex flex-wrap justify-center gap-2 mb-8">
-              <div
-                className="inline-flex items-center px-4 py-2 bg-blue-500/20 rounded-full text-blue-200 text-sm font-medium backdrop-blur-sm animate-fade-in-up"
-                style={{ animationDelay: "0.2s" }}
-              >
-                <Award className="w-4 h-4 mr-2" />
-                ISO 9001:2015 Certified
-              </div>
-              <div
-                className="inline-flex items-center px-4 py-2 bg-green-500/20 rounded-full text-green-200 text-sm font-medium backdrop-blur-sm animate-fade-in-up"
-                style={{ animationDelay: "0.4s" }}
-              >
-                <Award className="w-4 h-4 mr-2" />
-                EEPC Registered
-              </div>
-              <div
-                className="inline-flex items-center px-4 py-2 bg-purple-500/20 rounded-full text-purple-200 text-sm font-medium backdrop-blur-sm animate-fade-in-up"
-                style={{ animationDelay: "0.6s" }}
-              >
-                <Award className="w-4 h-4 mr-2" />
-                Importer-Exporter Code
-              </div>
+              {certificates.map((certificate, index) => (
+                <button
+                  key={index}
+                  onClick={() => setSelectedCertificate(certificate)}
+                  className="inline-flex items-center px-4 py-2 bg-blue-500/20 rounded-full text-blue-200 text-sm font-medium backdrop-blur-sm hover:bg-blue-500/30 transition-all duration-300"
+                >
+                  <Award className="w-4 h-4 mr-2" />
+                  {certificate.name}
+                </button>
+              ))}
             </div>
 
             <h1
@@ -268,7 +274,7 @@ const Home = () => {
                     Quality Assurance Excellence
                   </h3>
                   <p className="text-slate-600 leading-relaxed text-lg">
-                    With ISO 9001:2015 certified systems and 100% inspection at every stage, we deliver precision, reliability, and quality that consistently exceed global standards.
+                    With ISO 9001:2015 certified systems and 100% inspection at every stage, we deliver precision, reliability, and quality that consistently exceed global standards.
                   </p>
                 </div>
               </div>
@@ -285,7 +291,7 @@ const Home = () => {
                     Trusted Partnership
                   </h3>
                   <p className="text-slate-600 leading-relaxed text-lg">
-                    With over 15 years of trusted service to domestic and international clients, we build lasting partnerships through reliability, technical excellence, and a commitment to continuous innovation.
+                    With over 15 years of trusted service to domestic and international clients, we build lasting partnerships through reliability, technical excellence, and a commitment to continuous innovation.
                   </p>
                 </div>
               </div>
@@ -367,7 +373,7 @@ const Home = () => {
                   Precision Engineered to perfection
                 </h3>
                 <p className="text-slate-300 mb-6 leading-relaxed">
-                  Powered by advanced CNC systems, expert programming, and certified inspection standards.
+                  Powered by advanced CNC systems, expert programming, and certified inspectio standards.
                 </p>
                 <div className="flex items-center text-blue-400 text-sm font-semibold mt-auto pt-4 border-t border-blue-400/20 group-hover:text-blue-300 transition-colors duration-300">
                   <TrendingUp className="w-5 h-5 mr-2 group-hover:animate-bounce" />
@@ -392,7 +398,7 @@ const Home = () => {
                   On-Time Delivery
                 </h3>
                 <p className="text-slate-300 mb-6 leading-relaxed">
-                  Ensuring timely completion through optimized machining schedules, real-time tracking, disciplined process control and reliable logistics support.
+                  Ensuring timely completion through optimized machining schedules, real-time tracking, disciplined process control and reliable logistics support.
                 </p>
                 <div className="flex items-center text-green-400 text-sm font-semibold mt-auto pt-4 border-t border-green-400/20 group-hover:text-green-300 transition-colors duration-300">
                   <CheckCircle className="w-5 h-5 mr-2 group-hover:animate-bounce" />
@@ -417,7 +423,7 @@ const Home = () => {
                   Advanced Technology
                 </h3>
                 <p className="text-slate-300 mb-6 leading-relaxed">
-                  Equipped with the latest CNC machinery and CAD/CAM software to ensure maximum efficiency, precision, and superior machining outcomes.
+                  Equipped with the latest CNC machinery and CAD/CAM software to ensure maximum efficiency, precision, and superior machining outcomes.
                 </p>
                 <div className="flex items-center text-violet-400 text-sm font-semibold mt-auto pt-4 border-t border-violet-400/20 group-hover:text-violet-300 transition-colors duration-300">
                   <Zap className="w-5 h-5 mr-2 group-hover:animate-bounce" />
@@ -442,7 +448,7 @@ const Home = () => {
                   Quality Certified
                 </h3>
                 <p className="text-slate-300 mb-6 leading-relaxed">
-                  ISO 9001:2015 certified quality management with inspection at every stage of production.
+                  ISO 9001:2015 certified quality management with inspection at every stage of production.
                 </p>
                 <div className="flex items-center text-orange-400 text-sm font-semibold mt-auto pt-4 border-t border-orange-400/20 group-hover:text-orange-300 transition-colors duration-300">
                   <Shield className="w-5 h-5 mr-2 group-hover:animate-bounce" />
@@ -492,7 +498,7 @@ const Home = () => {
                   Industry Recognition
                 </h3>
                 <p className="text-slate-300 mb-6 leading-relaxed">
-                  Trusted by leading industries for our precision, reliability, and quality excellence proudly serving clients across oil & gas, defence, mining, and engineering sectors.
+                  Trusted by leading industries for our precision, reliability, and quality excellence proudly serving clients across oil & gas, defence, mining, and engineering sectors.
                 </p>
                 <div className="flex items-center text-yellow-400 text-sm font-semibold mt-auto pt-4 border-t border-yellow-400/20 group-hover:text-yellow-300 transition-colors duration-300">
                   <Star className="w-5 h-5 mr-2 group-hover:animate-bounce" />
@@ -729,6 +735,36 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      {/* Modal for Certificate */}
+      {selectedCertificate && (
+        <div
+          className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
+          onClick={() => setSelectedCertificate(null)} // Close modal on background click
+        >
+          <div
+            className="bg-white rounded-lg shadow-lg max-w-3xl w-full max-h-[90vh] p-6 relative overflow-auto"
+            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal
+          >
+            <button
+              onClick={() => setSelectedCertificate(null)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
+            >
+              <X className="w-6 h-6" />
+            </button>
+            <h2 className="text-2xl font-bold mb-4 text-center">
+              {selectedCertificate.name}
+            </h2>
+            <div className="flex justify-center">
+              <img
+                src={selectedCertificate.image}
+                alt={selectedCertificate.name}
+                className="w-full max-h-[70vh] object-contain rounded-lg shadow-md"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
