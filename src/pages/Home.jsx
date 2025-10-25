@@ -105,11 +105,11 @@ const Home = () => {
     },
     {
       name: "EEPC Registered",
-      image: "/Iso-certificate.jpg", // Replace with the actual path to your certificate image
+      image: "/EEPC-certificate.jpg", // Replace with the actual path to your certificate image
     },
     {
       name: "Importer-Exporter Code",
-      image: "/Iso-certificate.jpg", // Replace with the actual path to your certificate image
+      image: "/IEC code.jpg", // Replace with the actual path to your certificate image
     },
   ];
 

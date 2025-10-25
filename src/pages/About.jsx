@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Award, Shield, Users, CheckCircle, Sparkles, X } from "lucide-react";
 import { motion } from "framer-motion";
 import isoCertificate from "../assets/iso-certificate.jpg"; // Adjust extension if needed
+import eepcCertificate from "../assets/EEPC-certificate.jpg"; // Path to EEPC certificate
+import iecCertificate from "../assets/IEC code.jpg"; // Path to IEC certificate
 
 const highlights = [
 	{
@@ -37,7 +39,7 @@ const fadeUp = {
 };
 
 const About = () => {
-	const [showModal, setShowModal] = useState(false);
+	const [selectedCertificate, setSelectedCertificate] = useState(null);
 
 	return (
 		<motion.div
@@ -63,15 +65,15 @@ const About = () => {
 				className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500 rounded-full blur-3xl pointer-events-none"
 			/>
 
-			{/* Modal for ISO Certificate */}
-			{showModal && (
+			{/* Modal for Certificates */}
+			{selectedCertificate && (
 				<div className="fixed inset-0 z-50 flex items-center justify-center">
 					{/* Blurred, gradient overlay */}
 					<div
 						className="absolute inset-0 bg-gradient-to-br from-white/80 via-blue-100/60 to-purple-100/80 backdrop-blur-2xl transition-all duration-300"
-						onClick={() => setShowModal(false)}
+						onClick={() => setSelectedCertificate(null)}
 					/>
-					{/* Modal content with glassmorphism and animation */}
+					{/* Modal content */}
 					<motion.div
 						initial={{ scale: 0.85, opacity: 0 }}
 						animate={{ scale: 1, opacity: 1 }}
@@ -85,7 +87,7 @@ const About = () => {
 					>
 						{/* Floating Close Button */}
 						<button
-							onClick={() => setShowModal(false)}
+							onClick={() => setSelectedCertificate(null)}
 							className="absolute -top-6 right-6 bg-gradient-to-br from-blue-500 to-purple-500 text-white rounded-full p-3 shadow-lg hover:scale-110 transition-all border-4 border-white"
 							aria-label="Close"
 						>
@@ -93,16 +95,10 @@ const About = () => {
 						</button>
 						<div className="flex flex-col items-center w-full p-8">
 							<img
-								src={isoCertificate}
-								alt="ISO 9001:2015 Certificate"
+								src={selectedCertificate}
+								alt="Certificate"
 								className="rounded-xl shadow-xl border-4 border-blue-100 max-h-[70vh] w-auto object-contain bg-white"
 							/>
-							<div className="mt-6 text-xl font-bold text-blue-900 drop-shadow text-center">
-								ISO 9001:2015 Certificate
-							</div>
-							<div className="text-sm text-slate-600 mt-1 text-center">
-								ICS Reg. No. RQ91/6769
-							</div>
 						</div>
 					</motion.div>
 				</div>
@@ -122,7 +118,9 @@ const About = () => {
 						className="inline-flex items-center px-6 py-3 bg-blue-500/10 rounded-full text-blue-700 text-sm font-semibold mb-6 backdrop-blur-sm border border-blue-200/50"
 					>
 						<Sparkles className="w-4 h-4 mr-2" />
-						<a href="#company-overview " className="hover:underline focus:outline-none">About Ambika Precision Works</a>
+						<a href="#company-overview " className="hover:underline focus:outline-none">
+							About Ambika Precision Works
+						</a>
 					</motion.div>
 					<motion.h1
 						variants={fadeUp}
@@ -134,7 +132,6 @@ const About = () => {
 							With Trusted Excellence
 						</span>
 					</motion.h1>
-
 				</motion.div>
 
 				{/* Vision and Mission Section */}
@@ -177,91 +174,89 @@ const About = () => {
 				</motion.div>
 
 				{/* View Certificate Section */}
-<motion.div
-  className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
-  initial="hidden"
-  animate="visible"
-  variants={{
-    visible: { transition: { staggerChildren: 0.3 } },
-  }}
->
-  {/* Certificate Card 1 */}
-  <motion.div
-    variants={fadeUp}
-    custom={0}
-    className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-3xl shadow-lg p-10 flex flex-col justify-center items-center"
-  >
-    <div className="flex items-center mb-6">
-      <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mr-4 shadow-lg">
-        <Award className="w-8 h-8 text-white" />
-      </div>
-    </div>
-    <h3 className="text-xl font-bold text-blue-900 mb-4 text-center">
-      ISO 9001:2015 Certified
-    </h3>
-    <div className="text-blue-700 font-semibold mb-4 text-center">
-      ICS Reg. No. RQ91/6769
-    </div>
-    <button
-      onClick={() => setShowModal(true)}
-      className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full shadow transition-all"
-    >
-      View Certificate
-    </button>
-  </motion.div>
+				<motion.div
+					className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
+					initial="hidden"
+					animate="visible"
+					variants={{
+						visible: { transition: { staggerChildren: 0.3 } },
+					}}
+				>
+					{/* Certificate Card 1 */}
+					<motion.div
+						variants={fadeUp}
+						custom={0}
+						className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-3xl shadow-lg p-10 flex flex-col justify-center items-center"
+					>
+						<div className="flex items-center mb-6">
+							<div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mr-4 shadow-lg">
+								<Award className="w-8 h-8 text-white" />
+							</div>
+						</div>
+						<h3 className="text-xl font-bold text-blue-900 mb-4 text-center">
+							ISO 9001:2015 Certified
+						</h3>
+						<div className="text-blue-700 font-semibold mb-4 text-center">
+							ICS Reg. No. RQ91/6769
+						</div>
+						<button
+							onClick={() => setSelectedCertificate(isoCertificate)}
+							className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full shadow transition-all"
+						>
+							View Certificate
+						</button>
+					</motion.div>
 
-  {/* Certificate Card 2 */}
-  <motion.div
-    variants={fadeUp}
-    custom={1}
-    className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-3xl shadow-lg p-10 flex flex-col justify-center items-center"
-  >
-    <div className="flex items-center mb-6">
-      <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mr-4 shadow-lg">
-        <Award className="w-8 h-8 text-white" />
-      </div>
-    </div>
-    <h3 className="text-xl font-bold text-blue-900 mb-4 text-center">
-      ISO 9001:2015 Certified
-    </h3>
-    <div className="text-blue-700 font-semibold mb-4 text-center">
-      ICS Reg. No. RQ91/6769
-    </div>
-    <button
-      onClick={() => setShowModal(true)}
-      className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full shadow transition-all"
-    >
-      View Certificate
-    </button>
-  </motion.div>
+					{/* Certificate Card 2 */}
+					<motion.div
+						variants={fadeUp}
+						custom={1}
+						className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-3xl shadow-lg p-10 flex flex-col justify-center items-center"
+					>
+						<div className="flex items-center mb-6">
+							<div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mr-4 shadow-lg">
+								<Award className="w-8 h-8 text-white" />
+							</div>
+						</div>
+						<h3 className="text-xl font-bold text-blue-900 mb-4 text-center">
+							EEPC Registered
+						</h3>
+						<div className="text-blue-700 font-semibold mb-4 text-center">
+							Membership Certificate
+						</div>
+						<button
+							onClick={() => setSelectedCertificate(eepcCertificate)}
+							className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full shadow transition-all"
+						>
+							View Certificate
+						</button>
+					</motion.div>
 
-  {/* Certificate Card 3 */}
-  <motion.div
-    variants={fadeUp}
-    custom={2}
-    className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-3xl shadow-lg p-10 flex flex-col justify-center items-center"
-  >
-    <div className="flex items-center mb-6">
-      <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mr-4 shadow-lg">
-        <Award className="w-8 h-8 text-white" />
-      </div>
-    </div>
-    <h3 className="text-xl font-bold text-blue-900 mb-4 text-center">
-      ISO 9001:2015 Certified
-    </h3>
-    <div className="text-blue-700 font-semibold mb-4 text-center">
-      ICS Reg. No. RQ91/6769
-    </div>
-    <button
-      onClick={() => setShowModal(true)}
-      className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full shadow transition-all"
-    >
-      View Certificate
-    </button>
-  </motion.div>
-</motion.div>
-
-				
+					{/* Certificate Card 3 */}
+					<motion.div
+						variants={fadeUp}
+						custom={2}
+						className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-3xl shadow-lg p-10 flex flex-col justify-center items-center"
+					>
+						<div className="flex items-center mb-6">
+							<div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mr-4 shadow-lg">
+								<Award className="w-8 h-8 text-white" />
+							</div>
+						</div>
+						<h3 className="text-xl font-bold text-blue-900 mb-4 text-center">
+							Importer-Exporter Code
+						</h3>
+						<div className="text-blue-700 font-semibold mb-4 text-center">
+							IEC Code: BPIPP7268F
+						</div>
+						<button
+							onClick={() => setSelectedCertificate(iecCertificate)}
+							className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full shadow transition-all"
+						>
+							View Certificate
+						</button>
+					</motion.div>
+				</motion.div>
 
 				{/* Commitment Section */}
 				<motion.div

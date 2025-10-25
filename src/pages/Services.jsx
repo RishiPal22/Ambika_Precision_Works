@@ -167,28 +167,7 @@ const Services = () => {
     },
   ];
 
-  const capabilities = [
-    {
-      metric: "24/7",
-      label: "Operational Hours",
-      description: "Continuous production support",
-    },
-    {
-      metric: "650mm",
-      label: "Max Diameter",
-      description: "Large component capability",
-    },
-    {
-      metric: "ISO 9001:2015",
-      label: "Quality Certified",
-      description: "ICS Reg. RQ91/6769",
-    },
-    {
-      metric: "100%",
-      label: "Job Inspection",
-      description: "Every component verified",
-    },
-  ];
+  
 
   return (
     <div className="min-h-screen bg-slate-50">
@@ -242,26 +221,7 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Capabilities Overview */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-4 gap-8">
-            {capabilities.map((capability, index) => (
-              <div key={index} className="text-center group">
-                <div className="text-4xl md:text-5xl font-bold text-blue-600 mb-2 group-hover:text-blue-700 transition-colors">
-                  {capability.metric}
-                </div>
-                <div className="text-sm font-medium text-slate-600 uppercase tracking-wider mb-1">
-                  {capability.label}
-                </div>
-                <div className="text-sm text-slate-500">
-                  {capability.description}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+     
 
       {/* Services Section */}
       <section className="py-24 px-4 bg-slate-50">
