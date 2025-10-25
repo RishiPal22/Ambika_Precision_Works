@@ -122,7 +122,7 @@ const About = () => {
 						className="inline-flex items-center px-6 py-3 bg-blue-500/10 rounded-full text-blue-700 text-sm font-semibold mb-6 backdrop-blur-sm border border-blue-200/50"
 					>
 						<Sparkles className="w-4 h-4 mr-2" />
-						<a href="#company-overview "className="hover:underline focus:outline-none">About Ambika Precision Works</a>
+						<a href="#company-overview " className="hover:underline focus:outline-none">About Ambika Precision Works</a>
 					</motion.div>
 					<motion.h1
 						variants={fadeUp}
@@ -134,112 +134,134 @@ const About = () => {
 							With Trusted Excellence
 						</span>
 					</motion.h1>
-					
+
 				</motion.div>
 
-				{/* Highlights Grid */}
-				<motion.div
-					className="grid md:grid-cols-3 gap-8 mb-16"
-					initial="hidden"
-					animate="visible"
-					variants={{
-						visible: { transition: { staggerChildren: 0.2 } },
-					}}
-				>
-					{highlights.map((item, idx) => (
-						<motion.div
-							key={item.title}
-							variants={fadeUp}
-							custom={idx}
-							whileHover={{
-								scale: 1.05,
-								boxShadow: "0 0 32px #6366f1",
-								y: -8,
-							}}
-							className={`bg-gradient-to-br ${item.color} rounded-2xl shadow-lg p-8 text-center relative transition-all duration-300`}
-						>
-							<motion.div
-								whileHover={{ rotate: 12 }}
-								className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4 border border-white/30"
-							>
-								{item.icon}
-							</motion.div>
-							<h3 className="text-xl font-bold text-white mb-2">
-								{item.title}
-							</h3>
-							<p className="text-white/80 mb-4">{item.desc}</p>
-							<motion.div
-								whileHover={{ scale: 1.1 }}
-								className="absolute top-6 right-6 bg-white/90 text-blue-700 font-bold px-4 py-1 rounded-full text-xs shadow"
-							>
-								{item.badge}
-							</motion.div>
-						</motion.div>
-					))}
-				</motion.div>
-
-				{/* Company Overview & Certification */}
+				{/* Vision and Mission Section */}
+				{/* Vision and Mission Section */}
 				<motion.div
 					className="grid md:grid-cols-2 gap-12 mb-16"
 					initial="hidden"
 					animate="visible"
-					id="company-overview"
 					variants={{
 						visible: { transition: { staggerChildren: 0.3 } },
 					}}
 				>
+					{/* Vision Card */}
 					<motion.div
 						variants={fadeUp}
 						custom={0}
-						className="bg-white rounded-3xl shadow-lg p-10"
-						
+						className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl shadow-xl p-10 flex flex-col items-center text-center border border-blue-200 hover:shadow-2xl transition-shadow duration-300"
 					>
-						<h2 className="text-3xl font-bold text-slate-900 mb-6">
-							Company Overview
-						</h2>
-						<p className="text-slate-700 leading-relaxed mb-4">
-							Ambika Precision Works, established in 2010, is an ISO 9001:2015 certified company (Certified by ICS, Reg. No. RQ91/6769) specializing in high-precision CNC turning (up to 650 mm diameter) and advanced VMC machining (up to 5th axis).
-
-We serve diverse industries including oil & gas, valves & fittings, defence, aerospace, mining, and general engineering, delivering precision-engineered components that meet global standards.
-
-Our expertise spans a wide range of materials — steel, bronze, brass, alloys, Inconel, and more — all machined to perfection with a 100-ton monthly capacity, 100% job inspection, and a proven reputation for timely delivery and consistent quality.
-						</p>
-						{/* <p className="text-slate-700 leading-relaxed">
-							<span className="font-semibold text-blue-700">Our Products:</span>
-							{" "}
-							Steel, bronze, brass, alloys, Inconel, and more—machined to
-							perfection. 100-ton monthly capacity, 100% job inspection, and a
-							legacy of timely delivery.
-						</p> */}
+						<div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center mb-6 shadow-lg">
+							<Sparkles className="w-8 h-8 text-white" />
+						</div>
+						<h3 className="text-3xl font-extrabold text-blue-800 mb-4">Our Vision</h3>
+						<p className="text-slate-600 leading-relaxed text-lg">
+							 To expand globally as a multi-sector precision engineering enterprise, recognized for world-class quality, reliability, and customer trust.						</p>
 					</motion.div>
+
+					{/* Mission Card */}
 					<motion.div
 						variants={fadeUp}
 						custom={1}
-						className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-3xl shadow-lg p-10 flex flex-col justify-center"
+						className="bg-gradient-to-br from-green-50 to-teal-100 rounded-3xl shadow-xl p-10 flex flex-col items-center text-center border border-green-200 hover:shadow-2xl transition-shadow duration-300"
 					>
-						<div className="flex items-center mb-6">
-							<div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mr-4 shadow-lg">
-								<Award className="w-8 h-8 text-white" />
-							</div>
-							<div>
-								<h3 className="text-xl font-bold text-blue-900 mb-1">
-									ISO 9001:2015 Certified
-								</h3>
-								<div className="text-blue-700 font-semibold">
-									ICS Reg. No. RQ91/6769
-								</div>
-							</div>
+						<div className="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-600 rounded-full flex items-center justify-center mb-6 shadow-lg">
+							<CheckCircle className="w-8 h-8 text-white" />
 						</div>
-						
-						{/* View Button */}
-						<button
-							onClick={() => setShowModal(true)}
-							className="mx-auto mt-2 px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full shadow transition-all"
-						>
-							View Certificate
-						</button>
+						<h3 className="text-3xl font-extrabold text-green-800 mb-4">Our Mission</h3>
+						<p className="text-slate-600 leading-relaxed text-lg">
+							To manufacture zero defect precision components through advanced CNC & VMC technologies, 100% inspection, on-time delivery, process excellence and customer-focused solutions.						</p>
 					</motion.div>
 				</motion.div>
+
+				{/* View Certificate Section */}
+<motion.div
+  className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
+  initial="hidden"
+  animate="visible"
+  variants={{
+    visible: { transition: { staggerChildren: 0.3 } },
+  }}
+>
+  {/* Certificate Card 1 */}
+  <motion.div
+    variants={fadeUp}
+    custom={0}
+    className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-3xl shadow-lg p-10 flex flex-col justify-center items-center"
+  >
+    <div className="flex items-center mb-6">
+      <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mr-4 shadow-lg">
+        <Award className="w-8 h-8 text-white" />
+      </div>
+    </div>
+    <h3 className="text-xl font-bold text-blue-900 mb-4 text-center">
+      ISO 9001:2015 Certified
+    </h3>
+    <div className="text-blue-700 font-semibold mb-4 text-center">
+      ICS Reg. No. RQ91/6769
+    </div>
+    <button
+      onClick={() => setShowModal(true)}
+      className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full shadow transition-all"
+    >
+      View Certificate
+    </button>
+  </motion.div>
+
+  {/* Certificate Card 2 */}
+  <motion.div
+    variants={fadeUp}
+    custom={1}
+    className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-3xl shadow-lg p-10 flex flex-col justify-center items-center"
+  >
+    <div className="flex items-center mb-6">
+      <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mr-4 shadow-lg">
+        <Award className="w-8 h-8 text-white" />
+      </div>
+    </div>
+    <h3 className="text-xl font-bold text-blue-900 mb-4 text-center">
+      ISO 9001:2015 Certified
+    </h3>
+    <div className="text-blue-700 font-semibold mb-4 text-center">
+      ICS Reg. No. RQ91/6769
+    </div>
+    <button
+      onClick={() => setShowModal(true)}
+      className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full shadow transition-all"
+    >
+      View Certificate
+    </button>
+  </motion.div>
+
+  {/* Certificate Card 3 */}
+  <motion.div
+    variants={fadeUp}
+    custom={2}
+    className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-3xl shadow-lg p-10 flex flex-col justify-center items-center"
+  >
+    <div className="flex items-center mb-6">
+      <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mr-4 shadow-lg">
+        <Award className="w-8 h-8 text-white" />
+      </div>
+    </div>
+    <h3 className="text-xl font-bold text-blue-900 mb-4 text-center">
+      ISO 9001:2015 Certified
+    </h3>
+    <div className="text-blue-700 font-semibold mb-4 text-center">
+      ICS Reg. No. RQ91/6769
+    </div>
+    <button
+      onClick={() => setShowModal(true)}
+      className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full shadow transition-all"
+    >
+      View Certificate
+    </button>
+  </motion.div>
+</motion.div>
+
+				
 
 				{/* Commitment Section */}
 				<motion.div
