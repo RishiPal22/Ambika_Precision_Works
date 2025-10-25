@@ -135,7 +135,6 @@ const About = () => {
 				</motion.div>
 
 				{/* Vision and Mission Section */}
-				{/* Vision and Mission Section */}
 				<motion.div
 					className="grid md:grid-cols-2 gap-12 mb-16"
 					initial="hidden"
@@ -155,7 +154,8 @@ const About = () => {
 						</div>
 						<h3 className="text-3xl font-extrabold text-blue-800 mb-4">Our Vision</h3>
 						<p className="text-slate-600 leading-relaxed text-lg">
-							 To expand globally as a multi-sector precision engineering enterprise, recognized for world-class quality, reliability, and customer trust.						</p>
+							To expand globally as a multi-sector precision engineering enterprise, recognized for world-class quality, reliability, and customer trust.
+						</p>
 					</motion.div>
 
 					{/* Mission Card */}
@@ -169,8 +169,33 @@ const About = () => {
 						</div>
 						<h3 className="text-3xl font-extrabold text-green-800 mb-4">Our Mission</h3>
 						<p className="text-slate-600 leading-relaxed text-lg">
-							To manufacture zero defect precision components through advanced CNC & VMC technologies, 100% inspection, on-time delivery, process excellence and customer-focused solutions.						</p>
+							To manufacture zero defect precision components through advanced CNC & VMC technologies, 100% inspection, on-time delivery, process excellence, and customer-focused solutions.
+						</p>
 					</motion.div>
+				</motion.div>
+
+				{/* Company Overview Section */}
+				<motion.div
+					variants={fadeUp}
+					initial="hidden"
+					animate="visible"
+					custom={0}
+					className="bg-gradient-to-br from-white to-slate-100 rounded-3xl shadow-2xl p-12 mb-16 border border-slate-200"
+				>
+					<h2 className="text-4xl font-extrabold text-slate-900 mb-8 text-center">
+						Company Overview
+					</h2>
+					<div className="space-y-6 text-center">
+						<p className="text-slate-700 leading-relaxed text-lg">
+							Ambika Precision Works, established in 2010, is an ISO 9001:2015 certified company (Certified by ICS, Reg. No. RQ91/6769) specializing in high-precision CNC turning (up to 650 mm diameter) and advanced VMC machining (up to 5th axis).
+						</p>
+						<p className="text-slate-700 leading-relaxed text-lg">
+							We serve diverse industries including oil & gas, valves & fittings, defence, aerospace, mining, and general engineering, delivering precision-engineered components that meet global standards.
+						</p>
+						<p className="text-slate-700 leading-relaxed text-lg">
+							Our expertise spans a wide range of materials — steel, bronze, brass, alloys, Inconel, and more — all machined to perfection with a 100-ton monthly capacity, 100% job inspection, and a proven reputation for timely delivery and consistent quality.
+						</p>
+					</div>
 				</motion.div>
 
 				{/* View Certificate Section */}

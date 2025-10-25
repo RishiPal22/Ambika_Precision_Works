@@ -43,7 +43,7 @@ const Services = () => {
       description:
         "Advanced Vertical Machining Center operations for complex geometries, multi-axis machining, and high-precision manufacturing.",
       features: [
-        "3-axis and multi-axis capabilities",
+        "5th-axis capability",
         "Complex geometry machining",
         "High-speed machining operations",
         "Tight tolerance maintenance",
@@ -56,26 +56,13 @@ const Services = () => {
       description:
         "High-volume production runs with consistent quality, optimized for efficiency while maintaining precision standards.",
       features: [
-        "High-volume production capability",
+        "Machining capacity 100 tons/month",
         "Consistent quality assurance",
         "Optimized cycle times",
         "Cost-effective solutions",
       ],
       industries: ["Mining", "Oil & Gas", "General Engineering"],
-    },
-    {
-      icon: Microscope,
-      title: "Precision Components",
-      description:
-        "Manufacturing of critical precision components for demanding applications requiring exceptional accuracy and reliability.",
-      features: [
-        "Critical component manufacturing",
-        "Exceptional accuracy standards",
-        "Reliability testing protocols",
-        "Custom design solutions",
-      ],
-      industries: ["Defence", "Aerospace", "Oil & Gas"],
-    },
+    },  
     {
       icon: Shield,
       title: "Quality Inspection",
@@ -88,19 +75,6 @@ const Services = () => {
         "Complete documentation",
       ],
       industries: ["All Industries"],
-    },
-    {
-      icon: Zap,
-      title: "Rapid Prototyping",
-      description:
-        "Fast-track prototyping services to accelerate product development cycles with quick turnaround times.",
-      features: [
-        "Quick turnaround times",
-        "Design optimization support",
-        "Material selection guidance",
-        "Iterative development process",
-      ],
-      industries: ["General Engineering", "Aerospace"],
     },
   ];
 

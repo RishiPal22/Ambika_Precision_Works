@@ -2,27 +2,24 @@ import React from 'react'
 import { useState } from "react"
 import { useLocation } from "react-router-dom";
 // Oil & Gas
-// import hammerUnions from "../assets/oil-gas/hammer-unions.png";
-// import pupJoints from "../assets/oil-gas/pup-joints.png";
-// import crossover from "../assets/oil-gas/crossover.png";
-import swivelJoints from "../assets/oil-gas/swivel joint.jpg";
-// import mudPumpLiners from "../assets/oil-gas/mud-pump-liners.png";
-// import valveBodies from "../assets/oil-gas/valve-bodies.png";
+import hammerUnions from "../assets/oil-gas/hammer union.jpg";
+import pupJoints from "../assets/oil-gas/pup joint.jpg";
+import ChokeValves2 from "../assets/oil-gas/Choke Valves2.jpg";
+import crossover from "../assets/oil-gas/cross over.webp";
+import swivelJoints from "../assets/oil-gas/swivel-joint-1.jpg";
 import ringJointGaskets from "../assets/oil-gas/Ring-Joint-Gasket.avif";
-// import spacerSpools from "../assets/oil-gas/spacer-spools.png";
-// import flowTees from "../assets/oil-gas/flow-tees.png";
 
 // Valves & Fittings
-import gateValves from "../assets/valves/gate-valves.jpg";
+import gateValves from "../assets/valves/gate-valve.jpg";
 import globeValves from "../assets/valves/globevalve.png";
-// import ballValves from "../assets/valves/ball-valve.png";
-// import butterflyValves from "../assets/valves/butterfly-valve.png";
-// import checkValves from "../assets/valves/check-valve.png";
-// import needleValves from "../assets/valves/needle-valve.png";
-// import unionNuts from "../assets/valves/union-nuts.png";
-// import tubeFittings from "../assets/valves/tube-fittings.png";
-// import flanges from "../assets/valves/flanges.png";
+import ballValves from "../assets/valves/ball valves.jpg";
+import butterflyValves from "../assets/valves/valve_butterfly.jpg";
+import flanges from "../assets/valves/Flanges.jpg";
 // import couplings from "../assets/valves/couplings.png";
+
+// Defefnce
+// import defense1 from "../assets/defence/defense1.jpg";
+// import defense2 from "../assets/defence/defense2.jpg";
 
 
 
@@ -37,30 +34,38 @@ const Product = () => {
   const categories = ["All", "Oil & Gas", "Valves & Fittings", "Defence", "Aerospace", "Mining", "General Engineering"]
 
   const products = [
-  // {
-  //   id: 10,
-  //   name: "Hammer Unions",
-  //   category: "Oil & Gas",
-  //   description: "High-pressure hammer unions for reliable oilfield connections",
-  //   image: hammerUnions,
-  //   specifications: "Pressure Rating: Up to 15,000 PSI | Size: 2-10 inches",
-  // },
-  // {
-  //   id: 11,
-  //   name: "Pup Joints",
-  //   category: "Oil & Gas",
-  //   description: "Integral pup joints designed for durability in drilling operations",
-  //   image: pupJoints,
-  //   specifications: "Length: 2-10 ft | Material: Alloy Steel",
-  // },
-  // {
-  //   id: 12,
-  //   name: "Crossover",
-  //   category: "Oil & Gas",
-  //   description: "Crossovers used to connect different sizes of drilling equipment",
-  //   image: crossover,
-  //   specifications: "Custom Sizes Available | API Certified",
-  // },
+  {
+    id: 10,
+    name: "Hammer Unions",
+    category: "Oil & Gas",
+    description: "High-pressure hammer unions for reliable oilfield connections",
+    image: hammerUnions,
+    specifications: "Pressure Rating: Up to 15,000 PSI | Size: 2-10 inches",
+  },
+  {
+    id: 9,
+    name: "Choke Valves",
+    category: "Oil & Gas",
+    description: "Hiigh-performance choke valves designed for precise flow control in oil and gas applications",
+    image: ChokeValves2,
+    specifications: "Pressure Rating: Up to 10,000 PSI | Material: Forged Steel or Stainless Steel",
+  },
+  {
+    id: 11,
+    name: "Pup Joints",
+    category: "Oil & Gas",
+    description: "Integral pup joints designed for durability in drilling operations",
+    image: pupJoints,
+    specifications: "Length: 2-10 ft | Material: Alloy Steel",
+  },
+  {
+    id: 12,
+    name: "Crossover",
+    category: "Oil & Gas",
+    description: "Crossovers used to connect different sizes of drilling equipment",
+    image: crossover,
+    specifications: "Custom Sizes Available | API Certified",
+  },
   {
     id: 13,
     name: "Swivel Joints",
@@ -69,50 +74,18 @@ const Product = () => {
     image: swivelJoints,
     specifications: "Pressure Rating: 6,000 PSI | Rotation: 360°",
   },
-  // {
-  //   id: 14,
-  //   name: "Mud Pump Liners",
-  //   category: "Oil & Gas",
-  //   description: "Durable mud pump liners for drilling fluid systems",
-  //   image: mudPumpLiners,
-  //   specifications: "Material: Ceramic/Chromium | Size: 6-8 inches",
-  // },
-  // {
-  //   id: 15,
-  //   name: "Valve Bodies (Choke/Plug/Check)",
-  //   category: "Oil & Gas",
-  //   description: "Robust valve bodies for choke, plug, and check valve assemblies",
-  //   image: valveBodies,
-  //   specifications: "Material: Forged Steel | High Pressure Resistant",
-  // },
   {
-    id: 16,
+    id: 14,
     name: "Ring Joint Gaskets",
     category: "Oil & Gas",
     description: "Metal ring joint gaskets for high-pressure pipeline sealing",
     image: ringJointGaskets,
     specifications: "Standard: API 6A | Materials: Soft Iron, Stainless Steel",
   },
-  // {
-  //   id: 17,
-  //   name: "Spacer Spools / Drilling Spools",
-  //   category: "Oil & Gas",
-  //   description: "Spacer and drilling spools for blowout preventer stacks",
-  //   image: spacerSpools,
-  //   specifications: "Pressure Rating: 10,000 PSI | Bore Size: Up to 21 inches",
-  // },
-  // {
-  //   id: 18,
-  //   name: "Flow Tees / Flow Crosses",
-  //   category: "Oil & Gas",
-  //   description: "Flow tees and crosses for fluid distribution in wellheads",
-  //   image: flowTees,
-  //   specifications: "Material: Alloy Steel | API 6A Compliant",
-  // },
 
   // ---------------- Valves & Fittings ----------------
   {
-    id: 19,
+    id: 15,
     name: "Gate Valves",
     category: "Valves & Fittings",
     description: "Industrial gate valves for fluid shut-off applications",
@@ -120,77 +93,38 @@ const Product = () => {
     specifications: "Pressure Class: 150-2500 | Material: WCB/SS",
   },
   {
-    id: 20,
+    id: 16,
     name: "Globe Valves",
     category: "Valves & Fittings",
     description: "Globe valves for regulating fluid flow in pipelines",
     image: globeValves,
     specifications: "Size: ½” – 24” | Material: Cast Steel, Stainless Steel",
   },
-  // {
-  //   id: 21,
-  //   name: "Ball Valves",
-  //   category: "Valves & Fittings",
-  //   description: "Durable ball valves for reliable shut-off in piping systems",
-  //   image: ballValves,
-  //   specifications: "Pressure Rating: PN16 – PN420 | Type: Floating/Trunnion",
-  // },
-  // {
-  //   id: 22,
-  //   name: "Butterfly Valves",
-  //   category: "Valves & Fittings",
-  //   description: "Compact butterfly valves for throttling and shut-off",
-  //   image: butterflyValves,
-  //   specifications: "Disc Material: SS/CI | Operation: Manual/Gear/Pneumatic",
-  // },
-  // {
-  //   id: 23,
-  //   name: "Check Valves",
-  //   category: "Valves & Fittings",
-  //   description: "One-way check valves to prevent reverse flow",
-  //   image: checkValves,
-  //   specifications: "Type: Swing, Lift, Dual Plate | Size: DN50–DN1200",
-  // },
-  // {
-  //   id: 24,
-  //   name: "Needle Valves",
-  //   category: "Valves & Fittings",
-  //   description: "Precision needle valves for fine flow control",
-  //   image: needleValves,
-  //   specifications: "Max Pressure: 6000 PSI | Material: SS316/Brass",
-  // },
-  // {
-  //   id: 25,
-  //   name: "Union Nuts & End Connectors",
-  //   category: "Valves & Fittings",
-  //   description: "Connector components for secure piping assemblies",
-  //   image: unionNuts,
-  //   specifications: "Thread Types: NPT/BSP | Material: Brass/SS",
-  // },
-  // {
-  //   id: 26,
-  //   name: "Tube Fittings (Elbows, Tees, Crosses)",
-  //   category: "Valves & Fittings",
-  //   description: "Precision tube fittings including elbows, tees, and crosses",
-  //   image: tubeFittings,
-  //   specifications: "Material: SS316/L | Sizes: ¼” – 2”",
-  // },
-  // {
-  //   id: 27,
-  //   name: "Flanges (Blind, Slip-On, Weld Neck)",
-  //   category: "Valves & Fittings",
-  //   description: "Industrial flanges for pipe connections",
-  //   image: flanges,
-  //   specifications: "Standard: ANSI/ASME | Size: ½” – 48”",
-  // },
-  // {
-  //   id: 28,
-  //   name: "Couplings / Adapters",
-  //   category: "Valves & Fittings",
-  //   description: "Pipe couplings and adapters for versatile connections",
-  //   image: couplings,
-  //   specifications: "Material: Carbon Steel, SS, Alloy | Sizes Available",
-  // }
+  {
+    id: 17,
+    name: "Ball Valves",
+    category: "Valves & Fittings",
+    description: "Durable ball valves for reliable shut-off in piping systems",
+    image: ballValves,
+    specifications: "Pressure Rating: PN16 – PN420 | Type: Floating/Trunnion",
+  },
+  {
+    id: 18,
+    name: "Butterfly Valves",
+    category: "Valves & Fittings",
+    description: "Compact butterfly valves for throttling and shut-off",
+    image: butterflyValves,
+    specifications: "Disc Material: SS/CI | Operation: Manual/Gear/Pneumatic",
+  },
+ 
+  {
+    id: 19,
+    name: "Flanges (Blind, Slip-On, Weld Neck)",
+    category: "Valves & Fittings",
+    description: "Industrial flanges for pipe connections",
+    image: flanges,
+    specifications: "Standard: ANSI/ASME | Size: ½” – 48”",
+  }
 ];
 
 
@@ -300,9 +234,9 @@ const Product = () => {
                   <p className="text-xs text-muted-foreground font-medium">{product.specifications}</p>
                 </div>
 
-                <button className="mt-4 w-full bg-primary text-primary-foreground py-2.5 px-4 rounded-lg font-medium hover:bg-primary/90 transition-colors duration-200">
+                {/* <button className="mt-4 w-full bg-primary text-primary-foreground py-2.5 px-4 rounded-lg font-medium hover:bg-primary/90 transition-colors duration-200">
                   Request Quote
-                </button>
+                </button> */}
               </div>
             </div>
           ))}
