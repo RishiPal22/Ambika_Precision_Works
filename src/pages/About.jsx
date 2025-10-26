@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Award, Shield, Users, CheckCircle, Sparkles, X } from "lucide-react";
 import { motion } from "framer-motion";
-import isoCertificate from "../assets/iso-certificate.jpg"; // Adjust extension if needed
+import isoCertificate from "../assets/Iso-certificate.jpg"; // Adjust extension if needed
 import eepcCertificate from "../assets/EEPC-certificate.jpg"; // Path to EEPC certificate
 import iecCertificate from "../assets/IEC code.jpg"; // Path to IEC certificate
 
