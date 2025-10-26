@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom"; // Add this import at the top
 import {
   Settings,
   Shield,
@@ -95,7 +96,10 @@ const productShowcase = [
 ];
 
 const Home = () => {
+  const form = useRef();
   const navigate = useNavigate();
+  const [sending, setSending] = useState(false);
+  const [status, setStatus] = useState(null);
   const [selectedCertificate, setSelectedCertificate] = useState(null);
 
   const certificates = [
@@ -112,6 +116,30 @@ const Home = () => {
       image: "/IEC code.jpg", // Replace with the actual path to your certificate image
     },
   ];
+
+  const sendEmail = async (e) => {
+    e.preventDefault();
+    setSending(true);
+    setStatus(null);
+
+    try {
+      const result = await emailjs.sendForm(
+        "service_n3pnd7v", // Replace with your EmailJS service ID
+        "template_8h67n8p", // Replace with your EmailJS template ID
+        form.current,
+        "8camyyLwv9hs5-Hj4" // Replace with your EmailJS public key
+      );
+
+      console.log("Success:", result.text);
+      setStatus({ ok: true, msg: "Inquiry sent successfully!" });
+      form.current.reset();
+    } catch (error) {
+      console.error("Error:", error);
+      setStatus({ ok: false, msg: "Failed to send inquiry. Please try again." });
+    } finally {
+      setSending(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
@@ -185,7 +213,7 @@ const Home = () => {
                 className="text-center animate-fade-in-up"
                 style={{ animationDelay: "1.4s" }}
               >
-                <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2 animate-count-up">
+                <div className="text-3xl md:text-4xl font-bold text-purple-400 mb-2 animate-count-up">
                   Foundry
                 </div>
                 <div className="text-slate-300 text-sm font-medium">
@@ -207,7 +235,7 @@ const Home = () => {
                 className="text-center animate-fade-in-up"
                 style={{ animationDelay: "1.8s" }}
               >
-                <div className="text-3xl md:text-4xl font-bold text-green-400 mb-2 animate-count-up">
+                <div className="text-3xl md:text-4xl font-bold text-purple-400 mb-2 animate-count-up">
                   100%
                 </div>
                 <div className="text-slate-300 text-sm font-medium">
@@ -218,7 +246,7 @@ const Home = () => {
                 className="text-center animate-fade-in-up"
                 style={{ animationDelay: "2s" }}
               >
-                <div className="text-3xl md:text-4xl font-bold text-yellow-400 mb-2 animate-count-up">
+                <div className="text-3xl md:text-4xl font-bold text-purple-400 mb-2 animate-count-up">
                   100 Tons
                 </div>
                 <div className="text-slate-300 text-sm font-medium">
@@ -318,192 +346,178 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Why Choose Ambika Section */}
-      <section className="py-24 px-4 bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 relative overflow-hidden">
+      {/* Why Choose Ambika Section (refined styling) */}
+      <section className="pt-12 pb-16 -mt-12 lg:-mt-20 px-4 bg-gradient-to-b from-slate-800 via-slate-900 to-slate-800 text-white relative overflow-hidden">
+        {/* Subtle decorative blobs */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-0 w-full h-full opacity-20">
-            <div className="absolute top-24 left-24 w-96 h-96 bg-blue-500 rounded-full blur-3xl animate-pulse"></div>
-            <div
-              className="absolute bottom-24 right-24 w-[500px] h-[500px] bg-cyan-500 rounded-full blur-3xl animate-pulse"
-              style={{ animationDelay: "1s" }}
-            ></div>
-            <div
-              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal-500 rounded-full blur-3xl animate-pulse"
-              style={{ animationDelay: "2s" }}
-            ></div>
-          </div>
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMC41IiBvcGFjaXR5PSIwLjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-30"></div>
+          <div className="absolute -left-20 -top-10 w-72 h-72 bg-gradient-to-br from-blue-600/20 to-cyan-400/10 rounded-full blur-3xl"></div>
+          <div className="absolute right-0 bottom-0 w-96 h-96 bg-gradient-to-br from-teal-500/10 to-indigo-600/10 rounded-full blur-3xl"></div>
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23000000%22 fill-opacity=%220.03%22%3E%3Ccircle cx=%2230%22 cy=%2230%22 r=%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-full text-white text-sm font-semibold mb-8 backdrop-blur-md border border-white/30 shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105">
-              <Sparkles
-                className="w-4 h-4 mr-2 animate-spin"
-                style={{ animationDuration: "3s" }}
-              />
-              Why Industry Leaders Choose Us
-            </div>
-            <h2 className="text-5xl md:text-7xl font-black mb-8 text-white tracking-tight">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-4 text-white tracking-tight leading-tight">
               Excellence in Every
-              <span className="block bg-gradient-to-r from-cyan-400 via-blue-400 to-teal-400 bg-clip-text text-transparent animate-gradient">
+              <span className="block bg-gradient-to-r from-cyan-300 via-blue-300 to-teal-300 bg-clip-text text-transparent">
                 Dimension
               </span>
             </h2>
-            <p className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto leading-relaxed font-light">
+
+            <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
               Discover the Ambika Precision Works advantage through innovation,
-              precision, and unwavering commitment to excellence.
+              precision, and an unwavering commitment to quality and delivery.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="group relative bg-gradient-to-br from-blue-500/10 to-cyan-500/10 backdrop-blur-xl border border-blue-400/30 rounded-3xl shadow-2xl p-8 flex flex-col items-start hover:shadow-blue-500/50 hover:scale-105 hover:-translate-y-2 transition-all duration-500 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 to-cyan-500/0 group-hover:from-blue-500/20 group-hover:to-cyan-500/20 transition-all duration-500"></div>
-              <div className="absolute -top-24 -right-24 w-48 h-48 bg-blue-500 rounded-full blur-3xl opacity-0 group-hover:opacity-30 transition-all duration-500"></div>
-              <div className="relative z-10 w-full">
-                <div className="flex items-center justify-between mb-6">
-                  <div className="p-4 bg-blue-500/20 rounded-2xl group-hover:bg-blue-500/30 transition-all duration-300 group-hover:rotate-6 group-hover:scale-110">
-                    <Target className="w-8 h-8 text-blue-400" />
+            {/* Card 1 */}
+            <div className="relative bg-white/5 border border-white/8 rounded-2xl shadow-lg p-6 flex flex-col hover:shadow-2xl transition transform hover:-translate-y-2">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-cyan-400 flex items-center justify-center shadow-md">
+                    <Target className="w-6 h-6 text-white" />
                   </div>
-                  <span className="text-2xl font-black text-blue-400 group-hover:scale-125 transition-transform duration-300">
-                    Accuracy ±0.005mm
-                  </span>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Precision</h3>
+                    <div className="text-sm text-slate-300">Accuracy ±0.005mm</div>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors duration-300">
-                  Precision Engineered to perfection
-                </h3>
-                <p className="text-slate-300 mb-6 leading-relaxed">
-                  Powered by advanced CNC systems, expert programming, and certified inspectio standards.
-                </p>
-                <div className="flex items-center text-blue-400 text-sm font-semibold mt-auto pt-4 border-t border-blue-400/20 group-hover:text-blue-300 transition-colors duration-300">
-                  <TrendingUp className="w-5 h-5 mr-2 group-hover:animate-bounce" />
-                  99.8% Accuracy Rate
-                </div>
+                <div className="text-indigo-200 font-black text-xl">±0.005mm</div>
+              </div>
+
+              <p className="text-slate-300 mb-4">
+                Powered by advanced CNC systems, expert programming and certified inspection standards to ensure repeatable, high-precision parts.
+              </p>
+
+              <div className="mt-auto pt-4 border-t border-white/6 text-sm text-slate-300 flex items-center gap-2">
+                <TrendingUp className="w-4 h-4 text-cyan-300" />
+                99.8% Accuracy Rate
               </div>
             </div>
 
-            <div className="group relative bg-gradient-to-br from-green-500/10 to-emerald-500/10 backdrop-blur-xl border border-green-400/30 rounded-3xl shadow-2xl p-8 flex flex-col items-start hover:shadow-green-500/50 hover:scale-105 hover:-translate-y-2 transition-all duration-500 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-green-500/0 to-emerald-500/0 group-hover:from-green-500/20 group-hover:to-emerald-500/20 transition-all duration-500"></div>
-              <div className="absolute -top-24 -right-24 w-48 h-48 bg-green-500 rounded-full blur-3xl opacity-0 group-hover:opacity-30 transition-all duration-500"></div>
-              <div className="relative z-10 w-full">
-                <div className="flex items-center justify-between mb-6">
-                  <div className="p-4 bg-green-500/20 rounded-2xl group-hover:bg-green-500/30 transition-all duration-300 group-hover:rotate-6 group-hover:scale-110">
-                    <Clock className="w-8 h-8 text-green-400" />
+            {/* Card 2 */}
+            <div className="relative bg-white/5 border border-white/8 rounded-2xl shadow-lg p-6 flex flex-col hover:shadow-2xl transition transform hover:-translate-y-2">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500 to-emerald-400 flex items-center justify-center shadow-md">
+                    <Clock className="w-6 h-6 text-white" />
                   </div>
-                  <span className="text-3xl font-black text-green-400 group-hover:scale-125 transition-transform duration-300">
-                    100%
-                  </span>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Delivery</h3>
+                    <div className="text-sm text-slate-300">On-Time Commitment</div>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-green-300 transition-colors duration-300">
-                  On-Time Delivery
-                </h3>
-                <p className="text-slate-300 mb-6 leading-relaxed">
-                  Ensuring timely completion through optimized machining schedules, real-time tracking, disciplined process control and reliable logistics support.
-                </p>
-                <div className="flex items-center text-green-400 text-sm font-semibold mt-auto pt-4 border-t border-green-400/20 group-hover:text-green-300 transition-colors duration-300">
-                  <CheckCircle className="w-5 h-5 mr-2 group-hover:animate-bounce" />
-                  Guaranteed Timeline
-                </div>
+                <div className="text-green-200 font-black text-xl">100%</div>
+              </div>
+
+              <p className="text-slate-300 mb-4">
+                Optimized machining schedules, real-time tracking and disciplined process control to meet critical timelines consistently.
+              </p>
+
+              <div className="mt-auto pt-4 border-t border-white/6 text-sm text-slate-300 flex items-center gap-2">
+                <CheckCircle className="w-4 h-4 text-green-300" />
+                Guaranteed Timeline
               </div>
             </div>
 
-            <div className="group relative bg-gradient-to-br from-violet-500/10 to-fuchsia-500/10 backdrop-blur-xl border border-violet-400/30 rounded-3xl shadow-2xl p-8 flex flex-col items-start hover:shadow-violet-500/50 hover:scale-105 hover:-translate-y-2 transition-all duration-500 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-violet-500/0 to-fuchsia-500/0 group-hover:from-violet-500/20 group-hover:to-fuchsia-500/20 transition-all duration-500"></div>
-              <div className="absolute -top-24 -right-24 w-48 h-48 bg-violet-500 rounded-full blur-3xl opacity-0 group-hover:opacity-30 transition-all duration-500"></div>
-              <div className="relative z-10 w-full">
-                <div className="flex items-center justify-between mb-6">
-                  <div className="p-4 bg-violet-500/20 rounded-2xl group-hover:bg-violet-500/30 transition-all duration-300 group-hover:rotate-6 group-hover:scale-110">
-                    <Zap className="w-8 h-8 text-violet-400" />
+            {/* Card 3 */}
+            <div className="relative bg-white/5 border border-white/8 rounded-2xl shadow-lg p-6 flex flex-col hover:shadow-2xl transition transform hover:-translate-y-2">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-400 flex items-center justify-center shadow-md">
+                    <Zap className="w-6 h-6 text-white" />
                   </div>
-                  <span className="text-3xl font-black text-violet-400 group-hover:scale-125 transition-transform duration-300">
-                    Latest
-                  </span>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Technology</h3>
+                    <div className="text-sm text-slate-300">Advanced CNC & CAD/CAM</div>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-violet-300 transition-colors duration-300">
-                  Advanced Technology
-                </h3>
-                <p className="text-slate-300 mb-6 leading-relaxed">
-                  Equipped with the latest CNC machinery and CAD/CAM software to ensure maximum efficiency, precision, and superior machining outcomes.
-                </p>
-                <div className="flex items-center text-violet-400 text-sm font-semibold mt-auto pt-4 border-t border-violet-400/20 group-hover:text-violet-300 transition-colors duration-300">
-                  <Zap className="w-5 h-5 mr-2 group-hover:animate-bounce" />
-                  Cutting-Edge Tech
-                </div>
+                <div className="text-violet-200 font-black text-xl">Latest</div>
+              </div>
+
+              <p className="text-slate-300 mb-4">
+                Equipped with the latest CNC machinery and CAD/CAM workflows to deliver complex geometries with superior surface finish.
+              </p>
+
+              <div className="mt-auto pt-4 border-t border-white/6 text-sm text-slate-300 flex items-center gap-2">
+                <Zap className="w-4 h-4 text-violet-300" />
+                Cutting-Edge Tech
               </div>
             </div>
 
-            <div className="group relative bg-gradient-to-br from-orange-500/10 to-amber-500/10 backdrop-blur-xl border border-orange-400/30 rounded-3xl shadow-2xl p-8 flex flex-col items-start hover:shadow-orange-500/50 hover:scale-105 hover:-translate-y-2 transition-all duration-500 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/0 to-amber-500/0 group-hover:from-orange-500/20 group-hover:to-amber-500/20 transition-all duration-500"></div>
-              <div className="absolute -top-24 -right-24 w-48 h-48 bg-orange-500 rounded-full blur-3xl opacity-0 group-hover:opacity-30 transition-all duration-500"></div>
-              <div className="relative z-10 w-full">
-                <div className="flex items-center justify-between mb-6">
-                  <div className="p-4 bg-orange-500/20 rounded-2xl group-hover:bg-orange-500/30 transition-all duration-300 group-hover:rotate-6 group-hover:scale-110">
-                    <Shield className="w-8 h-8 text-orange-400" />
+            {/* Card 4 */}
+            <div className="relative bg-white/5 border border-white/8 rounded-2xl shadow-lg p-6 flex flex-col hover:shadow-2xl transition transform hover:-translate-y-2">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500 to-amber-400 flex items-center justify-center shadow-md">
+                    <Shield className="w-6 h-6 text-white" />
                   </div>
-                  <span className="text-3xl font-black text-orange-400 group-hover:scale-125 transition-transform duration-300">
-                    100%
-                  </span>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Quality</h3>
+                    <div className="text-sm text-slate-300">ISO 9001:2015 Certified</div>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-orange-300 transition-colors duration-300">
-                  Quality Certified
-                </h3>
-                <p className="text-slate-300 mb-6 leading-relaxed">
-                  ISO 9001:2015 certified quality management with inspection at every stage of production.
-                </p>
-                <div className="flex items-center text-orange-400 text-sm font-semibold mt-auto pt-4 border-t border-orange-400/20 group-hover:text-orange-300 transition-colors duration-300">
-                  <Shield className="w-5 h-5 mr-2 group-hover:animate-bounce" />
-                  Zero Defect Goal
-                </div>
+                <div className="text-orange-200 font-black text-xl">Certified</div>
+              </div>
+
+              <p className="text-slate-300 mb-4">
+                Robust quality management with 100% inspection at every stage and traceable documentation for full compliance.
+              </p>
+
+              <div className="mt-auto pt-4 border-t border-white/6 text-sm text-slate-300 flex items-center gap-2">
+                <Shield className="w-4 h-4 text-orange-300" />
+                Zero Defect Goal
               </div>
             </div>
 
-            <div className="group relative bg-gradient-to-br from-cyan-500/10 to-sky-500/10 backdrop-blur-xl border border-cyan-400/30 rounded-3xl shadow-2xl p-8 flex flex-col items-start hover:shadow-cyan-500/50 hover:scale-105 hover:-translate-y-2 transition-all duration-500 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/0 to-sky-500/0 group-hover:from-cyan-500/20 group-hover:to-sky-500/20 transition-all duration-500"></div>
-              <div className="absolute -top-24 -right-24 w-48 h-48 bg-cyan-500 rounded-full blur-3xl opacity-0 group-hover:opacity-30 transition-all duration-500"></div>
-              <div className="relative z-10 w-full">
-                <div className="flex items-center justify-between mb-6">
-                  <div className="p-4 bg-cyan-500/20 rounded-2xl group-hover:bg-cyan-500/30 transition-all duration-300 group-hover:rotate-6 group-hover:scale-110">
-                    <Users className="w-8 h-8 text-cyan-400" />
+            {/* Card 5 */}
+            <div className="relative bg-white/5 border border-white/8 rounded-2xl shadow-lg p-6 flex flex-col hover:shadow-2xl transition transform hover:-translate-y-2">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-cyan-500 to-sky-400 flex items-center justify-center shadow-md">
+                    <Users className="w-6 h-6 text-white" />
                   </div>
-                  <span className="text-3xl font-black text-cyan-400 group-hover:scale-125 transition-transform duration-300">
-                    15+
-                  </span>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">People</h3>
+                    <div className="text-sm text-slate-300">Experienced Team</div>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors duration-300">
-                  Expert Team
-                </h3>
-                <p className="text-slate-300 mb-6 leading-relaxed">
-                  Skilled team of engineers, machinists and CNC specialists with continuous training to ensure flawless execution everytime.
-                </p>
-                <div className="flex items-center text-cyan-400 text-sm font-semibold mt-auto pt-4 border-t border-cyan-400/20 group-hover:text-cyan-300 transition-colors duration-300">
-                  <Award className="w-5 h-5 mr-2 group-hover:animate-bounce" />
-                  Master Craftsmen
-                </div>
+                <div className="text-cyan-200 font-black text-xl">40+</div>
+              </div>
+
+              <p className="text-slate-300 mb-4">
+                Skilled engineers, machinists and CNC specialists with continuous training and process ownership to ensure flawless execution.
+              </p>
+
+              <div className="mt-auto pt-4 border-t border-white/6 text-sm text-slate-300 flex items-center gap-2">
+                <Award className="w-4 h-4 text-cyan-300" />
+                Master Craftsmen
               </div>
             </div>
 
-            <div className="group relative bg-gradient-to-br from-yellow-500/10 to-orange-500/10 backdrop-blur-xl border border-yellow-400/30 rounded-3xl shadow-2xl p-8 flex flex-col items-start hover:shadow-yellow-500/50 hover:scale-105 hover:-translate-y-2 transition-all duration-500 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/0 to-orange-500/0 group-hover:from-yellow-500/20 group-hover:to-orange-500/20 transition-all duration-500"></div>
-              <div className="absolute -top-24 -right-24 w-48 h-48 bg-yellow-500 rounded-full blur-3xl opacity-0 group-hover:opacity-30 transition-all duration-500"></div>
-              <div className="relative z-10 w-full">
-                <div className="flex items-center justify-between mb-6">
-                  <div className="p-4 bg-yellow-500/20 rounded-2xl group-hover:bg-yellow-500/30 transition-all duration-300 group-hover:rotate-6 group-hover:scale-110">
-                    <Award className="w-8 h-8 text-yellow-400" />
+            {/* Card 6 */}
+            <div className="relative bg-white/5 border border-white/8 rounded-2xl shadow-lg p-6 flex flex-col hover:shadow-2xl transition transform hover:-translate-y-2">
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-amber-400 to-yellow-400 flex items-center justify-center shadow-md">
+                    <Star className="w-6 h-6 text-white" />
                   </div>
-                  <span className="text-3xl font-black text-yellow-400 group-hover:scale-125 transition-transform duration-300">
-                    500+
-                  </span>
+                  <div>
+                    <h3 className="text-lg font-semibold text-white">Reputation</h3>
+                    <div className="text-sm text-slate-300">Industry Recognition</div>
+                  </div>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-yellow-300 transition-colors duration-300">
-                  Industry Recognition
-                </h3>
-                <p className="text-slate-300 mb-6 leading-relaxed">
-                  Trusted by leading industries for our precision, reliability, and quality excellence proudly serving clients across oil & gas, defence, mining, and engineering sectors.
-                </p>
-                <div className="flex items-center text-yellow-400 text-sm font-semibold mt-auto pt-4 border-t border-yellow-400/20 group-hover:text-yellow-300 transition-colors duration-300">
-                  <Star className="w-5 h-5 mr-2 group-hover:animate-bounce" />
-                  Trusted Partner
-                </div>
+                <div className="text-amber-200 font-black text-xl">500+</div>
+              </div>
+
+              <p className="text-slate-300 mb-4">
+                Trusted by leading industries for precision, reliability, and quality excellence across oil & gas, defence, mining and engineering.
+              </p>
+
+              <div className="mt-auto pt-4 border-t border-white/6 text-sm text-slate-300 flex items-center gap-2">
+                <Star className="w-4 h-4 text-amber-300" />
+                Trusted Partner
               </div>
             </div>
           </div>
@@ -511,7 +525,7 @@ const Home = () => {
       </section>
 
       {/* Industry Solutions Section */}
-      <section className="py-24 px-4 bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
+      <section className="py-20 px-4 bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden">
         {/* Decorative elements */}
         <div className="absolute inset-0 opacity-5">
           <div
@@ -523,13 +537,10 @@ const Home = () => {
         </div>
 
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-20">
-            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full text-slate-700 text-sm font-medium mb-8 border border-blue-200/50 animate-fade-in-up">
-              <MousePointer className="w-4 h-4 mr-2" />
-              Interactive Industry Explorer
-            </div>
+          <div className="text-center mb-6">
+            
             <h2
-              className="text-5xl md:text-6xl font-bold mb-8 text-slate-900 animate-fade-in-up"
+              className="text-5xl md:text-6xl font-bold mb-2 text-slate-900 animate-fade-in-up"
               style={{ animationDelay: "0.2s" }}
             >
               Our Industry
@@ -543,13 +554,6 @@ const Home = () => {
             >
               Precision-engineered solutions across aerospace, oil & gas, defence, and mining — transforming challenges into measurable performance.
             </p>
-            <div
-              className="flex items-center justify-center gap-2 text-slate-500 text-sm animate-fade-in-up"
-              style={{ animationDelay: "0.6s" }}
-            >
-              <span>Hover over cards to explore</span>
-              <MousePointer className="w-4 h-4 animate-bounce" />
-            </div>
           </div>
 
           {/* Masonry-style Grid */}
@@ -692,14 +696,16 @@ const Home = () => {
 
             <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20 animate-slide-in-right">
               <h3 className="text-2xl font-bold mb-6">Quick Inquiry</h3>
-              <form className="space-y-4">
+              <form ref={form} onSubmit={sendEmail} className="space-y-4">
                 <div
                   className="animate-fade-in-up"
                   style={{ animationDelay: "0.2s" }}
                 >
                   <input
                     type="text"
+                    name="from_name"
                     placeholder="Your Name"
+                    required
                     className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300 focus:bg-white/25"
                   />
                 </div>
@@ -709,7 +715,9 @@ const Home = () => {
                 >
                   <input
                     type="email"
+                    name="from_email"
                     placeholder="Your Email"
+                    required
                     className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400 transition-all duration-300 focus:bg-white/25"
                   />
                 </div>
@@ -718,19 +726,32 @@ const Home = () => {
                   style={{ animationDelay: "0.4s" }}
                 >
                   <textarea
+                    name="message"
                     placeholder="Project Details"
                     rows={4}
+                    required
                     className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-white/70 focus:outline-none focus:ring-2 focus:ring-blue-400 resize-none transition-all duration-300 focus:bg-white/25"
                   ></textarea>
                 </div>
                 <button
                   type="submit"
+                  disabled={sending}
                   className="w-full bg-blue-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 hover:scale-105 animate-fade-in-up"
                   style={{ animationDelay: "0.8s" }}
                 >
-                  Send Inquiry
+                  {sending ? "Sending..." : "Send Inquiry"}
                 </button>
               </form>
+
+              {status && (
+                <div
+                  className={`mt-4 p-4 rounded-md ${
+                    status.ok ? "bg-green-50 text-green-800" : "bg-red-50 text-red-800"
+                  }`}
+                >
+                  {status.msg}
+                </div>
+              )}
             </div>
           </div>
         </div>
