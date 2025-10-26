@@ -677,13 +677,7 @@ const Home = () => {
                 className="flex flex-col sm:flex-row gap-4 animate-fade-in-up"
                 style={{ animationDelay: "0.8s" }}
               >
-                <Link
-                  to="/contact"
-                  className="group bg-white text-slate-900 px-8 py-4 rounded-full font-semibold hover:bg-slate-100 transition-all hover:scale-105 flex items-center justify-center"
-                >
-                  Get Started Today
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Link>
+               
                 <Link
                   to="/services"
                   className="group border border-white/30 text-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition-colors backdrop-blur-sm flex items-center justify-center"

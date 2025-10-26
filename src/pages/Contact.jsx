@@ -7,6 +7,11 @@ function Contact() {
   const [status, setStatus] = useState(null);
   const [sending, setSending] = useState(false);
 
+  // load EmailJS config from Vite env
+  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
   const sendEmail = async (e) => {
     e.preventDefault();
     setSending(true);
@@ -14,10 +19,10 @@ function Contact() {
 
     try {
       const result = await emailjs.sendForm(
-        'service_n3pnd7v',
-        'template_8h67n8p',
+        SERVICE_ID,
+        TEMPLATE_ID,
         form.current,
-        '8camyyLwv9hs5-Hj4'
+        PUBLIC_KEY
       );
 
       console.log('Success:', result.text);
@@ -66,8 +71,9 @@ function Contact() {
               <div>
                 <h3 className="text-lg font-medium text-gray-900">Address</h3>
                 <p className="text-gray-600">
-                  Your Company Address,<br />
-                  City, State, PIN Code
+                  A-7 Swami Industrial Center, Gauraipada Vasai (East)<br />
+                  District: Palghar - 401208<br />
+                  Maharashtra, India
                 </p>
               </div>
             </div>
