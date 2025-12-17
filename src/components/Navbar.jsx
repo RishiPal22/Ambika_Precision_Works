@@ -1,174 +1,149 @@
-import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone, Mail } from "lucide-react";
-import logo from "../assets/logo.png";
+"use client"
+
+import { useState, useEffect } from "react"
+import { Link, useLocation } from "react-router-dom"
+import { Menu, X, Phone, Mail } from "lucide-react"
+import logo from "../assets/logo.PNG"
 
 function Navbar() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const location = useLocation();
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const location = useLocation()
 
-  // Height of navbar (matches --navbar-height in App.jsx and CSS)
-  const NAVBAR_HEIGHT = 80; // px (h-20)
+  const NAVBAR_HEIGHT = 80
 
-  // Handle scroll effect
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20)
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // Close mobile menu when route changes
   useEffect(() => {
-    setIsMenuOpen(false);
-  }, [location]);
+    setIsMenuOpen(false)
+  }, [location])
 
   const navLinks = [
     { to: "/", label: "Home" },
     { to: "/about", label: "About" },
     { to: "/services", label: "Services" },
     { to: "/product", label: "Products" },
-  ];
+  ]
 
-  const isActiveLink = (path) => {
-    return location.pathname === path;
-  };
+  const isActiveLink = (path) => location.pathname === path
 
   return (
     <>
       <nav
         className={`fixed w-full z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-white/95 backdrop-blur-md shadow-lg border-b border-slate-200/50"
-            : "bg-slate-900/95 backdrop-blur-md shadow-2xl"
+            ? "bg-[#F8F9FA]/95 backdrop-blur-md shadow-lg border-b border-[#E5E7EB]"
+            : "bg-[#0B5ED7]/95 backdrop-blur-md shadow-2xl"
         }`}
-        style={{ height: NAVBAR_HEIGHT, minHeight: NAVBAR_HEIGHT }}
+        style={{ height: NAVBAR_HEIGHT }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+        <div className="max-w-7xl mx-auto px-4 h-full">
           <div className="flex items-center justify-between h-full">
-            {/* Logo / Company Name + Phone (inline, no-wrap) */}
-            <Link to="/" className="flex items-center space-x-3 group flex-shrink-0">
+
+            {/* Logo */}
+            <Link to="/" className="flex items-center space-x-3 group">
               <img
                 src={logo}
                 alt="Ambika Precision Works"
-                className="w-12 h-12 object-contain transition-transform duration-300 group-hover:scale-105"
+                className="w-20 h-20 object-contain transition-transform group-hover:scale-105"
               />
-
-              <div
-                className={`transition-colors duration-300 flex items-center space-x-4 ${
-                  isScrolled ? "text-slate-900" : "text-white"
+              <span
+                className={`text-xl md:text-2xl font-semibold tracking-tight ${
+                  isScrolled ? "text-[#1C1C1C]" : "text-white"
                 }`}
               >
-                <div className="text-xl md:text-2xl font-semibold tracking-tight whitespace-nowrap">
-                  Ambika Precision Works
-                </div>
-
-                {/* Inline phone, won't wrap */}
-                {/* <div
-                  className={`hidden md:flex items-center space-x-2 text-sm whitespace-nowrap ${
-                    isScrolled ? "text-slate-600" : "text-slate-300"
-                  }`}
-                >
-                  <Phone className="w-4 h-4" />
-                  <span className="font-medium">+91 9765530366/</span>
-                  <span className="font-medium">info@ambikaprecisionworks.com</span>
-                </div> */}
-              </div>
+                Ambika Precision Works
+              </span>
             </Link>
 
-            {/* Desktop Navigation - centered using flex-1 */}
-            <div className="hidden lg:flex items-center space-x-1 flex-1 justify-center">
+            {/* Desktop Nav */}
+            <div className="hidden lg:flex flex-1 justify-center items-center space-x-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`relative px-4 py-2 rounded-lg font-medium text-sm uppercase tracking-wide transition-all duration-300 group ${
+                  className={`relative px-4 py-2 rounded-lg text-sm font-medium uppercase tracking-wide transition-all ${
                     isActiveLink(link.to)
                       ? isScrolled
-                        ? "text-blue-600 bg-blue-50"
-                        : "text-blue-400 bg-white/10"
+                        ? "text-[#0B5ED7] bg-[#0B5ED7]/10"
+                        : "text-white bg-white/20"
                       : isScrolled
-                      ? "text-slate-700 hover:text-blue-600 hover:bg-slate-50"
-                      : "text-slate-200 hover:text-white hover:bg-white/10"
+                        ? "text-[#1C1C1C] hover:text-[#0B5ED7] hover:bg-[#0B5ED7]/10"
+                        : "text-white/90 hover:text-white hover:bg-white/10"
                   }`}
                 >
                   {link.label}
                   {isActiveLink(link.to) && (
-                    <div
-                      className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 rounded-full ${
-                        isScrolled ? "bg-blue-600" : "bg-blue-400"
+                    <span
+                      className={`absolute bottom-1 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full ${
+                        isScrolled ? "bg-[#0B5ED7]" : "bg-[#FFC107]"
                       }`}
                     />
                   )}
                 </Link>
               ))}
 
-              {/* Phone number after Products */}
+              {/* Contact Info */}
               <div
-                className={`hidden lg:flex items-center space-x-2 text-sm whitespace-nowrap ${
-                  isScrolled ? "text-slate-600" : "text-slate-300"
+                className={`hidden xl:flex items-center space-x-4 text-sm ml-6 ${
+                  isScrolled ? "text-[#6C757D]" : "text-white/90"
                 }`}
               >
                 <Phone className="w-4 h-4" />
-                <span className="font-medium">+91 9765530366</span>
+                <span>+91 9765530366</span>
                 <Mail className="w-4 h-4" />
-                <span className="font-medium">info@ambikaprecisionworks.com</span>
+                <span>info@ambikaprecisionworks.com</span>
               </div>
             </div>
 
-            {/* CTA (right) */}
-            <div className="hidden lg:flex items-center">
+            {/* CTA */}
+            <div className="hidden lg:flex">
               <Link
                 to="/contact"
-                className="ml-6 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-3 rounded-full font-semibold text-sm uppercase tracking-wide transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-xl"
+                className="ml-6 bg-[#FFC107] hover:bg-[#E0A800] text-[#1C1C1C] px-6 py-3 rounded-full font-semibold text-sm uppercase tracking-wide transition-all hover:scale-105 shadow-lg"
               >
                 Get Quote
               </Link>
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile Button */}
             <div className="lg:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className={`p-2 rounded-lg transition-all duration-300 ${
+                className={`p-2 rounded-lg ${
                   isScrolled
-                    ? "text-slate-700 hover:bg-slate-100"
+                    ? "text-[#0B5ED7] hover:bg-[#0B5ED7]/10"
                     : "text-white hover:bg-white/10"
                 }`}
               >
-                {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+                {isMenuOpen ? <X /> : <Menu />}
               </button>
             </div>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Menu */}
         <div
-          className={`lg:hidden transition-all duration-300 overflow-hidden ${
+          className={`lg:hidden transition-all ${
             isMenuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
-          }`}
+          } overflow-hidden`}
         >
-          <div
-            className={`${
-              isScrolled ? "bg-white border-t border-slate-200" : "bg-slate-900 border-t border-slate-700"
-            }`}
-          >
+          <div className={`${isScrolled ? "bg-[#F8F9FA]" : "bg-[#0B5ED7]"}`}>
             <div className="px-4 py-6 space-y-2">
               {navLinks.map((link) => (
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`block px-4 py-3 rounded-lg font-medium text-sm uppercase tracking-wide transition-all duration-300 ${
+                  className={`block px-4 py-3 rounded-lg text-sm font-medium uppercase ${
                     isActiveLink(link.to)
-                      ? isScrolled
-                        ? "text-blue-600 bg-blue-50"
-                        : "text-blue-400 bg-white/10"
+                      ? "bg-[#0B5ED7]/10 text-[#0B5ED7]"
                       : isScrolled
-                      ? "text-slate-700 hover:text-blue-600 hover:bg-slate-50"
-                      : "text-slate-200 hover:text-white hover:bg-white/10"
+                        ? "text-[#1C1C1C] hover:bg-[#0B5ED7]/10"
+                        : "text-white hover:bg-white/10"
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -176,45 +151,26 @@ function Navbar() {
                 </Link>
               ))}
 
-              {/* Mobile Contact Info */}
-              <div
-                className={`pt-4 mt-4 border-t space-y-3 ${isScrolled ? "border-slate-200" : "border-slate-700"}`}
+              <Link
+                to="/contact"
+                className="block mt-4 bg-[#FFC107] text-[#1C1C1C] py-4 rounded-full text-center font-semibold uppercase shadow-lg"
+                onClick={() => setIsMenuOpen(false)}
               >
-                <div
-                  className={`flex items-center space-x-3 px-4 py-2 ${isScrolled ? "text-slate-600" : "text-slate-300"}`}
-                >
-                  <Phone className="w-4 h-4" />
-                  <span className="text-sm">+91 98765 43210</span>
-                </div>
-                <div
-                  className={`flex items-center space-x-3 px-4 py-2 ${isScrolled ? "text-slate-600" : "text-slate-300"}`}
-                >
-                  <Mail className="w-4 h-4" />
-                  <span className="text-sm">info@ambikaprecisionworks.com</span>
-                </div>
-              </div>
-
-              {/* Mobile CTA Button */}
-              <div className="pt-4">
-                <Link
-                  to="/contact"
-                  className="block w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-4 rounded-full font-semibold text-sm uppercase tracking-wide transition-all duration-300 text-center shadow-lg"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Get Quote
-                </Link>
-              </div>
+                Get Quote
+              </Link>
             </div>
           </div>
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
       {isMenuOpen && (
-        <div className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 lg:hidden" onClick={() => setIsMenuOpen(false)} />
+        <div
+          className="fixed inset-0 bg-black/30 z-40"
+          onClick={() => setIsMenuOpen(false)}
+        />
       )}
     </>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar
