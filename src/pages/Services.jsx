@@ -20,6 +20,9 @@ import {
   ChevronRight,
   Phone,
   Mail,
+  Compass,
+  Code2,
+  ShieldCheck,
 } from "lucide-react";
 
 const Services = () => {
@@ -62,7 +65,7 @@ const Services = () => {
         "Cost-effective solutions",
       ],
       industries: ["Mining", "Oil & Gas", "General Engineering"],
-    },  
+    },
     {
       icon: Shield,
       title: "Quality Inspection",
@@ -141,8 +144,6 @@ const Services = () => {
     },
   ];
 
-  
-
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Hero Section */}
@@ -162,7 +163,7 @@ const Services = () => {
               Precision Manufacturing Services
             </div> */}
 
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-white leading-tight">
+            <h1 className="text-3xl md:text-5xl font-bold mb-6 text-white leading-tight">
               Advanced CNC & VMC
               <span className="block bg-gradient-to-r from-blue-400 via-purple-400 to-blue-300 bg-clip-text text-transparent">
                 Manufacturing Solutions
@@ -195,13 +196,11 @@ const Services = () => {
         </div>
       </section>
 
-     
-
       {/* Services Section */}
       <section className="py-24 px-4 bg-slate-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-slate-900">
               Our Manufacturing Services
             </h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
@@ -219,9 +218,8 @@ const Services = () => {
                   key={index}
                   className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 group border border-slate-100"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <IconComponent className="w-8 h-8 text-white" />
-                  </div>
+                  {/* <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                  </div> */}
 
                   <h3 className="text-2xl font-bold mb-4 text-slate-900">
                     {service.title}
@@ -313,69 +311,131 @@ const Services = () => {
       </section>
 
       {/* Process Excellence Section */}
-      <section className="py-24 px-4 bg-slate-50">
+      <section className="py-20 px-4 bg-gradient-to-b from-slate-50 to-white">
         <div className="max-w-7xl mx-auto">
+          {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900">
+            <div className="inline-flex items-center px-4 py-2 bg-slate-200 rounded-full text-slate-700 text-sm font-semibold mb-6">
+              Process Workflow
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-slate-900 text-balance">
               Our Manufacturing Process
             </h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              A systematic approach to precision manufacturing ensuring
-              consistent quality and optimal results.
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              A systematic approach to precision manufacturing ensuring consistent
+              quality and optimal results at every stage.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center group">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <Layers className="w-10 h-10 text-white" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-slate-900">
-                Design Analysis
-              </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Comprehensive review of specifications, material requirements,
-                and manufacturing feasibility.
-              </p>
-            </div>
+          {/* Process Steps */}
+          <div className="max-w-4xl mx-auto">
+            <div className="relative">
+              {/* Vertical connecting line */}
+              <div
+                className="absolute left-6 top-0 bottom-0 w-0.5 bg-blue-200 hidden md:block"
+                aria-hidden="true"
+              ></div>
 
-            <div className="text-center group">
-              <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <Cpu className="w-10 h-10 text-white" />
+              <div className="space-y-12">
+                {/* Step 1: Design Analysis */}
+                <div className="relative">
+                  <div className="flex flex-col md:flex-row gap-6 items-start">
+                    <div className="relative flex-shrink-0">
+                      <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center shadow-lg z-10 relative">
+                        <Compass className="w-6 h-6 text-white" strokeWidth={2} />
+                      </div>
+                    </div>
+                    <div className="flex-1 bg-white rounded-xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow duration-300">
+                      <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                        Design Analysis
+                      </h3>
+                      <p className="text-slate-600 text-base leading-relaxed mb-1">
+                        Comprehensive review of specifications, material requirements,
+                        and manufacturing feasibility.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                {/* Step 2: Compliance/Testing */}
+                <div className="relative">
+                  <div className="flex flex-col md:flex-row gap-6 items-start">
+                    <div className="relative flex-shrink-0">
+                      <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center shadow-lg z-10 relative">
+                        <ShieldCheck className="w-6 h-6 text-white" strokeWidth={2} />
+                      </div>
+                    </div>
+                    <div className="flex-1 bg-white rounded-xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow duration-300">
+                      <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                        Material Traceability & Testing
+                      </h3>
+                      <p className="text-slate-600 text-base leading-relaxed mb-1">
+                        Material traceability ensured through heat-wise identification.
+                        Test certificates (TC) and documented process controls. All
+                        chemical, mechanical, and metallurgical testing is conducted
+                        through our NABL approved laboratory partners, offering complete
+                        testing facilities in compliance with international standards.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                {/* Step 3: CNC Programming */}
+                <div className="relative">
+                  <div className="flex flex-col md:flex-row gap-6 items-start">
+                    <div className="relative flex-shrink-0">
+                      <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center shadow-lg z-10 relative">
+                        <Code2 className="w-6 h-6 text-white" strokeWidth={2} />
+                      </div>
+                    </div>
+                    <div className="flex-1 bg-white rounded-xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow duration-300">
+                      <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                        CNC Programming
+                      </h3>
+                      <p className="text-slate-600 text-base leading-relaxed mb-1">
+                        Advanced CAD/CAM programming optimized for efficiency, precision,
+                        and surface finish quality.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                {/* Step 4: Precision Machining */}
+                <div className="relative">
+                  <div className="flex flex-col md:flex-row gap-6 items-start">
+                    <div className="relative flex-shrink-0">
+                      <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center shadow-lg z-10 relative">
+                        <Cog className="w-6 h-6 text-white" strokeWidth={2} />
+                      </div>
+                    </div>
+                    <div className="flex-1 bg-white rounded-xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow duration-300">
+                      <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                        Precision Machining
+                      </h3>
+                      <p className="text-slate-600 text-base leading-relaxed mb-1">
+                        State-of-the-art CNC and VMC operations with continuous monitoring
+                        and quality control.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                {/* Step 5: Quality Verification */}
+                <div className="relative">
+                  <div className="flex flex-col md:flex-row gap-6 items-start">
+                    <div className="relative flex-shrink-0">
+                      <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center shadow-lg z-10 relative">
+                        <ShieldCheck className="w-6 h-6 text-white" strokeWidth={2} />
+                      </div>
+                    </div>
+                    <div className="flex-1 bg-white rounded-xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition-shadow duration-300">
+                      <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                        Quality Verification
+                      </h3>
+                      <p className="text-slate-600 text-base leading-relaxed mb-1">
+                        100% inspection protocol with advanced measuring equipment and
+                        complete documentation.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-bold mb-3 text-slate-900">
-                CNC Programming
-              </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Advanced CAD/CAM programming optimized for efficiency,
-                precision, and surface finish quality.
-              </p>
-            </div>
-
-            <div className="text-center group">
-              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <Settings className="w-10 h-10 text-white" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-slate-900">
-                Precision Machining
-              </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                State-of-the-art CNC and VMC operations with continuous
-                monitoring and quality control.
-              </p>
-            </div>
-
-            <div className="text-center group">
-              <div className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <Gauge className="w-10 h-10 text-white" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-slate-900">
-                Quality Verification
-              </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                100% inspection protocol with advanced measuring equipment and
-                complete documentation.
-              </p>
             </div>
           </div>
         </div>
@@ -405,7 +465,7 @@ const Services = () => {
               <div className="space-y-4 mb-8">
                 <div className="flex items-center gap-4">
                   <Phone className="w-6 h-6 text-blue-400" />
-                  <span className="text-lg">+91 98765 43210</span>
+                  <span className="text-lg">+91 9765530366</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <Mail className="w-6 h-6 text-green-400" />

@@ -15,7 +15,7 @@ import {
   Instagram,
   ExternalLink
 } from "lucide-react";
-import logo from "../assets/logo.png";
+// import logo from "../assets/logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -61,9 +61,9 @@ const Footer = () => {
               <div className="flex items-center space-x-3 mb-6">
                 <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg">
                   <img
-                    src={logo}
+                    src="/public/logo.PNG"
                     alt="Ambika Precision Works"
-                    className="w-8 h-8 object-contain"
+                    className="w-16 h-16 object-contain transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
                 <div>
@@ -165,31 +165,60 @@ const Footer = () => {
                   </div>
                 </div>
 
-                <div className="flex items-center">
-                  <Phone className="w-5 h-5 mr-3 text-green-400" />
-                  <div className="text-slate-300">
-                    <a href="tel:+919876543210" className="hover:text-white transition-colors">
-                      +91 98765 43210
-                    </a>
+                <div className="space-y-3">
+                  <div className="flex items-start">
+                    <Phone className="w-5 h-5 mr-3 text-green-400 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <div className="text-slate-300">
+                        <div className="font-medium text-white mb-1">India</div>
+                        <a href="tel:+919765530366" className="text-sm hover:text-white transition-colors">
+                          +91 9765530366
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <Phone className="w-5 h-5 mr-3 text-green-400 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <div className="text-slate-300">
+                        <div className="font-medium text-white mb-1">United Kingdom</div>
+                        <a href="tel:+447818961332" className="text-sm hover:text-white transition-colors">
+                          +44 7818961332
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <Phone className="w-5 h-5 mr-3 text-green-400 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <div className="text-slate-300">
+                        <div className="font-medium text-white mb-1">Canada</div>
+                        <a href="tel:+17785481146" className="text-sm hover:text-white transition-colors">
+                          +1 7785481146
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
-                <div className="flex items-center">
-                  <Mail className="w-5 h-5 mr-3 text-purple-400" />
-                  <div className="text-slate-300">
-                    <a href="mailto:info@ambikaprecisionworks.com" className="hover:text-white transition-colors">
-                      info@ambikaprecisionworks.com
-                    </a>
+                <div className="flex items-start">
+                  <Mail className="w-5 h-5 mr-3 text-purple-400 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <div className="text-slate-300">
+                      <div className="font-medium text-white mb-1">Email</div>
+                      <a href="mailto:info@ambikaprecisionworks.com" className="text-sm hover:text-white transition-colors">
+                        info@ambikaprecisionworks.com
+                      </a>
+                    </div>
                   </div>
                 </div>
 
                 <div className="flex items-start">
                   <Clock className="w-5 h-5 mr-3 text-orange-400 flex-shrink-0 mt-0.5" />
                   <div className="text-slate-300">
-                    <div className="font-medium text-white mb-1">Business Hours</div>
+                    <div className="font-medium text-white mb-1">Availability</div>
                     <div className="text-sm">
-                      Mon - Fri: 9:00 AM - 6:00 PM<br />
-                      Sat: 9:00 AM - 2:00 PM
+                      24/7 Operations
                     </div>
                   </div>
                 </div>

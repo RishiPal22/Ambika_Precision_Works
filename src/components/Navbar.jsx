@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, Mail } from "lucide-react";
-import logo from "../assets/logo.png";
+// import logo from "../assets/logo.png";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -52,9 +52,9 @@ function Navbar() {
             {/* Logo / Company Name + Phone (inline, no-wrap) */}
             <Link to="/" className="flex items-center space-x-3 group flex-shrink-0">
               <img
-                src={logo}
+                src="/public/logo.PNG"
                 alt="Ambika Precision Works"
-                className="w-12 h-12 object-contain transition-transform duration-300 group-hover:scale-105"
+                className="w-16 h-16 object-contain transition-transform duration-300 group-hover:scale-105"
               />
 
               <div
