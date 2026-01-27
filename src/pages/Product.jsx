@@ -18,8 +18,22 @@ import flanges from "../assets/valves/Flanges.jpg";
 // import couplings from "../assets/valves/couplings.png";
 
 // Defefnce
-// import defense1 from "../assets/defence/defense1.jpg";
-// import defense2 from "../assets/defence/defense2.jpg";
+import defense1 from "../assets/Defence/def1.jpeg";
+import defense2 from "../assets/Defence/def2.jpeg";
+import defense3 from "../assets/Defence/def3.jpeg";
+import defense4 from "../assets/Defence/def4.jpeg";
+import defense5 from "../assets/Defence/def5.jpeg";
+
+// MINING
+import min1 from "../assets/mining/min1.jpeg";
+import min2 from "../assets/mining/min2.jpeg";
+import min3 from "../assets/mining/min3.jpeg";
+import min4 from "../assets/mining/min4.jpeg";
+import min5 from "../assets/mining/min5.jpeg";
+
+// GENERAL ENGINEERING
+
+
 
 
 
@@ -31,7 +45,7 @@ const Product = () => {
   const [activeFilter, setActiveFilter] = useState(initialFilter)
   const [searchTerm, setSearchTerm] = useState("")
 
-  const categories = ["All", "Oil & Gas", "Valves & Fittings", "Defence", "Aerospace", "Mining", "General Engineering"]
+  const categories = ["All", "Oil & Gas", "Valves & Fittings", "Defence", "Mining", "General Engineering"]
 
   const products = [
   {
@@ -124,7 +138,93 @@ const Product = () => {
     description: "Industrial flanges for pipe connections",
     image: flanges,
     specifications: "Standard: ANSI/ASME | Size: ½” – 48”",
-  }
+  },
+
+  // DEFENCE
+  {
+    id: 20,
+    name: "Defence Grade Precision Turned Components",
+    category: "Defence",
+    description: "",
+    image: defense1,
+    specifications: "",
+  },
+  {
+    id: 21,
+    name: "Precision Machined Defence Housing",
+    category: "Defence",
+    description: "",
+    image: defense2,
+    specifications: "",
+  },
+  {
+    id: 22,
+    name: "Precision Machined Defence Fittings",
+    category: "Defence",
+    description: "",
+    image: defense3,
+    specifications: "",
+  },
+  {
+    id: 23,
+    name: "Heavy duty Defence machined components",
+    category: "Defence",
+    description: "",
+    image: defense4,
+    specifications: "",
+  },
+  {
+    id: 24,
+    name: "Defence System Mounting components",
+    category: "Defence",
+    description: "",
+    image: defense5,
+    specifications: "",
+  },
+
+  // MINING
+  {
+    id: 25,
+    name: "Mining equipment bearing bushes",
+    category: "Mining",
+    description: "",
+    image: min1,
+    specifications: "",
+  },
+  {
+    id: 26,
+    name: "Heavy duty cylindrical wear sleeves",
+    category: "Mining",
+    description: "",
+    image: min2,
+    specifications: "",
+  },
+  {
+    id: 27,
+    name: "Mining equipment bearing housing",
+    category: "Mining",
+    description: "",
+    image: min3,
+    specifications: "",
+  },
+  {
+    id: 28,
+    name: "Crusher liner sleeve",
+    category: "Mining",
+    description: "",
+    image: min4,
+    specifications: "",
+  },
+  {
+    id: 29,
+    name: "Wear resistant liner plates",
+    category: "Mining",
+    description: "",
+    image: min5,
+    specifications: "",
+  },
+
+  
 ];
 
 

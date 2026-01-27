@@ -59,11 +59,11 @@ const Footer = () => {
             {/* Company Info */}
             <div className="lg:col-span-1">
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg">
+                <div className="w-20 h-20  rounded-xl flex items-center justify-center shadow-lg">
                   <img
-                    src={logo}
+                    src= "ambika_final_logo.jpeg"
                     alt="Ambika Precision Works"
-                    className="w-8 h-8 object-contain"
+                    className="w-20 h-20 object-contain"
                   />
                 </div>
                 <div>
