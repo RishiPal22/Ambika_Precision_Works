@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { setPageMeta, SEO_CONFIG } from "../utils/seoHelpers";
 import {
   Settings,
   Cog,
@@ -26,6 +27,16 @@ import {
 } from "lucide-react";
 
 const Services = () => {
+  useEffect(() => {
+    setPageMeta({
+      title: SEO_CONFIG.services.title,
+      description: SEO_CONFIG.services.description,
+      keywords: SEO_CONFIG.services.keywords,
+      canonical: SEO_CONFIG.services.canonical,
+      ogTitle: SEO_CONFIG.services.title,
+      ogDescription: SEO_CONFIG.services.description,
+    });
+  }, []);
   const services = [
     {
       icon: Settings,

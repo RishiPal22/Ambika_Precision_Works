@@ -1,6 +1,7 @@
 import React from 'react' 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useLocation } from "react-router-dom";
+import { setPageMeta, SEO_CONFIG } from "../utils/seoHelpers";
 // Oil & Gas
 import hammerUnions from "../assets/oil-gas/hammer union.jpg";
 import pupJoints from "../assets/oil-gas/pup joint.jpg";
@@ -44,6 +45,17 @@ const Product = () => {
   
   const [activeFilter, setActiveFilter] = useState(initialFilter)
   const [searchTerm, setSearchTerm] = useState("")
+
+  useEffect(() => {
+    setPageMeta({
+      title: SEO_CONFIG.products.title,
+      description: SEO_CONFIG.products.description,
+      keywords: SEO_CONFIG.products.keywords,
+      canonical: SEO_CONFIG.products.canonical,
+      ogTitle: SEO_CONFIG.products.title,
+      ogDescription: SEO_CONFIG.products.description,
+    });
+  }, []);
 
   const categories = ["All", "Oil & Gas", "Valves & Fittings", "Defence", "Mining", "General Engineering"]
 

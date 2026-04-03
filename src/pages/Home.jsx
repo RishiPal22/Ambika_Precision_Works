@@ -1,7 +1,8 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom"; // Add this import at the top
+import { setPageMeta, SEO_CONFIG } from "../utils/seoHelpers";
 import {
   Settings,
   Shield,
@@ -101,6 +102,17 @@ const Home = () => {
   const [sending, setSending] = useState(false);
   const [status, setStatus] = useState(null);
   const [selectedCertificate, setSelectedCertificate] = useState(null);
+
+  useEffect(() => {
+    setPageMeta({
+      title: SEO_CONFIG.home.title,
+      description: SEO_CONFIG.home.description,
+      keywords: SEO_CONFIG.home.keywords,
+      canonical: SEO_CONFIG.home.canonical,
+      ogTitle: SEO_CONFIG.home.title,
+      ogDescription: SEO_CONFIG.home.description,
+    });
+  }, []);
 
   const certificates = [
     {

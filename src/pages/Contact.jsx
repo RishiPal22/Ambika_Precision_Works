@@ -1,11 +1,23 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { FiMail, FiPhone, FiMapPin } from 'react-icons/fi';
+import { setPageMeta, SEO_CONFIG } from '../utils/seoHelpers';
 
 function Contact() {
   const form = useRef();
   const [status, setStatus] = useState(null);
   const [sending, setSending] = useState(false);
+
+  useEffect(() => {
+    setPageMeta({
+      title: SEO_CONFIG.contact.title,
+      description: SEO_CONFIG.contact.description,
+      keywords: SEO_CONFIG.contact.keywords,
+      canonical: SEO_CONFIG.contact.canonical,
+      ogTitle: SEO_CONFIG.contact.title,
+      ogDescription: SEO_CONFIG.contact.description,
+    });
+  }, []);
 
   // load EmailJS config from Vite env
   const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;

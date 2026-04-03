@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Award, Shield, Users, CheckCircle, Sparkles, X } from "lucide-react";
 import { motion } from "framer-motion";
+import { setPageMeta, SEO_CONFIG } from "../utils/seoHelpers";
 import isoCertificate from "../assets/Iso-certificate.jpg"; // Adjust extension if needed
 import eepcCertificate from "../assets/EEPC-certificate.jpg"; // Path to EEPC certificate
 import iecCertificate from "../assets/IEC code.jpg"; // Path to IEC certificate
@@ -40,6 +41,17 @@ const fadeUp = {
 
 const About = () => {
 	const [selectedCertificate, setSelectedCertificate] = useState(null);
+
+	useEffect(() => {
+		setPageMeta({
+			title: SEO_CONFIG.about.title,
+			description: SEO_CONFIG.about.description,
+			keywords: SEO_CONFIG.about.keywords,
+			canonical: SEO_CONFIG.about.canonical,
+			ogTitle: SEO_CONFIG.about.title,
+			ogDescription: SEO_CONFIG.about.description,
+		});
+	}, []);
 
 	return (
 		<motion.div

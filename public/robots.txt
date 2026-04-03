@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api
+Disallow: /*.json
+
+# Crawl delay
+Crawl-delay: 1
+
+# Sitemaps
+Sitemap: https://ambikaprecisionworks.in/sitemap.xml
+
+# Search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
