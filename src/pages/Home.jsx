@@ -37,7 +37,7 @@ const productShowcase = [
     icon: <Zap className="w-10 h-10 text-yellow-400" />,
     gradient: "from-yellow-400 via-orange-400 to-blue-600",
     image:
-      "https://assets.nov.com/NCP4N68N/at/7qhj564nrsh8jvfjqxgqnrkj/AnsonHammerUnions.jpg?auto=webp&format=jpg&width=1920",
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
     stats: "250+ Projects",
   },
   {
@@ -48,7 +48,7 @@ const productShowcase = [
     icon: <Settings className="w-10 h-10 text-blue-500" />,
     gradient: "from-blue-500 via-blue-300 to-green-400",
     image:
-      "https://thumbs.dreamstime.com/b/organized-top-down-view-various-plumbing-components-including-brass-copper-plastic-metal-fittings-valves-assortment-421098338.jpg?w=992",
+      "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80",
     stats: "180+ Components",
   },
   {
@@ -59,7 +59,7 @@ const productShowcase = [
     icon: <Shield className="w-10 h-10 text-red-500" />,
     gradient: "from-red-500 via-gray-700 to-black",
     image:
-      "https://www.shutterstock.com/image-photo/shiny-steel-parts-closeup-background-600w-1619620117.jpg",
+      "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
     stats: "95+ Assemblies",
   },
   {
@@ -69,7 +69,7 @@ const productShowcase = [
     icon: <Plane className="w-10 h-10 text-purple-500" />,
     gradient: "from-purple-500 via-indigo-400 to-blue-300",
     image:
-      "https://t4.ftcdn.net/jpg/08/74/69/15/240_F_874691596_E1OB5NVi3HmByjO6f5OtlwHicidjRj16.jpg",
+      "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
     stats: "120+ Parts",
   },
   {
@@ -80,7 +80,7 @@ const productShowcase = [
     icon: <Hammer className="w-10 h-10 text-yellow-700" />,
     gradient: "from-yellow-700 via-yellow-400 to-gray-500",
     image:
-      "https://cdn.pixabay.com/photo/2014/09/13/21/46/milling-444493_1280.jpg",
+      "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=600&q=80",
     stats: "300+ Units",
   },
   {
@@ -91,7 +91,7 @@ const productShowcase = [
     icon: <Globe2 className="w-10 h-10 text-teal-500" />,
     gradient: "from-teal-500 via-green-400 to-blue-400",
     image:
-      "https://pixabay.com/photos/drill-set-drill-milling-444485/",
+      "https://images.unsplash.com/photo-1465101178521-c1a2b3a8e8a2?auto=format&fit=crop&w=600&q=80",
     stats: "450+ Solutions",
   },
 ];
