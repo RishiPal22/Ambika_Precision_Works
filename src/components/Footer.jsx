@@ -99,13 +99,7 @@ const Footer = () => {
 
               {/* Social Media */}
               <div className="flex space-x-4">
-                <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors group">
-                  <Facebook className="w-5 h-5 text-slate-300 group-hover:text-white" />
-                </a>
-                <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors group">
-                  <Twitter className="w-5 h-5 text-slate-300 group-hover:text-white" />
-                </a>
-                <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors group">
+                <a href="https://www.linkedin.com/in/ravindra-pal-106992382/" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors group">
                   <Linkedin className="w-5 h-5 text-slate-300 group-hover:text-white" />
                 </a>
                 <a href="#" className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center hover:bg-white/20 transition-colors group">
@@ -225,28 +219,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Industries Section */}
-        {/* <div className="border-t border-slate-700/50">
-          <div className="max-w-7xl mx-auto px-4 py-8">
-            <div className="text-center mb-6">
-              <h3 className="text-lg font-bold text-white mb-2">Industries We Serve</h3>
-              <p className="text-slate-300 text-sm">Specialized manufacturing solutions for diverse industrial sectors</p>
-            </div>
-            <div className="flex flex-wrap justify-center gap-4">
-              {industries.map((industry, index) => (
-                <Link
-                  key={index}
-                  to={industry.to}
-                  className="px-4 py-2 bg-white/10 rounded-full text-slate-300 hover:bg-white/20 hover:text-white transition-all text-sm font-medium backdrop-blur-sm"
-                >
-                  {industry.label}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div> */}
+        </div>       
 
         {/* Bottom Bar */}
         <div className="border-t border-slate-700/50">

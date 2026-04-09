@@ -33,12 +33,10 @@ const productShowcase = [
     name: "Oil & Gas",
     tagline: "Powering Energy Frontiers",
     description:
-      "Delivering high-precision, corrosion-resistant, precision-built components for critical energy applications.",
+      "Delivering high-precision, corrosion-resistant, precision-built components for critical energy applications.",
     icon: <Zap className="w-10 h-10 text-yellow-400" />,
     gradient: "from-yellow-400 via-orange-400 to-blue-600",
-    image:
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
-    stats: "250+ Projects",
+    image: "/oil and gas.avif",
   },
   {
     name: "Valves & Fittings",
@@ -47,9 +45,7 @@ const productShowcase = [
       "Machined to exact tolerances, our valve and fitting components ensure superior sealing, pressure integrity, and long service life in critical applications.",
     icon: <Settings className="w-10 h-10 text-blue-500" />,
     gradient: "from-blue-500 via-blue-300 to-green-400",
-    image:
-      "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80",
-    stats: "180+ Components",
+    image: "/valves and fittings.avif",
   },
   {
     name: "Defence",
@@ -59,8 +55,7 @@ const productShowcase = [
     icon: <Shield className="w-10 h-10 text-red-500" />,
     gradient: "from-red-500 via-gray-700 to-black",
     image:
-      "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
-    stats: "95+ Assemblies",
+      "/defence.jpg",
   },
   {
     name: "Aerospace",
@@ -69,8 +64,7 @@ const productShowcase = [
     icon: <Plane className="w-10 h-10 text-purple-500" />,
     gradient: "from-purple-500 via-indigo-400 to-blue-300",
     image:
-      "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
-    stats: "120+ Parts",
+      "/aerospace.jpg",
   },
   {
     name: "Mining",
@@ -79,9 +73,7 @@ const productShowcase = [
     "Precision-machined parts crafted from high-strength alloys to deliver durability, accuracy, and consistent performance in challenging mining operations.",
     icon: <Hammer className="w-10 h-10 text-yellow-700" />,
     gradient: "from-yellow-700 via-yellow-400 to-gray-500",
-    image:
-      "https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&w=600&q=80",
-    stats: "300+ Units",
+    image: "/mining.avif",
   },
   {
     name: "General Engineering",
@@ -90,9 +82,7 @@ const productShowcase = [
     "From prototyping to production, Ambika Precision Works delivers cost-effective, high-accuracy solutions for mechanical, industrial, and manufacturing applications.",
     icon: <Globe2 className="w-10 h-10 text-teal-500" />,
     gradient: "from-teal-500 via-green-400 to-blue-400",
-    image:
-      "https://images.unsplash.com/photo-1465101178521-c1a2b3a8e8a2?auto=format&fit=crop&w=600&q=80",
-    stats: "450+ Solutions",
+    image: "/general engineering.jpg",
   },
 ];
 
@@ -583,9 +573,7 @@ const Home = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-                  <div className="absolute bottom-3 left-3 bg-white/90 text-gray-800 text-xs font-semibold px-3 py-1 rounded-full shadow-sm">
-                    {category.stats}
-                  </div>
+                  
                 </div>
 
                 {/* Content */}
